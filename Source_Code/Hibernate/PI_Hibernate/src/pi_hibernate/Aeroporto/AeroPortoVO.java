@@ -11,7 +11,7 @@ import pi_hibernate.Base.BaseVO;
  *
  * @author rafaellf
  */
-class AeroPortoVO extends BaseVO
+class AeroportoVO extends BaseVO
 {
     
 }

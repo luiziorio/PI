@@ -12,17 +12,17 @@ import pi_hibernate.Base.BaseDAO;
  *
  * @author rafaellf
  */
-public class AeroportoDAO extends BaseDAO<AeroPortoVO>
+class AeroportoDAO extends BaseDAO<AeroportoVO>
 {
 
     @Override
-    public void Salva(AeroPortoVO objeto)
+    public void Salva(AeroportoVO objeto)
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Delete(AeroPortoVO objeto)
+    public void Delete(AeroportoVO objeto)
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
