@@ -12,7 +12,7 @@ package pi_hibernate.Base;
  * @param <TVO>
  * @param <TDAO>
  */
-public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO>
+public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,TIB extends IBase>
 {
     /**
      * Get uma instancia do DAO
@@ -26,9 +26,19 @@ public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO>
         dao.Salva(objeto);
     }
     
+    public void Salva(IBase objeto)
+    {
+        Salva((TVO)objeto);
+    }
+    
     public void Delete(TVO objeto)
     {
         TDAO dao = GetInstanciaDAO();
         dao.Delete(objeto);
+    }
+    
+    public void Delete(IBase objeto)
+    {
+        Delete((TVO)objeto);
     }
 }

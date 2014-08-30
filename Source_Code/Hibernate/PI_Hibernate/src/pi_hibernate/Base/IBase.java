@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Aeroporto;
-import pi_hibernate.Base.BaseVO;
+package pi_hibernate.Base;
 
 /**
  *
- * @author rafaellf
+ * @author 032126421
  */
-class AeroportoVO extends BaseVO implements IAeropoto
+public interface IBase
 {
-    
+    int getSequencial();
+    void setSequencial(int sequencial);
+    String getCodigo();
+    void setCodigo(String codigo);
 }

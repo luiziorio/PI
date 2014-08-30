@@ -12,7 +12,7 @@ import pi_hibernate.Base.BaseController;
  *
  * @author rafaellf
  */
-public class AeroportoController extends BaseController<AeroportoVO, AeroportoDAO>
+public class AeroportoController extends BaseController<AeroportoVO, AeroportoDAO,IAeropoto>
 {
 
     @Override

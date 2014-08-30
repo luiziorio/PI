@@ -6,14 +6,13 @@
 
 package pi_hibernate.Aeroporto;
 
+import pi_hibernate.Base.IBase;
+
 /**
  *
  * @author rafaellf
  */
-public interface IAeropoto
+public interface IAeropoto extends IBase
 {
-    int getSequencial();
-    void setSequencial(int sequencial);
-    String getCodigo();
-    void setCodigo(String codigo);
+
 }
