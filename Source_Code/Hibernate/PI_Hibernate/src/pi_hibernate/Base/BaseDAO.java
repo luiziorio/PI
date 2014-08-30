@@ -13,7 +13,12 @@ package pi_hibernate.Base;
  */
 public abstract class BaseDAO<T extends BaseVO>
 {
-    public abstract void Salva(T objeto);
+    public void Salva(T objeto)
+    {                   
+    }
     
-    public abstract void Delete(T objeto);
+    public void Delete(T objeto)
+    {
+        
+    }
 }

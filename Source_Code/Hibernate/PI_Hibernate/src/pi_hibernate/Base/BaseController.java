@@ -14,5 +14,21 @@ package pi_hibernate.Base;
  */
 public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO>
 {
+    /**
+     * Get uma instancia do DAO
+     * @return DAO generico
+     */
+    protected abstract TDAO GetInstanciaDAO();
     
+    public void Salvar(TVO objeto)
+    {
+        TDAO dao = GetInstanciaDAO();
+        dao.Salva(objeto);
+    }
+    
+    public void Delete(TVO objeto)
+    {
+        TDAO dao = GetInstanciaDAO();
+        dao.Delete(objeto);
+    }
 }

@@ -12,5 +12,8 @@ package pi_hibernate.Aeroporto;
  */
 public interface IAeropoto
 {
-    
+    int getSequencial();
+    void setSequencial(int sequencial);
+    String getCodigo();
+    void setCodigo(String codigo);
 }

@@ -14,5 +14,11 @@ import pi_hibernate.Base.BaseController;
  */
 public class AeroportoController extends BaseController<AeroportoVO, AeroportoDAO>
 {
+
+    @Override
+    protected AeroportoDAO GetInstanciaDAO()
+    {
+       return AeroportoDAO.GetObjeto(); 
+    }
     
 }
