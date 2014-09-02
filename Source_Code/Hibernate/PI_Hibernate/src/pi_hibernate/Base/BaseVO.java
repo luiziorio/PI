@@ -10,30 +10,26 @@ package pi_hibernate.Base;
  *
  * @author rafaellf
  */
-public abstract class BaseVO implements IBase
+public abstract class BaseVO
 {
     protected int sequencial;
     protected String codigo;
 
-    @Override
     public int getSequencial()
     {
         return sequencial;
     }
 
-    @Override
     public void setSequencial(int sequencial)
     {
         this.sequencial = sequencial;
     }
 
-    @Override
     public String getCodigo()
     {
         return codigo;
     }
 
-    @Override
     public void setCodigo(String codigo)
     {
         this.codigo = codigo;

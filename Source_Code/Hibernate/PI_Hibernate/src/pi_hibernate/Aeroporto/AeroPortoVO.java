@@ -11,7 +11,18 @@ import pi_hibernate.Base.BaseVO;
  *
  * @author rafaellf
  */
-class AeroportoVO extends BaseVO implements IAeropoto
+class AeroportoVO extends BaseVO
 {
-    
+
+    String nome;
+
+    public String getNome()
+    {
+        return this.nome;
+    }
+
+    public void setNome(String nome)
+    {
+        this.nome = nome;
+    }
 }

@@ -26,9 +26,9 @@ public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,T
         dao.Salva(objeto);
     }
     
-    public void Salva(IBase objeto)
+    public void Salvar(TIB objeto)
     {
-        Salva((TVO)objeto);
+        Salvar(IBaseToTVO(objeto));
     }
     
     public void Delete(TVO objeto)
@@ -41,4 +41,6 @@ public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,T
     {
         Delete((TVO)objeto);
     }
+    
+    protected abstract TVO IBaseToTVO(TIB base);
 }

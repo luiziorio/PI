@@ -20,5 +20,12 @@ public class AeroportoController extends BaseController<AeroportoVO, AeroportoDA
     {
        return AeroportoDAO.GetObjeto(); 
     }
+
+    @Override
+    protected AeroportoVO IBaseToTVO(IAeropoto base)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

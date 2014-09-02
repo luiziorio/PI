@@ -14,5 +14,6 @@ import pi_hibernate.Base.IBase;
  */
 public interface IAeropoto extends IBase
 {
-
+    String getNome();
+    void setNome(String nome);
 }

@@ -14,6 +14,7 @@ public interface IBase
 {
     int getSequencial();
     void setSequencial(int sequencial);
+    
     String getCodigo();
     void setCodigo(String codigo);
 }
