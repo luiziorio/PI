@@ -6,6 +6,7 @@
 
 package pi_hibernate.Aeroporto;
 
+import EntidadesInterface.IAeropoto;
 import pi_hibernate.Base.BaseController;
 
 /**
@@ -19,13 +20,5 @@ public class AeroportoController extends BaseController<AeroportoVO, AeroportoDA
     protected AeroportoDAO GetInstanciaDAO()
     {
        return AeroportoDAO.GetObjeto(); 
-    }
-
-    @Override
-    protected AeroportoVO IBaseToTVO(IAeropoto base)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
+    }    
 }

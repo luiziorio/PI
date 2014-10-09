@@ -6,11 +6,18 @@
 
 package pi_hibernate.Base;
 
+import EntidadesInterface.IBase;
+import Entidade.BaseVO;
+
 /**
- *
+ * Classe base para fazer os Controle de persistencia da dadeas
  * @author rafaellf
- * @param <TVO>
- * @param <TDAO>
+ * @param <TVO> Entidade a ser persisteida. Ela obrigatoriamente tem que herdar
+ *   da classe BaseVO
+ * @param <TDAO> Classe responsavel por fazer a persistencia do dado no banco.
+ *  Obrigatoriamente tem que herdar da classe BaseDAO
+ * @param <TIB> Interface que a Entidade VO implemneta. Ela obrigatoriamente tem
+ *  que heradar de IBase
  */
 public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,TIB extends IBase>
 {
@@ -19,7 +26,7 @@ public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,T
      * @return DAO generico
      */
     protected abstract TDAO GetInstanciaDAO();
-    
+
     public void Salvar(TVO objeto)
     {
         TDAO dao = GetInstanciaDAO();
@@ -28,7 +35,7 @@ public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,T
     
     public void Salvar(TIB objeto)
     {
-        Salvar(IBaseToTVO(objeto));
+        Salvar((TVO)objeto);
     }
     
     public void Delete(TVO objeto)
@@ -41,6 +48,4 @@ public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,T
     {
         Delete((TVO)objeto);
     }
-    
-    protected abstract TVO IBaseToTVO(TIB base);
 }
