@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Base;
+package pi_hibernate.VO;
+
+import pi_hibernate.Base.BaseNomeVO;
+import pi_hibernate.IVO.IContinente;
 
 /**
  *
- * @author 032126421
+ * @author rafael
  */
-public interface IBase
+public class ContinenteVO extends BaseNomeVO implements IContinente
 {
-    int getSequencial();
-    void setSequencial(int sequencial);
+    
 }

@@ -8,21 +8,21 @@ package pi_hibernate.Base;
 
 /**
  *
- * @author rafaellf
+ * @author rafael
  */
-public abstract class BaseVO
+public class BaseNomeVO extends BaseVO implements IBaseNome
 {
-    protected int sequencial;
-    protected String codigo;
+    protected String nome;
 
-    public int getSequencial()
+    @Override
+    public String getNome()
     {
-        return sequencial;
+        return nome;
     }
 
-    public void setSequencial(int sequencial)
+    @Override
+    public void setNome(String nome)
     {
-        this.sequencial = sequencial;
+        this.nome = nome;
     }
-    
 }

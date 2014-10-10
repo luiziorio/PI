@@ -4,14 +4,15 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Base;
+package pi_hibernate.IVO;
+
+import pi_hibernate.Base.IBaseNome;
 
 /**
  *
- * @author 032126421
+ * @author rafael
  */
-public interface IBase
+public interface IContinente extends IBaseNome
 {
-    int getSequencial();
-    void setSequencial(int sequencial);
+    
 }

@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Base;
+package pi_hibernate.VO;
 
 /**
  *
- * @author 032126421
+ * @author rafael
  */
-public interface IBase
+public interface CidadeVO
 {
-    int getSequencial();
-    void setSequencial(int sequencial);
+    
 }

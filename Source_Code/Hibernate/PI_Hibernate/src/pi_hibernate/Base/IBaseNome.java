@@ -8,17 +8,10 @@ package pi_hibernate.Base;
 
 /**
  *
- * @author rafaellf
- * @param <T>
+ * @author rafael
  */
-public abstract class BaseDAO<T extends BaseVO>
+public interface IBaseNome extends IBase
 {
-    public void Salva(T objeto)
-    {                   
-    }
-    
-    public void Delete(T objeto)
-    {
-        
-    }
+    String getNome();
+    void setNome(String nome);
 }
