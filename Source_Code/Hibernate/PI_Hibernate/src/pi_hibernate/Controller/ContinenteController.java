@@ -8,14 +8,14 @@ package pi_hibernate.Controller;
 
 import pi_hibernate.Base.BaseController;
 import pi_hibernate.DAO.ContinenteDAO;
-import pi_hibernate.IVO.IContinente;
-import pi_hibernate.VO.ContinenteVO;
+import pi_hibernate.IEntidade.IContinente;
+import pi_hibernate.Entidade.EContinente;
 
 /**
  *
  * @author rafael
  */
-public class ContinenteController extends BaseController<ContinenteVO, ContinenteDAO, IContinente>
+public class ContinenteController extends BaseController<EContinente, ContinenteDAO, IContinente>
 {
 
     @Override

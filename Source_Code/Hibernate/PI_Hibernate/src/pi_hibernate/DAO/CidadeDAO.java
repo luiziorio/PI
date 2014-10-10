@@ -7,22 +7,22 @@
 package pi_hibernate.DAO;
 
 import pi_hibernate.Base.BaseDAO;
-import pi_hibernate.Entidade.EUsuario;
+import pi_hibernate.Entidade.ECidade;
 
 /**
  *
- * @author rafael
+ * @author rafaellf
  */
-public class UsuarioDAO extends BaseDAO<EUsuario>
+public class CidadeDAO extends BaseDAO<ECidade>
 {
-    private UsuarioDAO(){}
+    private CidadeDAO(){}
     
-    private static UsuarioDAO objeto;
+    private static CidadeDAO objeto;
     
-    public static UsuarioDAO GetObjeto()
+    public static CidadeDAO GetObjeto()
     {
         if(objeto == null)
-            objeto = new UsuarioDAO();
+            objeto = new CidadeDAO();
         return objeto;
     }
 }

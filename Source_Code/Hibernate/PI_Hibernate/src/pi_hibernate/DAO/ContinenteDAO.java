@@ -7,13 +7,13 @@
 package pi_hibernate.DAO;
 
 import pi_hibernate.Base.BaseDAO;
-import pi_hibernate.VO.ContinenteVO;
+import pi_hibernate.Entidade.EContinente;
 
 /**
  *
  * @author rafael
  */
-public class ContinenteDAO extends BaseDAO<ContinenteVO>
+public class ContinenteDAO extends BaseDAO<EContinente>
 {
     private ContinenteDAO(){}
     

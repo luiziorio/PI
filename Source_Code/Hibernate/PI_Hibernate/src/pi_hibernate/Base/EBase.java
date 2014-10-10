@@ -9,16 +9,20 @@ package pi_hibernate.Base;
 /**
  *
  * @author rafaellf
- * @param <T>
  */
-public abstract class BaseDAO<T extends EBase>
+public abstract class EBase
 {
-    public void Salva(T objeto)
-    {                   
+    protected int sequencial;
+    protected String codigo;
+
+    public int getSequencial()
+    {
+        return sequencial;
+    }
+
+    public void setSequencial(int sequencial)
+    {
+        this.sequencial = sequencial;
     }
     
-    public void Delete(T objeto)
-    {
-        
-    }
 }

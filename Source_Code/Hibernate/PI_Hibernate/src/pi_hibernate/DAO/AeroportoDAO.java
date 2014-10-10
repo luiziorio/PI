@@ -7,14 +7,14 @@
 package pi_hibernate.DAO;
 
 import pi_hibernate.Base.BaseDAO;
-import pi_hibernate.VO.AeroportoVO;
+import pi_hibernate.Entidade.EAeroporto;
      
 
 /**
  *
  * @author rafaellf
  */
-public class AeroportoDAO extends BaseDAO<AeroportoVO>
+public class AeroportoDAO extends BaseDAO<EAeroporto>
 {
     private AeroportoDAO(){}
     

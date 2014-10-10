@@ -13,7 +13,7 @@ package pi_hibernate.Base;
  * @param <TDAO>
  * @param <TIB>
  */
-public abstract class BaseController <TVO extends BaseVO, TDAO extends BaseDAO,TIB extends IBase>
+public abstract class BaseController <TVO extends EBase, TDAO extends BaseDAO,TIB extends IBase>
 {
     /**
      * Get uma instancia do DAO

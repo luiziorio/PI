@@ -4,21 +4,16 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Base;
+package pi_hibernate.IEntidade;
+
+import pi_hibernate.Base.IBase;
 
 /**
  *
  * @author rafaellf
- * @param <T>
  */
-public abstract class BaseDAO<T extends EBase>
+public interface IAeropoto extends IBase
 {
-    public void Salva(T objeto)
-    {                   
-    }
-    
-    public void Delete(T objeto)
-    {
-        
-    }
+    String getCodigo();
+    void setCodigo(String codigo);
 }
