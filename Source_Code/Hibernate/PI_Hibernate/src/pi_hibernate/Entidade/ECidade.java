@@ -6,34 +6,37 @@
 
 package pi_hibernate.Entidade;
 
-import java.util.HashSet;
 import pi_hibernate.Base.EBaseNome;
+import pi_hibernate.IEntidade.ICidade;
 
 /**
  *
  * @author rafael
  */
-public class ECidade extends EBaseNome
+public class ECidade extends EBaseNome implements ICidade
 {
     private Integer paisID;
     private EPais pais;
-    private HashSet<EPais> listaPaises;
 
+    @Override
     public Integer getPaisID()
     {
         return paisID;
     }
 
+    @Override
     public void setPaisID(Integer paisID)
     {
         this.paisID = paisID;
     }
 
+    @Override
     public EPais getPais()
     {
         return pais;
     }
 
+    @Override
     public void setPais(EPais pais)
     {
         this.pais = pais;

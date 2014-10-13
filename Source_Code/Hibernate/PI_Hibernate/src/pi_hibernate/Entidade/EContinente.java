@@ -18,11 +18,13 @@ public class EContinente extends EBaseNome implements IContinente
 {
    private HashSet<EPais> listaPaises;
 
+   @Override
     public HashSet<EPais> getListaPaises()
     {
         return listaPaises;
     }
 
+   @Override
     public void setListaPaises(HashSet<EPais> listaPaises)
     {
         this.listaPaises = listaPaises;
