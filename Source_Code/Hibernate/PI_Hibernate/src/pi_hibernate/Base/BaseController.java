@@ -9,37 +9,43 @@ package pi_hibernate.Base;
 /**
  *
  * @author rafaellf
- * @param <TVO>
+ * @param <TE>
  * @param <TDAO>
  * @param <TIB>
  */
-public abstract class BaseController <TVO extends EBase, TDAO extends BaseDAO,TIB extends IBase>
+@SuppressWarnings("unchecked")
+public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO,TIB extends IBase>
 {
     /**
      * Get uma instancia do DAO
      * @return DAO generico
      */
-    protected abstract TDAO GetInstanciaDAO();
+    protected abstract TDAO getInstanciaDAO();
     
-    public void Salvar(TVO objeto)
+    public void Salvar(TE objeto)
     {
-        TDAO dao = GetInstanciaDAO();
+        TDAO dao = getInstanciaDAO();
         dao.Salva(objeto);
     }
     
     public void Salvar(TIB objeto)
     {
-        Salvar((TVO)objeto);
+        Salvar((TE)objeto);
     }
     
-    public void Delete(TVO objeto)
+    public void Delete(TE objeto)
     {
-        TDAO dao = GetInstanciaDAO();
+        TDAO dao = getInstanciaDAO();
         dao.Delete(objeto);
     }
     
     public void Delete(IBase objeto)
     {
-        Delete((TVO)objeto);
+        Delete((TE)objeto);
+    }
+    
+    public TE getSelect(String fltro)
+    {
+        return (TE) getInstanciaDAO().getSelect(fltro);
     }
 }

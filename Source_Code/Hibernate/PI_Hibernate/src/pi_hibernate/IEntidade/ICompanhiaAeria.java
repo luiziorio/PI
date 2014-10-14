@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pi_hibernate.IEntidade;
 
-import java.util.HashSet;
+import java.awt.Image;
 import pi_hibernate.Base.IBaseNome;
-import pi_hibernate.Entidade.ECidade;
 
 /**
  *
  * @author rafael
  */
-public interface IPais extends IBaseNome
-{    
-    HashSet<ECidade> getListaCidades();
-    void setListaCidades(HashSet<ECidade> listaCidades); 
+public interface ICompanhiaAeria extends IBaseNome
+{
+    String getSigla();
+    void setSigla(String sigla);
+
+    String getLogoTipoCaminho();
+    void setLogoTipoCaminho(String logoTipoCaminho);
+
+    Image getLogoTipo();
+    void setLogoTipo(Image logoTipo);
 }

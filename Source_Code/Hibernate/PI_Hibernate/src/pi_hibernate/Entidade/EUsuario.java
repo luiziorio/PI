@@ -6,8 +6,14 @@
 
 package pi_hibernate.Entidade;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.IUsuario;
+
 
 /**
  *
@@ -39,7 +45,24 @@ public class EUsuario extends EBaseNome implements IUsuario
     @Override
     public void setSenha(String senha)
     {
-        this.senha = senha;
+        MessageDigest algorithm;
+        try
+        {
+            algorithm = MessageDigest.getInstance("MD5");
+            byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : messageDigest) 
+                hexString.append(String.format("%02X", 0xFF & b));
+            this.senha = hexString.toString();
+        }
+        catch (NoSuchAlgorithmException ex)
+        {
+            Logger.getLogger(EUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch(UnsupportedEncodingException ex)
+        {
+            
+        }
     }
 
     @Override
@@ -53,6 +76,4 @@ public class EUsuario extends EBaseNome implements IUsuario
     {
         this.tipo = tipo;
     }
-    
-    
 }

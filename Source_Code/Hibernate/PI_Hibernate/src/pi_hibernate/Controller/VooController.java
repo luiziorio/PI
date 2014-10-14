@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pi_hibernate.Controller;
 
 import pi_hibernate.Base.BaseController;
-import pi_hibernate.DAO.PaisDAO;
-import pi_hibernate.Entidade.EPais;
-import pi_hibernate.IEntidade.IPais;
+import pi_hibernate.DAO.VooDAO;
+import pi_hibernate.Entidade.EVoo;
+import pi_hibernate.IEntidade.IVoo;
 
 /**
  *
- * @author rafaellf
+ * @author rafael
  */
-public class PaisController extends BaseController<EPais, PaisDAO, IPais>
+public class VooController extends BaseController<EVoo, VooDAO, IVoo>
 {
+
     @Override
-    protected PaisDAO getInstanciaDAO()
+    protected VooDAO getInstanciaDAO()
     {
-        return PaisDAO.GetObjeto();
+        return VooDAO.GetObjeto();
     }
     
 }

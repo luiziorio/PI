@@ -15,30 +15,4 @@ import pi_hibernate.IEntidade.ICidade;
  */
 public class ECidade extends EBaseNome implements ICidade
 {
-    private Integer paisID;
-    private EPais pais;
-
-    @Override
-    public Integer getPaisID()
-    {
-        return paisID;
-    }
-
-    @Override
-    public void setPaisID(Integer paisID)
-    {
-        this.paisID = paisID;
-    }
-
-    @Override
-    public EPais getPais()
-    {
-        return pais;
-    }
-
-    @Override
-    public void setPais(EPais pais)
-    {
-        this.pais = pais;
-    }
 }

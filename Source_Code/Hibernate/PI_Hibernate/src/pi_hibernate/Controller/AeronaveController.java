@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pi_hibernate.Controller;
 
 import pi_hibernate.Base.BaseController;
-import pi_hibernate.DAO.ContinenteDAO;
-import pi_hibernate.IEntidade.IContinente;
-import pi_hibernate.Entidade.EContinente;
+import pi_hibernate.DAO.AeronaveDAO;
+import pi_hibernate.Entidade.EAeronave;
+import pi_hibernate.IEntidade.IAeronave;
 
 /**
  *
  * @author rafael
  */
-public class ContinenteController extends BaseController<EContinente, ContinenteDAO, IContinente>
+public class AeronaveController extends BaseController<EAeronave, AeronaveDAO, IAeronave>
 {
 
     @Override
-    protected ContinenteDAO getInstanciaDAO()
+    protected AeronaveDAO getInstanciaDAO()
     {
-        return ContinenteDAO.GetObjeto();
+        return AeronaveDAO.GetObjeto();
     }
     
 }

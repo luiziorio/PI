@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package pi_hibernate.Entidade;
 
-package pi_hibernate.IEntidade;
-
-import pi_hibernate.Base.IBaseNome;
+import pi_hibernate.Base.EBaseNome;
+import pi_hibernate.IEntidade.IAeronave;
 
 /**
  *
- * @author rafaellf
+ * @author rafael
  */
-public interface ICidade extends IBaseNome
+public class EAeronave extends EBaseNome implements IAeronave
 {
-
+    
 }

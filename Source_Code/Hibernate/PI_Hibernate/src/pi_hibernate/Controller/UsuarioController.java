@@ -19,7 +19,7 @@ public class UsuarioController extends BaseController<EUsuario, UsuarioDAO, IUsu
 {
 
     @Override
-    protected UsuarioDAO GetInstanciaDAO()
+    protected UsuarioDAO getInstanciaDAO()
     {
         return UsuarioDAO.GetObjeto();
     }

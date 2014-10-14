@@ -10,7 +10,7 @@ package pi_hibernate.Base;
  *
  * @author rafael
  */
-public class EBaseNome extends EBase implements IBaseNome
+public abstract class EBaseNome extends EBase implements IBaseNome
 {
     protected String nome;
 

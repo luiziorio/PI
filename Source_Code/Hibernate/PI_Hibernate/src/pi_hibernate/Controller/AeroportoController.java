@@ -19,7 +19,7 @@ public class AeroportoController extends BaseController<EAeroporto, AeroportoDAO
 {
 
     @Override
-    protected AeroportoDAO GetInstanciaDAO()
+    protected AeroportoDAO getInstanciaDAO()
     {
        return AeroportoDAO.GetObjeto(); 
     }

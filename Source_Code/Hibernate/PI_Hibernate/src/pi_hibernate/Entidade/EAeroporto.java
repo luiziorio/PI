@@ -17,6 +17,9 @@ import pi_hibernate.IEntidade.IAeropoto;
 public class EAeroporto extends EBaseNome implements IAeropoto
 {
     private String codigo;
+    private EContinente continente;
+    private EPais pais;
+    private ECidade cidade;
 
     @Override
     public String getCodigo()
@@ -28,5 +31,41 @@ public class EAeroporto extends EBaseNome implements IAeropoto
     public void setCodigo(String codigo)
     {
         this.codigo = codigo;
+    }
+
+    @Override
+    public EContinente getContinente()
+    {
+        return continente;
+    }
+
+    @Override
+    public void setContinente(EContinente continente)
+    {
+        this.continente = continente;
+    }
+
+    @Override
+    public EPais getPais()
+    {
+        return pais;
+    }
+
+    @Override
+    public void setPais(EPais pais)
+    {
+        this.pais = pais;
+    }
+
+    @Override
+    public ECidade getCidade()
+    {
+        return cidade;
+    }
+
+    @Override
+    public void setCidade(ECidade cidade)
+    {
+        this.cidade = cidade;
     }
 }
