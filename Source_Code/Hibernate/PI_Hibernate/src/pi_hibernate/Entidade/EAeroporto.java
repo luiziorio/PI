@@ -7,6 +7,9 @@
 package pi_hibernate.Entidade;
 
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.IAeropoto;
 
@@ -14,11 +17,16 @@ import pi_hibernate.IEntidade.IAeropoto;
  *
  * @author rafaellf
  */
+@Entity
+@Table(name = "Aeroporto")
 public class EAeroporto extends EBaseNome implements IAeropoto
 {
     private String codigo;
+    @OneToOne
     private EContinente continente;
+    @OneToOne
     private EPais pais;
+    @OneToOne
     private ECidade cidade;
 
     @Override

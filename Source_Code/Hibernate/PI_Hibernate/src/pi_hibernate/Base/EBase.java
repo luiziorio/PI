@@ -6,14 +6,23 @@
 
 package pi_hibernate.Base;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 /**
  *
  * @author rafaellf
  */
-public abstract class EBase
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class EBase implements Serializable
 {
+    @Id
     protected int sequencial;
-    protected String codigo;
+
 
     public int getSequencial()
     {

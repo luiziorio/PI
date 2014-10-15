@@ -5,6 +5,9 @@
  */
 package pi_hibernate.Entidade;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import pi_hibernate.Base.EBase;
 import pi_hibernate.IEntidade.IVoo;
 
@@ -12,10 +15,15 @@ import pi_hibernate.IEntidade.IVoo;
  *
  * @author rafael
  */
+@Entity
+@Table(name = "Voo")
 public class EVoo extends EBase implements IVoo
 {
+    @OneToOne
     private ECompanhiaAeria companhia;
+    @OneToOne
     private EUsuario usuario;
+    @OneToOne
     private EAeronave aeronave;
 
     @Override

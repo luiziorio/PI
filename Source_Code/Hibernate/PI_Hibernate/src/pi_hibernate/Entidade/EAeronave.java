@@ -5,6 +5,8 @@
  */
 package pi_hibernate.Entidade;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.IAeronave;
 
@@ -12,6 +14,8 @@ import pi_hibernate.IEntidade.IAeronave;
  *
  * @author rafael
  */
+@Entity
+@Table(name = "Aeronave")
 public class EAeronave extends EBaseNome implements IAeronave
 {
     

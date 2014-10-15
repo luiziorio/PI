@@ -6,6 +6,9 @@
 package pi_hibernate.Entidade;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
 import pi_hibernate.Base.EBase;
 import pi_hibernate.IEntidade.IEscala;
 
@@ -13,15 +16,21 @@ import pi_hibernate.IEntidade.IEscala;
  *
  * @author rafael
  */
+@Entity
+@Table(name = "Escala")
 public class EEscala extends EBase implements IEscala
 {
     private EAeroporto aerportoDestino;
     private EAeroporto aeroportoOrigem;
     
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataChegadaPrevista;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataSaidaPrevista;
     
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataChegadaEfetiva;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataSaidaEfetiva;
     
     private Integer status;

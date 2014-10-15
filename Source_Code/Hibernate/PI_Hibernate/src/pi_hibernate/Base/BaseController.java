@@ -48,4 +48,5 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO,TIB
     {
         return (TE) getInstanciaDAO().getSelect(fltro);
     }
+    
 }

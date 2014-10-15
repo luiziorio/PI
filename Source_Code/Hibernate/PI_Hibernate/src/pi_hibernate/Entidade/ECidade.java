@@ -6,6 +6,8 @@
 
 package pi_hibernate.Entidade;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.ICidade;
 
@@ -13,6 +15,8 @@ import pi_hibernate.IEntidade.ICidade;
  *
  * @author rafael
  */
+@Entity
+@Table(name = "Cidade")
 public class ECidade extends EBaseNome implements ICidade
 {
 }

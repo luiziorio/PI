@@ -6,6 +6,9 @@
 package pi_hibernate.Entidade;
 
 import java.awt.Image;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.ICompanhiaAeria;
 
@@ -13,10 +16,14 @@ import pi_hibernate.IEntidade.ICompanhiaAeria;
  *
  * @author rafael
  */
+@Entity
+@Table(name = "CompanhiaAeria")
 public class ECompanhiaAeria extends EBaseNome implements ICompanhiaAeria
 {
     private String sigla;
     private String logoTipoCaminho;
+    
+    @Transient
     private Image logoTipo;
     
     @Override

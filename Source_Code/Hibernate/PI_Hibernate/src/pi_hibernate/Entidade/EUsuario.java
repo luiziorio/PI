@@ -11,6 +11,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.IUsuario;
 
@@ -19,10 +21,26 @@ import pi_hibernate.IEntidade.IUsuario;
  *
  * @author rafael
  */
+@Entity
+@Table(name = "Usuario")
 public class EUsuario extends EBaseNome implements IUsuario
 {
-    private String login,senha;
+    private String login;
+    private String senha;
     private Integer tipo;
+
+    public EUsuario()
+    {
+    }
+
+    public EUsuario(Integer sequencial, String login, String senha, Integer tipo)
+    {
+        this.sequencial = sequencial;
+        this.login = login;
+        this.senha = senha;
+        this.tipo = tipo;
+    }
+    
 
     @Override
     public String getLogin()

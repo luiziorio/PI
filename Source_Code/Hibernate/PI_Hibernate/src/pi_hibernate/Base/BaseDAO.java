@@ -8,6 +8,7 @@ package pi_hibernate.Base;
 
 import HibernateUtil.HibernateUtility;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Predicate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -63,5 +64,10 @@ public abstract class BaseDAO<T extends EBase>
     public T getObjeto(int id)
     {
         throw  new UnsupportedOperationException();
+    }
+    
+    public T getSelect(Predicate<T> filtro)
+    {
+        return null;
     }
 }
