@@ -7,8 +7,8 @@
 package pi_hibernate.Base;
 
 import HibernateUtil.HibernateUtility;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -19,29 +19,24 @@ import org.hibernate.Transaction;
  */
 public abstract class BaseDAO<T extends EBase>
 {
-
-    protected final void iniciaConexaoBanco(AtomicReference<Session> sessao,AtomicReference<Transaction> transaction)
-    {
-        sessao = (AtomicReference<Session>) HibernateUtility.getSession(); //Abrindo uma sessão
-        transaction = (AtomicReference<Transaction>) sessao.get().beginTransaction();
-    }
-    
-    protected final void finalizaSessaoBanco(AtomicReference<Session> sessao,AtomicReference<Transaction> transaction)
-    {
-        transaction.get().commit(); //Finalizando a transação
-        sessao.get().close(); //Fechando a sessão
-    }
-    
+   
     public void Salva(T objeto)
     {
-        AtomicReference<Session> sessao = new AtomicReference<>();
-        AtomicReference<Transaction> transaction = new AtomicReference<>();
-        
-        iniciaConexaoBanco(sessao,transaction);
-        
-        sessao.get().saveOrUpdate(objeto);
-        
-        finalizaSessaoBanco(sessao,transaction);
+        Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
+        Transaction transaction = sessao.beginTransaction();
+        try
+        {
+            sessao.saveOrUpdate(objeto);
+            transaction.commit(); //Finalizando a transação
+        }
+        catch(HibernateException e)
+        {
+            transaction.rollback();
+        }
+        finally
+        {
+            sessao.close(); //Fechando a sessão
+        }
     }
     
     
@@ -50,10 +45,19 @@ public abstract class BaseDAO<T extends EBase>
         Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
         Transaction transaction = sessao.beginTransaction(); //Iniciando uma transação
         
-        sessao.delete(objeto);
+        try
+        {
+            sessao.delete(objeto);
+        }
         
-        transaction.commit(); //Finalizando a transação
-        sessao.close(); //Fechando a sessão
+        catch(HibernateException e)
+        {
+            transaction.rollback();
+        }
+        finally
+        {
+            sessao.close(); //Fechando a sessão
+        }
     }
     
     public T getSelect(String filtro)

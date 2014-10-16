@@ -6,6 +6,7 @@
 package pi_hibernate.Entidade;
 
 import java.awt.Image;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -20,6 +21,7 @@ import pi_hibernate.IEntidade.ICompanhiaAeria;
 @Table(name = "CompanhiaAeria")
 public class ECompanhiaAeria extends EBaseNome implements ICompanhiaAeria
 {
+    @Column(length = 3)
     private String sigla;
     private String logoTipoCaminho;
     

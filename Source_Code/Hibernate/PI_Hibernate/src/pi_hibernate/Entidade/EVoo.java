@@ -5,7 +5,12 @@
  */
 package pi_hibernate.Entidade;
 
+import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import pi_hibernate.Base.EBase;
@@ -25,6 +30,9 @@ public class EVoo extends EBase implements IVoo
     private EUsuario usuario;
     @OneToOne
     private EAeronave aeronave;
+    
+    @OneToMany(fetch = FetchType.LAZY)
+    private Set<EEscala> escalas;
 
     @Override
     public ECompanhiaAeria getCompanhia()
@@ -60,6 +68,18 @@ public class EVoo extends EBase implements IVoo
     public void setAeronave(EAeronave aeronave)
     {
         this.aeronave = aeronave;
+    }
+
+    @Override
+    public Set<EEscala> getEscalas()
+    {
+        return escalas;
+    }
+
+    @Override
+    public void setEscalas(Set<EEscala> escalas)
+    {
+        this.escalas = escalas;
     }
     
 }

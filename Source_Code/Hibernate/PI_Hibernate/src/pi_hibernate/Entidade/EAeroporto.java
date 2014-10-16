@@ -8,6 +8,7 @@ package pi_hibernate.Entidade;
 
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import pi_hibernate.Base.EBaseNome;
@@ -22,11 +23,11 @@ import pi_hibernate.IEntidade.IAeropoto;
 public class EAeroporto extends EBaseNome implements IAeropoto
 {
     private String codigo;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private EContinente continente;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private EPais pais;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private ECidade cidade;
 
     @Override

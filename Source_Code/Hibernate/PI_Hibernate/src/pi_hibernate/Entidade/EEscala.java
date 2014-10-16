@@ -6,7 +6,12 @@
 package pi_hibernate.Entidade;
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import pi_hibernate.Base.EBase;
@@ -20,7 +25,11 @@ import pi_hibernate.IEntidade.IEscala;
 @Table(name = "Escala")
 public class EEscala extends EBase implements IEscala
 {
+    @ManyToMany(mappedBy = "escalas")
+    private List<EVoo> eVoos;
+    @OneToOne(fetch = FetchType.LAZY)
     private EAeroporto aerportoDestino;
+    @OneToOne(fetch = FetchType.LAZY)
     private EAeroporto aeroportoOrigem;
     
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -35,6 +44,8 @@ public class EEscala extends EBase implements IEscala
     
     private Integer status;
     private boolean atrasado;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
     private EVoo voo;
 
     @Override

@@ -6,12 +6,20 @@
 
 package pi_hibernate.Base;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 /**
  *
  * @author rafael
  */
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class EBaseNome extends EBase implements IBaseNome
 {
+    @Column(length = 30)
     protected String nome;
 
     @Override

@@ -6,7 +6,7 @@
 
 package pi_hibernate.IEntidade;
 
-import java.util.HashSet;
+import java.util.Set;
 import pi_hibernate.Base.IBaseNome;
 import pi_hibernate.Entidade.ECidade;
 
@@ -16,6 +16,6 @@ import pi_hibernate.Entidade.ECidade;
  */
 public interface IPais extends IBaseNome
 {    
-    HashSet<ECidade> getListaCidades();
-    void setListaCidades(HashSet<ECidade> listaCidades); 
+    Set<ECidade> getListaCidades();
+    void setListaCidades(Set<ECidade> listaCidades); 
 }

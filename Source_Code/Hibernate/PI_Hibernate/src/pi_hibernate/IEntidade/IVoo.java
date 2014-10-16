@@ -5,9 +5,11 @@
  */
 package pi_hibernate.IEntidade;
 
+import java.util.Set;
 import pi_hibernate.Base.IBase;
 import pi_hibernate.Entidade.EAeronave;
 import pi_hibernate.Entidade.ECompanhiaAeria;
+import pi_hibernate.Entidade.EEscala;
 import pi_hibernate.Entidade.EUsuario;
 
 /**
@@ -24,4 +26,7 @@ public interface IVoo extends IBase
             
     EAeronave getAeronave();
     void setAeronave(EAeronave aeronave);
+    
+    Set<EEscala> getEscalas();
+    void setEscalas(Set<EEscala> escalas);
 }

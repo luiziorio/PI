@@ -6,6 +6,8 @@
 
 package pi_hibernate.Base;
 
+import java.util.function.Predicate;
+
 /**
  *
  * @author rafaellf
@@ -45,6 +47,11 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO,TIB
     }
     
     public TE getSelect(String fltro)
+    {
+        return (TE) getInstanciaDAO().getSelect(fltro);
+    }
+    
+    public TE getSelect(Predicate<TE> fltro)
     {
         return (TE) getInstanciaDAO().getSelect(fltro);
     }

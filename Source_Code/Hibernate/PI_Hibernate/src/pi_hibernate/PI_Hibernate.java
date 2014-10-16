@@ -6,6 +6,9 @@
 
 package pi_hibernate;
 
+import pi_hibernate.Controller.UsuarioController;
+import pi_hibernate.Entidade.EUsuario;
+
 /**
  *
  * @author rafaellf
@@ -19,6 +22,7 @@ public class PI_Hibernate
     public static void main(String[] args)
     {
         // TODO code application logic here
+
     }
     
 }

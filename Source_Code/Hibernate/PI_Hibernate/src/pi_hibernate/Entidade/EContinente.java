@@ -6,8 +6,7 @@
 
 package pi_hibernate.Entidade;
 
-import java.util.HashSet;
-import javax.persistence.Basic;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
@@ -23,18 +22,17 @@ import pi_hibernate.IEntidade.IContinente;
 @Table(name = "Continente")
 public class EContinente extends EBaseNome implements IContinente
 {
-   @OneToMany
-   @Basic(fetch = FetchType.LAZY)
-   private HashSet<EPais> listaPaises;
+   @OneToMany(fetch = FetchType.LAZY)
+   private Set<EPais> listaPaises;
 
    @Override
-    public HashSet<EPais> getListaPaises()
+    public Set<EPais> getListaPaises()
     {
         return listaPaises;
     }
 
    @Override
-    public void setListaPaises(HashSet<EPais> listaPaises)
+    public void setListaPaises(Set<EPais> listaPaises)
     {
         this.listaPaises = listaPaises;
     }

@@ -6,7 +6,7 @@
 
 package pi_hibernate.IEntidade;
 
-import java.util.HashSet;
+import java.util.Set;
 import pi_hibernate.Base.IBaseNome;
 import pi_hibernate.Entidade.EPais;
 
@@ -16,6 +16,6 @@ import pi_hibernate.Entidade.EPais;
  */
 public interface IContinente extends IBaseNome
 {
-    HashSet<EPais> getListaPaises();
-    void setListaPaises(HashSet<EPais> listaPaises);
+    Set<EPais> getListaPaises();
+    void setListaPaises(Set<EPais> listaPaises);
 }

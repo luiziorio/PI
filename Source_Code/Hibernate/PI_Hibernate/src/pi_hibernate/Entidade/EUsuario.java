@@ -11,7 +11,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Table;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.IUsuario;
@@ -26,6 +28,8 @@ import pi_hibernate.IEntidade.IUsuario;
 public class EUsuario extends EBaseNome implements IUsuario
 {
     private String login;
+    
+    @Basic(fetch = FetchType.LAZY)
     private String senha;
     private Integer tipo;
 
