@@ -24,4 +24,10 @@ public class CompanhiaAeriaDAO extends BaseDAO<ECompanhiaAeria>
             objeto = new CompanhiaAeriaDAO();
         return objeto;
     }
+
+    @Override
+    protected ECompanhiaAeria getInstanceEntidade()
+    {
+        return new ECompanhiaAeria();
+    }
 }

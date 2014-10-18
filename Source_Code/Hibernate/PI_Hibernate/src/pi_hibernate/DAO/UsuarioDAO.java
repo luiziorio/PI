@@ -25,4 +25,10 @@ public class UsuarioDAO extends BaseDAO<EUsuario>
             objeto = new UsuarioDAO();
         return objeto;
     }
+
+    @Override
+    protected EUsuario getInstanceEntidade()
+    {
+       return new EUsuario();
+    }
 }

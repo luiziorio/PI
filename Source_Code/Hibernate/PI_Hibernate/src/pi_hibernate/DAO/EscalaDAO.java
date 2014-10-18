@@ -24,4 +24,10 @@ public class EscalaDAO extends BaseDAO<EEscala>
             objeto = new EscalaDAO();
         return objeto;
     }
+
+    @Override
+    protected EEscala getInstanceEntidade()
+    {
+        return new EEscala();
+    }
 }

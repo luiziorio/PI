@@ -24,4 +24,10 @@ public class AeronaveDAO extends BaseDAO<EAeronave>
             objeto = new AeronaveDAO();
         return objeto;
     }
+
+    @Override
+    protected EAeronave getInstanceEntidade()
+    {
+        return new EAeronave();
+    }
 }

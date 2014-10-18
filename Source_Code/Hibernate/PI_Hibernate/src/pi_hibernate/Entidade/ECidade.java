@@ -8,6 +8,7 @@ package pi_hibernate.Entidade;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 import pi_hibernate.Base.EBaseNome;
 import pi_hibernate.IEntidade.ICidade;
 
@@ -17,6 +18,7 @@ import pi_hibernate.IEntidade.ICidade;
  */
 @Entity
 @Table(name = "Cidade")
+@XmlRootElement
 public class ECidade extends EBaseNome implements ICidade
 {
 }

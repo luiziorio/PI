@@ -7,6 +7,8 @@
 package pi_hibernate.Base;
 
 import java.util.function.Predicate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,7 +18,7 @@ import java.util.function.Predicate;
  * @param <TIB>
  */
 @SuppressWarnings("unchecked")
-public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO,TIB extends IBase>
+public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO,TIB extends IBase> implements AutoCloseable
 {
     /**
      * Get uma instancia do DAO
@@ -24,36 +26,93 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO,TIB
      */
     protected abstract TDAO getInstanciaDAO();
     
-    public void Salvar(TE objeto)
+    @Override 
+     public void close()
+     {
+        try
+        {
+            this.finalize();
+            System.gc();
+        }
+        catch (Throwable ex)
+        {
+            Logger.getLogger(BaseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+    
+     
+     /**
+      * Salva a entidade
+      * @param objeto entidade a ser salva
+      */
+    public boolean Salvar(TE objeto)
     {
         TDAO dao = getInstanciaDAO();
-        dao.Salva(objeto);
+        return dao.Salva(objeto);
     }
     
-    public void Salvar(TIB objeto)
+    
+    /**
+      * Salva a entidade
+      * @param objeto Entidade a ser salva
+      */
+    public boolean Salvar(TIB objeto)
     {
-        Salvar((TE)objeto);
+        return Salvar((TE)objeto);
     }
     
+    
+    /**
+     * Delete a entidade
+     * @param objeto Entidade a ser deletada
+     */
     public void Delete(TE objeto)
     {
         TDAO dao = getInstanciaDAO();
         dao.Delete(objeto);
     }
     
+    /**
+     * Delete a entidade
+     * @param objeto Entidade a ser deletada
+     */
     public void Delete(IBase objeto)
     {
         Delete((TE)objeto);
     }
     
+    /**
+     * Pesquisa a ser realizada com o HQL
+     * 
+     * @param fltro Filtro usando o HQL
+     * @return retorna um objeto que herda de EBase
+     */
     public TE getSelect(String fltro)
     {
         return (TE) getInstanciaDAO().getSelect(fltro);
     }
     
-    public TE getSelect(Predicate<TE> fltro)
+    /**
+     * Realiza pesquisa utilizando um lambda expression,
+     * METODO NÃO ESTA PRONTO AINDA
+     * @param filtro Lambda expression
+     * @return retorna um objeto que herda de EBase
+     */
+    public TE getSelect(Predicate<TE> filtro)
     {
-        return (TE) getInstanciaDAO().getSelect(fltro);
+        return null;
+    }
+    
+    /**
+     * Pesquisa entidae pelo id
+     * 
+     * @param id Id desejado
+     * @return retorna um objeto que herda de EBase
+     */
+    public TE getEntidade(int  id)
+    {
+        return (TE) getInstanciaDAO().getObjeto(id);
+                
     }
     
 }

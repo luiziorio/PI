@@ -25,4 +25,10 @@ public class CidadeDAO extends BaseDAO<ECidade>
             objeto = new CidadeDAO();
         return objeto;
     }
+
+    @Override
+    protected ECidade getInstanceEntidade()
+    {
+       return new ECidade();
+    }
 }

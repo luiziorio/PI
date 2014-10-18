@@ -25,5 +25,11 @@ public class ContinenteDAO extends BaseDAO<EContinente>
             objeto = new ContinenteDAO();
         return objeto;
     }
+
+    @Override
+    protected EContinente getInstanceEntidade()
+    {
+        return new EContinente();
+    }
     
 }

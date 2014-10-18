@@ -24,4 +24,12 @@ public class DataHoraDAO extends BaseDAO<EDataHora>
             objeto = new DataHoraDAO();
         return objeto;
     }
+
+    @Override
+    protected EDataHora getInstanceEntidade()
+    {
+        return new EDataHora();
+    }
+    
+    
 }

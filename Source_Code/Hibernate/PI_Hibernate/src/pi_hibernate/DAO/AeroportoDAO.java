@@ -26,4 +26,10 @@ public class AeroportoDAO extends BaseDAO<EAeroporto>
             objeto = new AeroportoDAO();
         return objeto;
     }
+
+    @Override
+    protected EAeroporto getInstanceEntidade()
+    {
+        return new EAeroporto();
+    }
 }

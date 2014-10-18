@@ -6,11 +6,13 @@
 
 package pi_hibernate.Base;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 032126421
  */
-public interface IBase
+public interface IBase extends Serializable
 {
     int getSequencial();
     void setSequencial(int sequencial);

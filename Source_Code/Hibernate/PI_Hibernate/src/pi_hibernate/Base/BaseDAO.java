@@ -7,8 +7,11 @@
 package pi_hibernate.Base;
 
 import HibernateUtil.HibernateUtility;
+import java.io.Serializable;
+import java.util.List;
 import java.util.function.Predicate;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -20,8 +23,11 @@ import org.hibernate.Transaction;
 public abstract class BaseDAO<T extends EBase>
 {
    
-    public void Salva(T objeto)
+    protected abstract T getInstanceEntidade();
+    
+    public boolean Salva(T objeto)
     {
+        boolean retorno = true;
         Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
         Transaction transaction = sessao.beginTransaction();
         try
@@ -32,13 +38,14 @@ public abstract class BaseDAO<T extends EBase>
         catch(HibernateException e)
         {
             transaction.rollback();
+            retorno = false;
         }
         finally
         {
             sessao.close(); //Fechando a sessão
         }
+        return retorno;
     }
-    
     
     public void Delete(T objeto)
     {
@@ -60,14 +67,45 @@ public abstract class BaseDAO<T extends EBase>
         }
     }
     
-    public T getSelect(String filtro)
+    public List<T> getSelect(String filtro)
     {
-        throw  new UnsupportedOperationException();
+        List<T> retorno = null;
+        Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
+        try
+        {
+            
+            Query query = sessao.createQuery(filtro);
+            retorno = query.list();
+        }
+        catch(Exception e)
+        {
+            
+        }
+        finally
+        {
+            sessao.close();
+        }
+        return  retorno;
     }
     
     public T getObjeto(int id)
     {
-        throw  new UnsupportedOperationException();
+        T retorno = getInstanceEntidade();
+        retorno.setSequencial(id);
+        Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
+        try
+        {
+            retorno = (T) sessao.get(retorno.getClass(), retorno);
+        }
+        catch(Exception e)
+        {
+            
+        }
+        finally
+        {
+            sessao.close();            
+        }
+        return  retorno;
     }
     
     public T getSelect(Predicate<T> filtro)

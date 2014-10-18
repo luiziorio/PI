@@ -24,4 +24,10 @@ public class VooDAO extends BaseDAO<EVoo>
             objeto = new VooDAO();
         return objeto;
     }
+
+    @Override
+    protected EVoo getInstanceEntidade()
+    {
+        return new EVoo();
+    }
 }

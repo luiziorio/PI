@@ -25,4 +25,10 @@ public class PaisDAO extends BaseDAO<EPais>
             objeto = new PaisDAO();
         return objeto;
     }
+
+    @Override
+    protected EPais getInstanceEntidade()
+    {
+        return new EPais();
+    }
 }
