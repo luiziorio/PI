@@ -32,17 +32,19 @@ public class EUsuario extends EBaseNome implements IUsuario
     @Basic(fetch = FetchType.LAZY)
     private String senha;
     private Integer tipo;
+    private String email;
 
     public EUsuario()
     {
     }
 
-    public EUsuario(Integer sequencial, String login, String senha, Integer tipo)
+    public EUsuario(Integer sequencial, String login, String senha, Integer tipo, String email)
     {
         this.sequencial = sequencial;
         this.login = login;
         this.senha = senha;
         this.tipo = tipo;
+        this.email = email;
     }
     
 
@@ -81,4 +83,16 @@ public class EUsuario extends EBaseNome implements IUsuario
     {
         this.tipo = tipo;
     }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+    
+    
 }
