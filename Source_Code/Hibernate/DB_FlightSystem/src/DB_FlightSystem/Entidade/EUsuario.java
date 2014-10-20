@@ -67,24 +67,7 @@ public class EUsuario extends EBaseNome implements IUsuario
     @Override
     public void setSenha(String senha)
     {
-        MessageDigest algorithm;
-        try
-        {
-            algorithm = MessageDigest.getInstance("MD5");
-            byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : messageDigest) 
-                hexString.append(String.format("%02X", 0xFF & b));
-            this.senha = hexString.toString();
-        }
-        catch (NoSuchAlgorithmException ex)
-        {
-            Logger.getLogger(EUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch(UnsupportedEncodingException ex)
-        {
-            
-        }
+        this.senha = Util.Util.encripta(senha);
     }
 
     @Override
