@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Entidade;
+package DB_FlightSystem.Entidade;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import pi_hibernate.Base.EBaseNome;
-import pi_hibernate.IEntidade.ICidade;
+import DB_FlightSystem.Base.EBaseNome;
+import DB_FlightSystem.IEntidade.ICidade;
 
 /**
  *

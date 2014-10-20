@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.DAO;
+package DB_FlightSystem.DAO;
 
-import pi_hibernate.Base.BaseDAO;
-import pi_hibernate.Entidade.EUsuario;
+import DB_FlightSystem.Base.BaseDAO;
+import DB_FlightSystem.Entidade.EUsuario;
 
 /**
  *

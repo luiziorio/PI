@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pi_hibernate.DAO;
+package DB_FlightSystem.DAO;
 
-import pi_hibernate.Base.BaseDAO;
-import pi_hibernate.Entidade.EVoo;
+import DB_FlightSystem.Base.BaseDAO;
+import DB_FlightSystem.Entidade.EVoo;
 
 /**
  *

@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pi_hibernate.IEntidade;
+package DB_FlightSystem.IEntidade;
 
 import java.util.Set;
-import pi_hibernate.Base.IBase;
-import pi_hibernate.Entidade.EAeronave;
-import pi_hibernate.Entidade.ECompanhiaAeria;
-import pi_hibernate.Entidade.EEscala;
-import pi_hibernate.Entidade.EUsuario;
+import DB_FlightSystem.Base.IBase;
+import DB_FlightSystem.Entidade.EAeronave;
+import DB_FlightSystem.Entidade.ECompanhiaAeria;
+import DB_FlightSystem.Entidade.EEscala;
+import DB_FlightSystem.Entidade.EUsuario;
 
 /**
  *

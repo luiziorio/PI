@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Cadastro de Cidade</title>
+        <link type="text/css" rel="stylesheet" href="../css/estilo.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/theme.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div id="Header" style="width: 100%; height: 100px;">
+                <div id="logo" style="float: left;">
+                    <img src="../images/logo_plane_tipo.png" alt="" width="200" height="auto" />
+                </div>
+                <div id="logout" style="float: right;">
+                    <ul>
+                        <li><p:link>logout</p:link></li>
+                    </ul>
+                </div>
+            </div>         
+            <p:layout fullPage="false" >
+                <p:layoutUnit position="center">
+                    <h:panelGrid columns="1">
+                        <h:panelGrid columns="2" style="background: none;">
+                            <p:outputLabel value="Nome:" for="nome" style="color: #000000;"/>
+                            <p:inputText id="nome" label="Nome" value="#{usuarioBean.nome}"  required="true" 
+                                         style="color: #000000; background-color: #ffffff;"/>
+                            <p:outputLabel value="Senha:" for="senha" style="color: #000000;"/>
+                            <p:inputText id="senha" label="Senha" type="Password" value="#{usuarioBean.senha}" required="true" 
+                                         style="color: #000000; background-color: #ffffff;"/>
+                            <p:selectBooleanCheckbox id="cbxTipo" ></p:selectBooleanCheckbox>
+                        </h:panelGrid><br/> 
+                        <h:panelGrid columns="2">
+                            <p:button onclick="#{usuarioBean.salvar}" value="Ok" icon="ui-icon-check" iconPos="right"
+                                      style="width: 130px;"/>
+                            <p:button onclick="#{usuarioBean.salvar}" value="Cancelar" icon="ui-icon-cancel" iconPos="right"
+                                      style="width: 130px;"/>
+                        </h:panelGrid>
+                    </h:panelGrid>
+                </p:layoutUnit>
+            </p:layout>
+        </h:form>
+    </h:body>
+</html>
+

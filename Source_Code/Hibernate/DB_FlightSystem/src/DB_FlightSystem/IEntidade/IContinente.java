@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.IEntidade;
+package DB_FlightSystem.IEntidade;
 
 import java.util.Set;
-import pi_hibernate.Base.IBaseNome;
-import pi_hibernate.Entidade.EPais;
+import DB_FlightSystem.Base.IBaseNome;
+import DB_FlightSystem.Entidade.EPais;
 
 /**
  *

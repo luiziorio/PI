@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pi_hibernate.Entidade;
+package DB_FlightSystem.Entidade;
 
 import java.util.Date;
 import java.util.List;
@@ -14,8 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
-import pi_hibernate.Base.EBase;
-import pi_hibernate.IEntidade.IEscala;
+import DB_FlightSystem.Base.EBase;
+import DB_FlightSystem.IEntidade.IEscala;
 
 /**
  *

@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.IEntidade;
+package DB_FlightSystem.IEntidade;
 
-import pi_hibernate.Base.IBase;
-import pi_hibernate.Entidade.ECidade;
-import pi_hibernate.Entidade.EContinente;
-import pi_hibernate.Entidade.EPais;
+import DB_FlightSystem.Base.IBase;
+import DB_FlightSystem.Entidade.ECidade;
+import DB_FlightSystem.Entidade.EContinente;
+import DB_FlightSystem.Entidade.EPais;
 
 /**
  *

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pi_hibernate.Controller;
+package DB_FlightSystem.Controller;
 
-import pi_hibernate.Base.BaseController;
-import pi_hibernate.DAO.CompanhiaAeriaDAO;
-import pi_hibernate.Entidade.ECompanhiaAeria;
-import pi_hibernate.IEntidade.ICompanhiaAeria;
+import DB_FlightSystem.Base.BaseController;
+import DB_FlightSystem.DAO.CompanhiaAeriaDAO;
+import DB_FlightSystem.Entidade.ECompanhiaAeria;
+import DB_FlightSystem.IEntidade.ICompanhiaAeria;
 
 /**
  *

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Entidade;
+package DB_FlightSystem.Entidade;
 
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -12,8 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import pi_hibernate.Base.EBaseNome;
-import pi_hibernate.IEntidade.IPais;
+import DB_FlightSystem.Base.EBaseNome;
+import DB_FlightSystem.IEntidade.IPais;
 
 /**
  *

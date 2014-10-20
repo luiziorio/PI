@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pi_hibernate.IEntidade;
+package DB_FlightSystem.IEntidade;
 
-import pi_hibernate.Base.IBaseNome;
+import DB_FlightSystem.Base.IBaseNome;
 
 /**
  *

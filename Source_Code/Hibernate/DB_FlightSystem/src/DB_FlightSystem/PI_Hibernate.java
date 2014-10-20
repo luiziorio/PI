@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate;
+package DB_FlightSystem;
 
-import pi_hibernate.Controller.UsuarioController;
-import pi_hibernate.Entidade.EUsuario;
+import DB_FlightSystem.Controller.UsuarioController;
+import DB_FlightSystem.Entidade.EUsuario;
 
 /**
  *

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package pi_hibernate.Base;
+package DB_FlightSystem.Base;
 
 /**
  *
