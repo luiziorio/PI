@@ -51,7 +51,7 @@ public class Usuario implements IUsuario
     @Override
     public void setSenha(String senha)
     {
-        this.senha = senha;
+        this.senha = Util.Util.encripta(senha);
     }
 
     @Override
