@@ -22,4 +22,7 @@ public interface IUsuario extends IBase
 
     Integer getTipo();
     void setTipo(Integer tipo);    
+    
+    String getEmail();
+    void setEmail(String email);
 }
