@@ -13,11 +13,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Possui alguns metodos que são uteis
  * @author rafael
+ * @version 1.0.0
  */
 public class Util
 {
+    /**
+     * Encripta um texto usando o algoritimo  de hash MD5
+     * @param texto Texto a sem encriptogrado
+     * @return retorna o texto encriptografado
+     */
     public static String encripta(String texto)
     {
         String retonro = "";

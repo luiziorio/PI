@@ -7,7 +7,6 @@
 package DB_FlightSystem.Base;
 
 import HibernateUtil.HibernateUtility;
-import java.io.Serializable;
 import java.util.List;
 import java.util.function.Predicate;
 import org.hibernate.HibernateException;
@@ -16,9 +15,10 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- *
+ * Classe abstrata e base para todas as classes de acesso ao banco de dado
  * @author rafaellf
- * @param <T>
+ * @param <T> Clasee a ser persistida
+ * @version  1.0.0
  */
 public abstract class BaseDAO<T extends EBase>
 {

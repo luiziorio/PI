@@ -9,8 +9,9 @@ package DB_FlightSystem.Base;
 import java.io.Serializable;
 
 /**
- *
- * @author 032126421
+ * Interface para expor dados sem precisar expor a classe
+ * @author Rafael 
+ * @version 1.0.0
  */
 public interface IBase extends Serializable
 {

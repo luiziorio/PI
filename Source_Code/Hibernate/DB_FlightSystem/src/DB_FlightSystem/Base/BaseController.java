@@ -11,11 +11,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Classe abstrata com as funções base do controller
  * @author rafaellf
- * @param <TE>
- * @param <TDAO>
- * @param <TIB>
+ * @version 1.0.0
+ * @param <TE> Classe da ira possuir os dados. Obrigatorio herdar da classe EBase
+ * @param <TDAO> Classe de acesso ao banco. Obrigatorio herdar da classe BaseDAO
+ * @param <TIB> Interface com os Getter e Settetrs dos dados. Obrigatorio herdar da interface IBase
  */
 @SuppressWarnings("unchecked")
 public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO,TIB extends IBase> implements AutoCloseable
