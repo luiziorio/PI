@@ -18,5 +18,5 @@ import DB_FlightSystem.IEntidade.IAeronave;
 @Table(name = "Aeronave")
 public class EAeronave extends EBaseNome implements IAeronave
 {
-    
+   
 }

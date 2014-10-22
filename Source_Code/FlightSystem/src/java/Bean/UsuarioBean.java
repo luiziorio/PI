@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Bean;
 
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import Controller.UsuarioControle;
+import Model.Usuario;
 import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 /**
  *
@@ -16,12 +17,23 @@ import java.io.Serializable;
  */
 @Named(value = "usuarioBean")
 @SessionScoped
-public class UsuarioBean implements Serializable {
+public class UsuarioBean implements Serializable
+{
+    private Usuario usuario = new Usuario();
+    private UsuarioControle usuarioControle;
 
-    /**
-     * Creates a new instance of UsuarioBean
-     */
-    public UsuarioBean() {
+    public Usuario getUsuario()
+    {
+        return usuario;
     }
-    
+
+    public void setUsuario(Usuario usuario)
+    {
+        this.usuario = usuario;
+    }
+
+    public UsuarioBean()
+    {
+
+    }
 }

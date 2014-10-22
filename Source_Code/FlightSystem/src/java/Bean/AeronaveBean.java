@@ -19,6 +19,7 @@ import java.io.Serializable;
 public class AeronaveBean implements Serializable
 {
 
+    
     /**
      * Creates a new instance of AeronaveBean
      */

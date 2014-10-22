@@ -24,12 +24,15 @@
             <p:layout fullPage="false" >
                 <p:layoutUnit position="center">
                     <h:panelGrid columns="1">
+                    <br/>
+                        <h1>Cadastro de Aeroportos</h1>
+                    <br/>
                         <h:panelGrid columns="2" style="background: none; text-align: right;">
                             <p:outputLabel for="codigo" value="Código: " style="color: #000000;" />
-                            <p:inputText id="codigo" label="Código" value="#{usuarioBean.nome}"  required="true" 
+                            <p:inputText id="codigo" label="Código" value="#"  required="true" 
                                          style="color: #000000; background-color: #ffffff;"/>
                             <p:outputLabel for="desc" value="Descrição: " style="color: #000000;" />
-                            <p:inputText id="desc" label="Descrição" value="#{usuarioBean.nome}"  required="true" 
+                            <p:inputText id="desc" label="Descrição" value="#"  required="true" 
                                          style="color: #000000; background-color: #ffffff;"/>
                             <p:outputLabel value="Continente: " for="continente" style="color: #000000;"/>
                             <p:selectOneMenu id="continente" value="#{dropdownView.continente}" style="width:300px">

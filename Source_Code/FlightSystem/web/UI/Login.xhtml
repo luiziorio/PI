@@ -19,15 +19,18 @@
                     Identifique-se por favor para utilizar
                     o sistema.
                 </div><br/>
-                <h:panelGrid columns="2" style="background: none;">
-                    <p:outputLabel value="Nome:" for="nome" style="color: #ffffff;"/>
-                    <p:inputText id="nome" label="Nome" value="#{usuarioBean.nome}"  required="true" 
+                <h:panelGrid columns="2" style=" text-align: right; background: none;">
+                    <p:outputLabel value="Nome de Usuario: " for="nome" style="color: #ffffff;"/>
+                    <p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.login}"  required="true" 
                                  style="color: #000000; background-color: #ffffff;"/>
-                    <p:outputLabel value="Senha:" for="senha" style="color: #ffffff;"/>
-                    <p:inputText id="senha" label="Senha" type="Password" value="#{usuarioBean.senha}" required="true" 
+                    <p:outputLabel value="Senha: " for="senha" style="color: #ffffff;"/>
+                    <p:inputText id="senha" label="Senha" type="Password" value="#{usuarioBean.usuario.senha}" required="true" 
+                                 style="color: #000000; background-color: #ffffff;"/>
+                    <p:outputLabel value="Email: " for="email" style="color: #ffffff;"/>
+                    <p:inputText id="email" label="Email" value="#{usuarioBean.usuario.email}" required="true" 
                                  style="color: #000000; background-color: #ffffff;"/>
                 </h:panelGrid><br/> 
-                <p:button onclick="#{usuarioBean.salvar}" value="Login" icon="ui-icon-check" iconPos="right"
+                <p:button onclick="#" value="Login" icon="ui-icon-check" iconPos="right"
                                  style="color: #000000; background-color: #ffffff;"/><br/>
             </h:panelGrid>
             <hr size="250" width="1" align="left" color="#ffffff" style="margin: 0px 20px 0px 20px;"></hr>
