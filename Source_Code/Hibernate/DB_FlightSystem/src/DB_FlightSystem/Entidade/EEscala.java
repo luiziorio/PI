@@ -41,11 +41,12 @@ public class EEscala extends EBase
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataSaidaEfetiva;
     
-    private Integer status;
     private boolean atrasado;
     
     @ManyToOne(fetch = FetchType.LAZY)
     private EVoo voo;
+    
+    private EStatus status;
 
      
     public EAeroporto getAerportoDestino()
@@ -120,13 +121,13 @@ public class EEscala extends EBase
     }
 
      
-    public Integer getStatus()
+    public EStatus getStatus()
     {
         return status;
     }
 
      
-    public void setStatus(Integer status)
+    public void setStatus(EStatus status)
     {
         this.status = status;
     }

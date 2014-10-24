@@ -99,7 +99,7 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
      * @param id Id desejado
      * @return retorna um objeto que herda de EBase
      */
-    public TE getEntidade(int  id)
+    public TE getEntidade(Integer  id)
     {
         return (TE) getInstanciaDAO().getObjeto(id);
                 

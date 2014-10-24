@@ -93,7 +93,7 @@ public abstract class BaseDAO<T extends EBase>
         return  retorno;
     }
     
-    public T getObjeto(int id)
+    public T getObjeto(Integer id)
     {
         T retorno = getInstanceEntidade();
         retorno.setSequencial(id);

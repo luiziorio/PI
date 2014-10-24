@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 /**
@@ -20,6 +21,7 @@ import DB_FlightSystem.Base.EBaseNome;
  */
 @Entity
 @Table(name = "Usuario")
+@XmlRootElement
 public class EUsuario extends EBaseNome  
 {
     private String login;
