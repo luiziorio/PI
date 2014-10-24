@@ -8,13 +8,10 @@ package DB_FlightSystem.Entidade;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBase;
-import DB_FlightSystem.IEntidade.IVoo;
 
 /**
  *
@@ -22,10 +19,10 @@ import DB_FlightSystem.IEntidade.IVoo;
  */
 @Entity
 @Table(name = "Voo")
-public class EVoo extends EBase implements IVoo
+public class EVoo extends EBase  
 {
     @OneToOne
-    private ECompanhiaAeria companhia;
+    private ECompanhiaAerea companhia;
     @OneToOne
     private EUsuario usuario;
     @OneToOne
@@ -34,49 +31,49 @@ public class EVoo extends EBase implements IVoo
     @OneToMany(fetch = FetchType.LAZY)
     private Set<EEscala> escalas;
 
-    @Override
-    public ECompanhiaAeria getCompanhia()
+     
+    public ECompanhiaAerea getCompanhia()
     {
         return companhia;
     }
 
-    @Override
-    public void setCompanhia(ECompanhiaAeria companhia)
+     
+    public void setCompanhia(ECompanhiaAerea companhia)
     {
         this.companhia = companhia;
     }
 
-    @Override
+     
     public EUsuario getUsuario()
     {
         return usuario;
     }
 
-    @Override
+     
     public void setUsuario(EUsuario usuario)
     {
         this.usuario = usuario;
     }
 
-    @Override
+     
     public EAeronave getAeronave()
     {
         return aeronave;
     }
 
-    @Override
+     
     public void setAeronave(EAeronave aeronave)
     {
         this.aeronave = aeronave;
     }
 
-    @Override
+     
     public Set<EEscala> getEscalas()
     {
         return escalas;
     }
 
-    @Override
+     
     public void setEscalas(Set<EEscala> escalas)
     {
         this.escalas = escalas;

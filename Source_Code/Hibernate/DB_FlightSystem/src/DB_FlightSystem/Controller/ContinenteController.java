@@ -8,14 +8,13 @@ package DB_FlightSystem.Controller;
 
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.ContinenteDAO;
-import DB_FlightSystem.IEntidade.IContinente;
 import DB_FlightSystem.Entidade.EContinente;
 
 /**
  *
  * @author rafael
  */
-public class ContinenteController extends BaseController<EContinente, ContinenteDAO, IContinente>
+public class ContinenteController extends BaseController<EContinente, ContinenteDAO>
 {
 
     @Override

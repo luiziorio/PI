@@ -8,14 +8,13 @@ package DB_FlightSystem.Controller;
 
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.UsuarioDAO;
-import DB_FlightSystem.IEntidade.IUsuario;
 import DB_FlightSystem.Entidade.EUsuario;
 
 /**
  *
  * @author rafael
  */
-public class UsuarioController extends BaseController<EUsuario, UsuarioDAO, IUsuario>
+public class UsuarioController extends BaseController<EUsuario, UsuarioDAO>
 {
 
     @Override

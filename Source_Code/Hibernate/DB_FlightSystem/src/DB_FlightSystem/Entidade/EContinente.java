@@ -12,26 +12,24 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
-import DB_FlightSystem.IEntidade.IContinente;
-
 /**
  *
  * @author rafael
  */
 @Entity
 @Table(name = "Continente")
-public class EContinente extends EBaseNome implements IContinente
+public class EContinente extends EBaseNome  
 {
    @OneToMany(fetch = FetchType.LAZY)
    private Set<EPais> listaPaises;
 
-   @Override
+    
     public Set<EPais> getListaPaises()
     {
         return listaPaises;
     }
 
-   @Override
+    
     public void setListaPaises(Set<EPais> listaPaises)
     {
         this.listaPaises = listaPaises;

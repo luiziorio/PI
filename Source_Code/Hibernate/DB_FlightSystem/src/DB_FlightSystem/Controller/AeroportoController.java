@@ -8,14 +8,13 @@ package DB_FlightSystem.Controller;
 
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.AeroportoDAO;
-import DB_FlightSystem.IEntidade.IAeropoto;
 import DB_FlightSystem.Entidade.EAeroporto;
 
 /**
  *
  * @author rafaellf
  */
-public class AeroportoController extends BaseController<EAeroporto, AeroportoDAO,IAeropoto>
+public class AeroportoController extends BaseController<EAeroporto, AeroportoDAO>
 {
 
     @Override

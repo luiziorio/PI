@@ -7,14 +7,13 @@ package DB_FlightSystem.Controller;
 
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.CompanhiaAeriaDAO;
-import DB_FlightSystem.Entidade.ECompanhiaAeria;
-import DB_FlightSystem.IEntidade.ICompanhiaAeria;
+import DB_FlightSystem.Entidade.ECompanhiaAerea;
 
 /**
  *
  * @author rafael
  */
-public class CompanhiaAeriaController extends BaseController<ECompanhiaAeria, CompanhiaAeriaDAO, ICompanhiaAeria>
+public class CompanhiaAeriaController extends BaseController<ECompanhiaAerea, CompanhiaAeriaDAO>
 {
 
     @Override

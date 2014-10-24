@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import DB_FlightSystem.Base.EBase;
-import DB_FlightSystem.IEntidade.IDataHora;
+
 
 /**
  *
@@ -18,18 +18,18 @@ import DB_FlightSystem.IEntidade.IDataHora;
  */
 @Entity
 @Table(name = "DataHora")
-public class EDataHora extends EBase implements IDataHora
+public class EDataHora extends EBase  
 {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataHora;
 
-    @Override
+     
     public Date getDataHora()
     {
         return dataHora;
     }
 
-    @Override
+     
     public void setDataHora(Date dataHora)
     {
         this.dataHora = dataHora;

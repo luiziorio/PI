@@ -12,7 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
-import DB_FlightSystem.IEntidade.IUsuario;
 
 
 /**
@@ -21,7 +20,7 @@ import DB_FlightSystem.IEntidade.IUsuario;
  */
 @Entity
 @Table(name = "Usuario")
-public class EUsuario extends EBaseNome implements IUsuario
+public class EUsuario extends EBaseNome  
 {
     private String login;
     
@@ -44,49 +43,49 @@ public class EUsuario extends EBaseNome implements IUsuario
     }
     
 
-    @Override
+     
     public String getLogin()
     {
         return login;
     }
 
-    @Override
+     
     public void setLogin(String login)
     {
         this.login = login;
     }
 
-    @Override
+     
     public String getSenha()
     {
         return senha;
     }
 
-    @Override
+     
     public void setSenha(String senha)
     {
         this.senha = Cripto.encripta(senha);
     }
 
-    @Override
+     
     public Integer getTipo()
     {
         return tipo;
     }
 
-    @Override
+     
     public void setTipo(Integer tipo)
     {
         this.tipo = tipo;
     }
 
-    @Override
+     
     public String getEmail()
     {
         return email;
     }
 
-    @Override
+     
     public void setEmail(String email)
     {
         this.email = email;

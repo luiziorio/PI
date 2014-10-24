@@ -8,13 +8,12 @@ package DB_FlightSystem.Controller;
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.VooDAO;
 import DB_FlightSystem.Entidade.EVoo;
-import DB_FlightSystem.IEntidade.IVoo;
 
 /**
  *
  * @author rafael
  */
-public class VooController extends BaseController<EVoo, VooDAO, IVoo>
+public class VooController extends BaseController<EVoo, VooDAO>
 {
 
     @Override

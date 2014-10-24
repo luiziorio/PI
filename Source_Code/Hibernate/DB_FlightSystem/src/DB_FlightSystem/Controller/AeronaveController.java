@@ -8,13 +8,12 @@ package DB_FlightSystem.Controller;
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.AeronaveDAO;
 import DB_FlightSystem.Entidade.EAeronave;
-import DB_FlightSystem.IEntidade.IAeronave;
 
 /**
  *
  * @author rafael
  */
-public class AeronaveController extends BaseController<EAeronave, AeronaveDAO, IAeronave>
+public class AeronaveController extends BaseController<EAeronave, AeronaveDAO>
 {
 
     @Override

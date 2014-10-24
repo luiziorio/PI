@@ -8,13 +8,12 @@ package DB_FlightSystem.Controller;
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.EscalaDAO;
 import DB_FlightSystem.Entidade.EEscala;
-import DB_FlightSystem.IEntidade.IEscala;
 
 /**
  *
  * @author rafael
  */
-public class EscalaController extends BaseController<EEscala,EscalaDAO,IEscala>
+public class EscalaController extends BaseController<EEscala,EscalaDAO>
 {
 
     @Override

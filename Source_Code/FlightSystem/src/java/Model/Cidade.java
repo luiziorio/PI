@@ -6,37 +6,14 @@
 
 package Model;
 
-import DB_FlightSystem.IEntidade.ICidade;
+import DB_FlightSystem.Entidade.ECidade;
+
 
 /**
  *
  * @author Flavinha
  */
-public class Cidade implements ICidade
+public class Cidade extends ECidade
 {
 
-    @Override
-    public String getNome()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setNome(String nome)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getSequencial()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setSequencial(int sequencial)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

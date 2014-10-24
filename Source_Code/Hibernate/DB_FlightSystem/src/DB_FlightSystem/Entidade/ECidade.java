@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import DB_FlightSystem.Base.EBaseNome;
-import DB_FlightSystem.IEntidade.ICidade;
 
 /**
  *
@@ -19,6 +18,6 @@ import DB_FlightSystem.IEntidade.ICidade;
 @Entity
 @Table(name = "Cidade")
 @XmlRootElement
-public class ECidade extends EBaseNome implements ICidade
+public class ECidade extends EBaseNome
 {
 }

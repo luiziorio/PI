@@ -12,7 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
-import DB_FlightSystem.IEntidade.IAeropoto;
 
 /**
  *
@@ -20,7 +19,7 @@ import DB_FlightSystem.IEntidade.IAeropoto;
  */
 @Entity
 @Table(name = "Aeroporto")
-public class EAeroporto extends EBaseNome implements IAeropoto
+public class EAeroporto extends EBaseNome 
 {
     private String codigo;
     @OneToOne(fetch = FetchType.LAZY)
@@ -30,49 +29,41 @@ public class EAeroporto extends EBaseNome implements IAeropoto
     @OneToOne(fetch = FetchType.LAZY)
     private ECidade cidade;
 
-    @Override
     public String getCodigo()
     {
         return codigo;
     }
 
-    @Override
     public void setCodigo(String codigo)
     {
         this.codigo = codigo;
     }
 
-    @Override
     public EContinente getContinente()
     {
         return continente;
     }
 
-    @Override
     public void setContinente(EContinente continente)
     {
         this.continente = continente;
     }
 
-    @Override
     public EPais getPais()
     {
         return pais;
     }
 
-    @Override
     public void setPais(EPais pais)
     {
         this.pais = pais;
     }
 
-    @Override
     public ECidade getCidade()
     {
         return cidade;
     }
 
-    @Override
     public void setCidade(ECidade cidade)
     {
         this.cidade = cidade;

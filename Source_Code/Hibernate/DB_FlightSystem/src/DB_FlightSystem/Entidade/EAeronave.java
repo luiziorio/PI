@@ -8,7 +8,6 @@ package DB_FlightSystem.Entidade;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
-import DB_FlightSystem.IEntidade.IAeronave;
 
 /**
  *
@@ -16,7 +15,7 @@ import DB_FlightSystem.IEntidade.IAeronave;
  */
 @Entity
 @Table(name = "Aeronave")
-public class EAeronave extends EBaseNome implements IAeronave
+public class EAeronave extends EBaseNome
 {
    
 }

@@ -9,13 +9,12 @@ package DB_FlightSystem.Controller;
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.PaisDAO;
 import DB_FlightSystem.Entidade.EPais;
-import DB_FlightSystem.IEntidade.IPais;
 
 /**
  *
  * @author rafaellf
  */
-public class PaisController extends BaseController<EPais, PaisDAO, IPais>
+public class PaisController extends BaseController<EPais, PaisDAO>
 {
     @Override
     protected PaisDAO getInstanciaDAO()

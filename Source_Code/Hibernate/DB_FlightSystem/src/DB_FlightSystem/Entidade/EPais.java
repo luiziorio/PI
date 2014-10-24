@@ -13,7 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
-import DB_FlightSystem.IEntidade.IPais;
+
 
 /**
  *
@@ -21,19 +21,19 @@ import DB_FlightSystem.IEntidade.IPais;
  */
 @Entity
 @Table(name = "Pais")
-public class EPais extends EBaseNome implements IPais
+public class EPais extends EBaseNome  
 {
     @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ECidade> listaCidades;
 
 
-    @Override
+     
     public Set<ECidade> getListaCidades()
     {
         return listaCidades;
     }
 
-    @Override
+     
     public void setListaCidades(Set<ECidade> listaCidades)
     {
         this.listaCidades = listaCidades;

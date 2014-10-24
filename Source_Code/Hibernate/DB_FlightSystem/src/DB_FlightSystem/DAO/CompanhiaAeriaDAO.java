@@ -6,13 +6,13 @@
 package DB_FlightSystem.DAO;
 
 import DB_FlightSystem.Base.BaseDAO;
-import DB_FlightSystem.Entidade.ECompanhiaAeria;
+import DB_FlightSystem.Entidade.ECompanhiaAerea;
 
 /**
  *
  * @author rafael
  */
-public class CompanhiaAeriaDAO extends BaseDAO<ECompanhiaAeria>
+public class CompanhiaAeriaDAO extends BaseDAO<ECompanhiaAerea>
 {
     private CompanhiaAeriaDAO(){}
     
@@ -26,8 +26,8 @@ public class CompanhiaAeriaDAO extends BaseDAO<ECompanhiaAeria>
     }
 
     @Override
-    protected ECompanhiaAeria getInstanceEntidade()
+    protected ECompanhiaAerea getInstanceEntidade()
     {
-        return new ECompanhiaAeria();
+        return new ECompanhiaAerea();
     }
 }

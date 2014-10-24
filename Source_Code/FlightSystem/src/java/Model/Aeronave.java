@@ -6,37 +6,17 @@
 
 package Model;
 
-import DB_FlightSystem.IEntidade.IAeronave;
+import DB_FlightSystem.Entidade.EAeronave;
+
+
 
 /**
  *
  * @author Flavinha
  */
-public class Aeronave implements IAeronave
+public class Aeronave extends EAeronave
 {
 
-    @Override
-    public String getNome()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setNome(String nome)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getSequencial()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setSequencial(int sequencial)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
     
 }
