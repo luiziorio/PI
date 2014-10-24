@@ -6,12 +6,20 @@
 
 package DB_FlightSystem.Base;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
 /**
  * Classe que herdar de EBase, possuindo apenas o attributo nome a mais
  * Classe abstrata e base para classes de persistencia de dados
  * @author rafael
  * @version 1.0.0 
  */
+@Entity
+@Table(name = "basenome")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class EBaseNome extends EBase implements IBaseNome
 {
     protected String nome;

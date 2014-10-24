@@ -14,26 +14,29 @@ import org.hibernate.cfg.Configuration;
  *
  * @author rafaellf
  */
-public class HibernateUtility
+class HibernateUtility
 {
-    private static SessionFactory factory;
-    private static Configuration configuration;
+    private SessionFactory factory;
+    private Configuration configuration;
 
-    static {
-        try {
+    public HibernateUtility()
+    {
+        try
+        {
             configuration = new Configuration().configure();
-
             //configuration.setProperty("hibernate.connection.username", "root");
-
             factory = configuration.buildSessionFactory();
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) 
+        {
             e.printStackTrace();
             factory = null;
         }
     }
 
-    public static Session getSession() {
+    public Session getSession()
+    {
         return factory.openSession();
-    }
+    }   
+    
 }

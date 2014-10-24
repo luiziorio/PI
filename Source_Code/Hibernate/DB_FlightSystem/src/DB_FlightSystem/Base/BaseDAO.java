@@ -6,7 +6,7 @@
 
 package DB_FlightSystem.Base;
 
-import HibernateUtil.HibernateUtility;
+import HibernateUtil.HibernateUtilityController;
 import java.util.List;
 import java.util.function.Predicate;
 import org.hibernate.HibernateException;
@@ -25,10 +25,15 @@ public abstract class BaseDAO<T extends EBase>
    
     protected abstract T getInstanceEntidade();
     
+    protected Session getSession()    
+    {
+        return HibernateUtilityController.getInstance().getSession();
+    }
+    
     public boolean Salva(T objeto)
     {
         boolean retorno = true;
-        Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
+        Session sessao = getSession(); //Abrindo uma sessão
         Transaction transaction = sessao.beginTransaction();
         try
         {
@@ -49,7 +54,7 @@ public abstract class BaseDAO<T extends EBase>
     
     public void Delete(T objeto)
     {
-        Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
+        Session sessao = getSession(); //Abrindo uma sessão
         Transaction transaction = sessao.beginTransaction(); //Iniciando uma transação
         
         try
@@ -70,7 +75,7 @@ public abstract class BaseDAO<T extends EBase>
     public List<T> getSelect(String filtro)
     {
         List<T> retorno = null;
-        Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
+        Session sessao = getSession(); //Abrindo uma sessão
         try
         {
             
@@ -92,7 +97,7 @@ public abstract class BaseDAO<T extends EBase>
     {
         T retorno = getInstanceEntidade();
         retorno.setSequencial(id);
-        Session sessao = HibernateUtility.getSession(); //Abrindo uma sessão
+        Session sessao = getSession(); //Abrindo uma sessão
         try
         {
             retorno = (T) sessao.get(retorno.getClass(), retorno);

@@ -6,11 +6,7 @@
 
 package DB_FlightSystem.Entidade;
 
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Criptografia.Cripto;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -69,7 +65,7 @@ public class EUsuario extends EBaseNome implements IUsuario
     @Override
     public void setSenha(String senha)
     {
-        this.senha = Util.Util.encripta(senha);
+        this.senha = Cripto.encripta(senha);
     }
 
     @Override
@@ -84,11 +80,13 @@ public class EUsuario extends EBaseNome implements IUsuario
         this.tipo = tipo;
     }
 
+    @Override
     public String getEmail()
     {
         return email;
     }
 
+    @Override
     public void setEmail(String email)
     {
         this.email = email;
