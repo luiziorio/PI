@@ -75,9 +75,10 @@ public class HibernateUtilityController implements ICarregouXML
         boolean retorno = false;
         try
         {
-            retorno = (hibernateUtility.getSession().connection().getMetaData().getURL() == null ? hibernate.get().getSession().connection().getMetaData().getURL() == null : hibernateUtility.getSession().connection().getMetaData().getURL().equals(hibernate.get().getSession().connection().getMetaData().getURL()));
+            //retorno = (hibernateUtility.getSession().connection().getMetaData().getURL() == null ? hibernate.get().getSession().connection().getMetaData().getURL() == null : hibernateUtility.getSession().connection().getMetaData().getURL().equals(hibernate.get().getSession().connection().getMetaData().getURL()));
+            
         }
-        catch (SQLException ex)
+        catch (Exception ex)
         {
             Logger.getLogger(HibernateUtilityController.class.getName()).log(Level.SEVERE, null, ex);
         }

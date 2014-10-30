@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"   
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+     <link type="text/css" rel="stylesheet" href="../css/theme.css"/>
+    <script type="text/javascript" src="../css/jquery.min.js"></script>
+    <script type="text/javascript" src="../css/jquery.flipcountdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.flipcountdown.css" />
+
+    <script>jQuery(function() {
+            jQuery('#flipcountdownbox1').flipcountdown();
+        })</script>
+    <h:body>
+       
+        <div id="corLayout" style="background: #002040; width: 100%; height: 100%" >
+            <div id="logo" style="float: left;">
+                <img src="../images/logo_plane_tipo.png" alt="" width="200" height="auto" style="margin-left: 18px;"/>
+            </div>
+            <div id="flipcountdownbox1"></div>
+            <div id="opcoes" style="float: right;">
+                <ul>
+                    <li><p:link href="Home.jsf">Home</p:link></li>
+                    <li><p:link>Logout</p:link></li>
+                </ul>
+            </div>
+        </div>
+    </h:body>
+</html>
+

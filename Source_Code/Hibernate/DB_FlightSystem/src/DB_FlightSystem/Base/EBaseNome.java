@@ -20,17 +20,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "basenome")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class EBaseNome extends EBase implements IBaseNome
+public abstract class EBaseNome extends EBase
 {
     protected String nome;
 
-    @Override
     public String getNome()
     {
         return nome;
     }
 
-    @Override
     public void setNome(String nome)
     {
         this.nome = nome;

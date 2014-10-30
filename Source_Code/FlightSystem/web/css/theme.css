@@ -21,6 +21,21 @@
 .ui-widget .ui-widget {
 	font-size: 1em;
 }
+.ui-layout{
+ background: #002040;   
+}
+.ui-layout-unit{
+ background: #002040;   
+}
+.ui-layout-unit-content{
+ background: #002040;   
+}
+.ui-layout-unit-header{
+        background: #002040;
+}
+.ui-layout-unit{
+        background: #002040;
+}
 .ui-widget input,
 .ui-widget select,
 .ui-widget textarea,
@@ -39,7 +54,7 @@
 .ui-widget-header {
 	border: 1px solid #aaaaaa;
 	background: #002040 url("../images/ui-bg_diagonals-small_45_eeeeee_40x40.png") 50% 50% repeat;
-	color: #ffffff;
+	color: #002040;
 	font-weight: normal;
 }
 .ui-widget-header a {

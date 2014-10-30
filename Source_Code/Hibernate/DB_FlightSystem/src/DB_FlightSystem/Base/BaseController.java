@@ -62,14 +62,6 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
         dao.Delete(objeto);
     }
     
-    /**
-     * Delete a entidade
-     * @param objeto Entidade a ser deletada
-     */
-    public void Delete(IBase objeto)
-    {
-        Delete((TE)objeto);
-    }
     
     /**
      * Pesquisa a ser realizada com o HQL

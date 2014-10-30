@@ -22,19 +22,17 @@ import javax.persistence.InheritanceType;
 @Entity
 @Table(name = "base")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class EBase implements IBase, Serializable
+public abstract class EBase implements Serializable
 {
     @Id @GeneratedValue
     protected int sequencial;
 
 
-    @Override
     public int getSequencial()
     {
         return sequencial;
     }
 
-    @Override
     public void setSequencial(int sequencial)
     {
         this.sequencial = sequencial;
