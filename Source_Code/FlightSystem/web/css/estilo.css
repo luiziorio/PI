@@ -28,6 +28,16 @@ body{
     vertical-align: middle;
     text-align: center;
 }
+#bHome{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bgHome.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%,100%;
+    vertical-align: middle;
+    text-align: center;
+}
 #Header {
     background: #002040;
 }
@@ -35,7 +45,7 @@ body{
 #principal{
     width: 100%;
     height: 100%;
-    margin-top: 200px;
+    margin-top: 80px;
     text-align: center;
     font-family: calibri;
     font-size: 10px;
@@ -67,25 +77,56 @@ body{
     text-align: left;
  }
  #opcoes ul {
-   
      list-style:none;
      display: block;
-     text-decoration:underline;
+     text-decoration:none;
       
  }
  #opcoes ul li{
-     font-size: 16px;
-     padding: 35px 30px 20px 10px;
+     font-size: 15px;
+     padding: 35px 30px 20px 10px;     
      list-style:none;
      display: inline-block;
      text-decoration:underline;
      color: #ffffff;
      font-family: arial;  
+     text-align: center;
  }
- #opcoes li a:hover{
-     color: #ffffff;     
+  #opcoes li button{
+     color: #ffffff; 
+     
  }
- #opcoes li a:visited{
+ #opcoes li button:hover{
+     color: #ffffff; 
+     width: 180px;
+ }
+ #opcoes li button:visited{
      color: #e3e3e3;     
+ }
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 15px 30px 15px 30px;
+  border: solid #ffffff 4px;
+  text-decoration: none;
+  line-height: 25px;
+  width: 180px;
+}
+
+.btn:hover {
+  background: #002040;
+  text-decoration: none;
+}
+#home{
+     font-size: 16px;
+     list-style:none;
+     display: inline-block;
+     text-decoration:underline;
+     color: #ffffff;
+     font-family: arial;  
  }
  

@@ -9,7 +9,7 @@
         <title>Cadastro de Usuario</title>
         <link type="text/css" rel="stylesheet" href="../css/estilo.css"/>
         <link type="text/css" rel="stylesheet" href="../css/theme.css"/>
-        
+
     </h:head>
     <h:body>
         <p:layout fullPage="true" >
@@ -17,24 +17,31 @@
                 <ui:include src="Header.xhtml"/>
             </p:layoutUnit>
             <p:layoutUnit position="center">
-                <h:panelGrid columns="1">
+                <h:panelGrid columns="1" >
                     <br/>
                     <h1>Cadastro de Usuario</h1>
                     <br/>
-                    <h:panelGrid columns="2" style="background: none;">
-                        <p:outputLabel value="Nome:" for="nome" style="color: #000000;"/>
+                    <h:panelGrid columns="2" style="background: none; text-align: left; ">
+                        <p:outputLabel value="Nome: " for="nome" style="color: #000000; margin-right: 40px;"/>
                         <p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.login}"  required="true" 
                                      style="color: #000000; background-color: #ffffff;"/>
-                        <p:outputLabel value="Senha:" for="senha" style="color: #000000;"/>
-                        <p:inputText id="senha" label="Senha" type="Password" value="#{usuarioBean.usuario.senha}" required="true" 
-                                     style="color: #000000; background-color: #ffffff;"/>
-                        <p:outputLabel value="E-mail: " for="email" style="color: #000000;"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="2" id="matchGrid" cellpadding="5" style="background: none; text-align: left;">                   
+                        <h:outputLabel for="pwd1" value="Password 1: *"/>
+                        <p:password id="pwd1" value="#{passwordView.password5}" match="pwd2" 
+                                    label="Password 1" required="true" />
+
+                        <h:outputLabel for="pwd2" value="Password 2: *" />
+                        <p:password id="pwd2" value="#{model.passwordView.password5}" label="Password 2" required="true" />
+                    </h:panelGrid>
+                    <h:panelGrid columns="2" style="background: none; text-align: left;">
+                        <p:outputLabel value="E-mail: " for="email" style="color: #000000; margin-right: 40px;"/>
                         <p:inputText id="email" label="Email" value="#{usuarioBean.usuario.email}" required="true" 
                                      style="color: #000000; background-color: #ffffff;"/>
                     </h:panelGrid><br/> 
                     <h:panelGrid columns="2">
-                        <p:button onclick="#" value="Ok" icon="ui-icon-check" iconPos="right"
-                                  style="color: #000000; background-color: #ffffff; width: 130px;"/>
+                        <p:commandButton update="matchGrid" value="Ok" icon="ui-icon-check" iconPos="right"
+                                         style="color: #000000; background-color: #ffffff; width: 130px;"/>
                         <p:button href="Home.jsf" value="Cancelar" icon="ui-icon-cancel" iconPos="right"
                                   style="color: #000000; background-color: #ffffff; width: 130px;"/>
                     </h:panelGrid>
