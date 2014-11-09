@@ -20,6 +20,7 @@ import javax.inject.Named;
 public class UsuarioBean implements Serializable
 {
     private Usuario usuario = new Usuario();
+    private String senha;
     private UsuarioControle usuarioControle;
 
     public Usuario getUsuario()
@@ -32,8 +33,27 @@ public class UsuarioBean implements Serializable
         this.usuario = usuario;
     }
 
+    public String getSenha()
+    {
+        return senha;
+    }
+
+    public void setSenha(String senha)
+    {
+        this.senha = senha;
+    }
+    
+    
+
     public UsuarioBean()
     {
-
+    }
+    
+    public String insert()
+    {
+        if(usuario == null || usuario.getLogin() == null)
+            return "";
+        usuarioControle = new UsuarioControle();
+        return "";
     }
 }
