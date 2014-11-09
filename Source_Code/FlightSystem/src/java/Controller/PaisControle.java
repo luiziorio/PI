@@ -6,11 +6,20 @@
 
 package Controller;
 
+import DB_FlightSystem.Controller.PaisController;
+import Model.Pais;
+
 /**
  *
  * @author Flavinha
  */
-public class PaisControle
+public class PaisControle extends BaseControle<PaisController, Pais>
 {
+
+    @Override
+    protected PaisController getInstanceBase()
+    {
+        return new PaisController();
+    }
     
 }

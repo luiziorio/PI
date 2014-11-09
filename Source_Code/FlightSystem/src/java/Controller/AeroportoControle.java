@@ -6,11 +6,20 @@
 
 package Controller;
 
+import DB_FlightSystem.Controller.AeroportoController;
+import Model.Aeroporto;
+
 /**
  *
  * @author Flavinha
  */
-public class AeroportoControle
+public class AeroportoControle extends BaseControle<AeroportoController, Aeroporto>
 {
+
+    @Override
+    protected AeroportoController getInstanceBase()
+    {
+        return new AeroportoController();
+    }
     
 }

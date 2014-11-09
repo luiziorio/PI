@@ -21,7 +21,6 @@ public class UsuarioBean implements Serializable
 {
     private Usuario usuario = new Usuario();
     private String senha;
-    private UsuarioControle usuarioControle;
 
     public Usuario getUsuario()
     {
@@ -53,7 +52,9 @@ public class UsuarioBean implements Serializable
     {
         if(usuario == null || usuario.getLogin() == null)
             return "";
-        usuarioControle = new UsuarioControle();
+        usuario.setSenha(senha);
+        UsuarioControle usuarioControle = new UsuarioControle();
+        usuarioControle.insert(usuario);
         return "";
     }
 }

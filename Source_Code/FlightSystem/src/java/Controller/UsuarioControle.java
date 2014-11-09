@@ -13,19 +13,11 @@ import Model.Usuario;
  *
  * @author Flavinha
  */
-public class UsuarioControle
+public class UsuarioControle extends BaseControle<UsuarioController, Usuario>
 {
-    public boolean insert(Usuario usuario)
+    @Override
+    protected UsuarioController getInstanceBase()
     {
-        boolean retorno;
-        try(UsuarioController usuarioController = new UsuarioController())
-        {
-            retorno = usuarioController.Salvar(usuario);
-        }
-        catch(Exception e)
-        {
-            retorno = false;
-        }
-       return retorno;
+        return new UsuarioController();
     }
 }

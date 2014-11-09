@@ -6,11 +6,18 @@
 
 package Controller;
 
+import DB_FlightSystem.Controller.AeronaveController;
+import Model.Aeronave;
+
 /**
  *
  * @author Flavinha
  */
-public class AeronaveControle
+public class AeronaveControle extends BaseControle<AeronaveController, Aeronave>
 {
-    
+    @Override
+    protected AeronaveController getInstanceBase()
+    {
+        return new AeronaveController();
+    }   
 }

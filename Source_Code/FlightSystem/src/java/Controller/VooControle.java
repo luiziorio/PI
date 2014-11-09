@@ -6,11 +6,20 @@
 
 package Controller;
 
+import DB_FlightSystem.Controller.VooController;
+import Model.Voo;
+
 /**
  *
  * @author Flavinha
  */
-public class VooControle
+public class VooControle extends BaseControle<VooController, Voo>
 {
+
+    @Override
+    protected VooController getInstanceBase()
+    {
+        return new VooController();
+    }
     
 }

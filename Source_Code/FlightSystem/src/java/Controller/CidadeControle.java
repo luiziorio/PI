@@ -6,11 +6,21 @@
 
 package Controller;
 
+import DB_FlightSystem.Base.EBase;
+import DB_FlightSystem.Controller.CidadeController;
+import Model.Cidade;
+
 /**
  *
  * @author Flavinha
  */
-public class CidadeControle
+public class CidadeControle extends BaseControle<CidadeController, Cidade>
 {
+
+    @Override
+    protected CidadeController getInstanceBase()
+    {
+        return new CidadeController();
+    }
     
 }

@@ -6,11 +6,20 @@
 
 package Controller;
 
+import DB_FlightSystem.Controller.CompanhiaAeriaController;
+import Model.CompanhiaAerea;
+
 /**
  *
  * @author Flavinha
  */
-public class CompanhiaAereaControle
+public class CompanhiaAereaControle extends BaseControle<CompanhiaAeriaController, CompanhiaAerea>
 {
+
+    @Override
+    protected CompanhiaAeriaController getInstanceBase()
+    {
+        return new CompanhiaAeriaController();
+    }
     
 }
