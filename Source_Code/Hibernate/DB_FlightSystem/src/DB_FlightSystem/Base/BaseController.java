@@ -31,7 +31,7 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
      {
         try
         {
-            this.finalize();
+            finalize();
             System.gc();
         }
         catch (Throwable ex)
