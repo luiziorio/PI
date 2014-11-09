@@ -92,16 +92,12 @@ body{
      font-family: arial;  
      text-align: center;
  }
-  #opcoes li button{
-     color: #ffffff; 
-     
+  #opcoes li a:hover{
+  
+     color: #ffffff;
  }
- #opcoes li button:hover{
-     color: #ffffff; 
-     width: 180px;
- }
- #opcoes li button:visited{
-     color: #e3e3e3;     
+  #opcoes li a:visited{
+     color: #e3e3e3;
  }
 .btn {
   -webkit-border-radius: 0;

@@ -1,56 +1,69 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Login</title>
         <link type="text/css" rel="stylesheet" href="../css/estilo.css"/>
         <link type="text/css" rel="stylesheet" href="../css/theme.css"/>
     </h:head>
     <h:body>
-        <div id="principal" style="margin-top:  170px;">
-            <h:panelGrid columns="3">  
-                <h:panelGrid columns="1">  
-                    <div id="msg1">
-                        Seja Bem vindo
-                    </div><br/>
-                    <div id="msg2">
-                        Identifique-se por favor para utilizar
-                        o sistema.
-                    </div><br/>
-                    <h:panelGrid columns="2" style=" text-align: right; background: none;">
-                        <p:outputLabel value="Nome de Usuario: " for="nome" style="color: #ffffff;"/>
-                        <p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.login}"  required="true" 
-                                     style="color: #000000; background-color: #ffffff;"/>
-                        <p:outputLabel value="Senha: " for="senha" style="color: #ffffff;"/>
-                        <p:inputText id="senha" label="Senha" type="Password" value="#{usuarioBean.usuario.senha}" required="true" 
-                                     style="color: #000000; background-color: #ffffff;"/>
-                        <p:outputLabel value="Email: " for="email" style="color: #ffffff;"/>
-                        <p:inputText id="email" label="Email" value="#{usuarioBean.usuario.email}" required="true" 
-                                     style="color: #000000; background-color: #ffffff;"/>                       
-                    </h:panelGrid><br/> 
-                    <h:panelGrid id="Login" columns="5" >
-                        <ul style="display: inline-block">
-                            <p:link href="Home.jsf" id="home" style="font-size: 12px; padding-left:10px;" >Home</p:link>
-                            <p:link href="Cadastro_Usuario.jsf" id="home" style="font-size: 12px; padding-left:10px; padding-right: 15px;" >Cadastre-se</p:link>
-                        </ul>
-                        <p:button onclick="#" value="Login" icon="ui-icon-check" iconPos="right"
-                                  style="color: #000000; background-color: #ffffff;"/>
-                    </h:panelGrid>
-                </h:panelGrid>
-                <hr size="250" width="1" align="left" color="#ffffff" style="margin: 0px 20px 0px 20px;"></hr>
-                <h:panelGrid>
-                    <ul style="list-style: none; display: block;">
-                        <li style="padding: 20px;">
-                            <img src="../images/logo_plane_tipo.png" alt="" width="200" height="110"/>
-                        </li>
-                        <li>
-                            <img src="../images/logo survivor solutions_Branco.png" alt="" width="90" height="40"/>
-                        </li>
-                    </ul>
-                </h:panelGrid>  
-            </h:panelGrid>
+        <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-12">
+                    <div id="principal" style="margin 100px;">
+                        <h:panelGrid columns="4">  
+                            <div class="ui-grid-col-6">
+                                <h:panelGrid columns="1">  
+                                    <div id="msg1">
+                                        Seja Bem vindo
+                                    </div><br/>
+                                    <div id="msg2">
+                                        Identifique-se por favor para utilizar
+                                        o sistema.
+                                    </div><br/>
+                                    <h:panelGrid columns="2" style=" text-align: right; background: none;">
+                                        <p:outputLabel value="Nome de Usuario: " for="nome" style="color: #ffffff;"/>
+                                        <p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.login}"  required="true" 
+                                                     style="color: #000000; background-color: #ffffff;"/>
+                                        <p:outputLabel value="Senha: " for="senha" style="color: #ffffff;"/>
+                                        <p:inputText id="senha" label="Senha" type="Password" value="#{usuarioBean.usuario.senha}" required="true" 
+                                                     style="color: #000000; background-color: #ffffff;"/>
+                                        <p:outputLabel value="Email: " for="email" style="color: #ffffff;"/>
+                                        <p:inputText id="email" label="Email" value="#{usuarioBean.usuario.email}" required="true" 
+                                                     style="color: #000000; background-color: #ffffff;"/>                       
+                                    </h:panelGrid><br/> 
+                                    <h:panelGrid id="Login" columns="5" >
+                                        <ul style="display: inline-block">
+                                            <p:link href="Home.jsf" id="home" style="font-size: 12px; padding-left:10px;" >Home</p:link>
+                                            <p:link href="Cadastro_Usuario.jsf" id="home" style="font-size: 12px; padding-left:10px; padding-right: 15px;" >Cadastre-se</p:link>
+                                        </ul>
+                                        <p:button onclick="#" value="Login" icon="ui-icon-check" iconPos="right"
+                                                  style="color: #000000; background-color: #ffffff;"/>
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </div>  
+                                <hr size="250" width="1" align="left" color="#ffffff" style="margin: 0px 20px 0px 20px;"></hr>  
+                            
+                            <div class="ui-grid-col-6">
+                                <h:panelGrid>
+                                    <ul style="list-style: none; display: block;">
+                                        <li style="padding: 20px;">
+                                            <img src="../images/logo_plane_tipo.png" alt="" width="200" height="110"/>
+                                        </li>
+                                        <li>
+                                            <img src="../images/logo survivor solutions_Branco.png" alt="" width="90" height="40"/>
+                                        </li>
+                                    </ul>
+                                </h:panelGrid>  
+                            </div>
+                        </h:panelGrid>
+                    </div>
+                </div>
+            </div>
         </div>
     </h:body>
 </html>
