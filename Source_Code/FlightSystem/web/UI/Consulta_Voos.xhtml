@@ -17,7 +17,9 @@
                     <ui:include src="Header.xhtml"/>
                 </p:layoutUnit>
                 <p:layoutUnit position="center">
+                  <div class="ui-grid ui-grid-responsive">
                     <br/><h:panelGrid columns="2">
+                         <div class="ui-grid-row">
                         <p:inputText></p:inputText>
                         <p:button onclick="#" value="Buscar" icon="ui-icon-search" iconPos="right"
                                   style="width: 130px;"/>
@@ -68,7 +70,9 @@
                                 <h:outputText value="#" />
                             </p:column>
                         </p:dataTable>
+                        </div>
                     </h:panelGrid>
+                    </div>
                 </p:layoutUnit>
                 <p:layoutUnit position="south">
                     <ui:include src="Footer.xhtml"/>
