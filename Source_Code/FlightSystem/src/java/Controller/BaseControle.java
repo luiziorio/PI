@@ -12,7 +12,7 @@ import DB_FlightSystem.Base.EBase;
  *
  * @author rafael
  */
-abstract class BaseControle< T extends BaseController, TE extends EBase>
+public abstract class BaseControle< T extends BaseController, TE extends EBase>
 {
     protected abstract T getInstanceBase();
     

@@ -28,20 +28,16 @@ public class EUsuario extends EBaseNome
     
     @Basic(fetch = FetchType.LAZY)
     private String senha;
-    private Integer tipo;
-    private String email;
 
     public EUsuario()
     {
     }
 
-    public EUsuario(Integer sequencial, String login, String senha, Integer tipo, String email)
+    public EUsuario(Integer sequencial, String login, String senha)
     {
         this.sequencial = sequencial;
         this.login = login;
         this.senha = senha;
-        this.tipo = tipo;
-        this.email = email;
     }
     
 
@@ -68,30 +64,4 @@ public class EUsuario extends EBaseNome
     {
         this.senha = Cripto.encripta(senha);
     }
-
-     
-    public Integer getTipo()
-    {
-        return tipo;
-    }
-
-     
-    public void setTipo(Integer tipo)
-    {
-        this.tipo = tipo;
-    }
-
-     
-    public String getEmail()
-    {
-        return email;
-    }
-
-     
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
-    
-    
 }

@@ -6,6 +6,7 @@
 package Bean;
 
 import Controller.UsuarioControle;
+import DB_FlightSystem.Base.EBase;
 import Model.Usuario;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
@@ -17,20 +18,9 @@ import javax.inject.Named;
  */
 @Named(value = "usuarioBean")
 @SessionScoped
-public class UsuarioBean implements Serializable
+public class UsuarioBean extends BaseBean<UsuarioControle, Usuario>
 {
-    private Usuario usuario = new Usuario();
     private String senha;
-
-    public Usuario getUsuario()
-    {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario)
-    {
-        this.usuario = usuario;
-    }
 
     public String getSenha()
     {
@@ -41,20 +31,23 @@ public class UsuarioBean implements Serializable
     {
         this.senha = senha;
     }
+
+    @Override
+    public void insert()
+    {
+        objeto.setSenha(senha);
+        super.insert(); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 
     public UsuarioBean()
     {
     }
-    
-    public String insert()
+
+    @Override
+    protected UsuarioControle getControleInstancia()
     {
-        if(usuario == null || usuario.getLogin() == null)
-            return "";
-        usuario.setSenha(senha);
-        UsuarioControle usuarioControle = new UsuarioControle();
-        usuarioControle.insert(usuario);
-        return "";
+        return new UsuarioControle();
     }
 }

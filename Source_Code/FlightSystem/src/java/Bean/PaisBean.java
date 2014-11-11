@@ -6,6 +6,9 @@
 
 package Bean;
 
+import Controller.PaisControle;
+import DB_FlightSystem.Base.EBase;
+import Model.Pais;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 
@@ -15,7 +18,7 @@ import javax.enterprise.context.Dependent;
  */
 @Named(value = "paisBean")
 @Dependent
-public class PaisBean
+public class PaisBean extends BaseBean<PaisControle, Pais>
 {
 
     /**
@@ -23,6 +26,12 @@ public class PaisBean
      */
     public PaisBean()
     {
+    }
+
+    @Override
+    protected PaisControle getControleInstancia()
+    {
+        return new PaisControle();
     }
     
 }

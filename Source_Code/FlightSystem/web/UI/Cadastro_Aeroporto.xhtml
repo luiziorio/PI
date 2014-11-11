@@ -20,12 +20,12 @@
                     <br/>
                     <h1>Cadastro de Aeroportos</h1>
                     <br/>
-                    <h:panelGrid columns="2" style="background: none; text-align: right;">
+                    <h:panelGrid id="dados" columns="2" style="background: none; text-align: right;">
                         <p:outputLabel for="codigo" value="Código: " style="color: #000000;" />
-                        <p:inputText id="codigo" label="Código" value="#" size="32" required="true" 
-                                     style="color: #000000; background-color: #ffffff;"/>
+                        <p:inputText id="codigo" label="Código" value="#{aeroportoBean.aeroport.codigo}" size="32" required="true" 
+                                      style="color: #000000; background-color: #ffffff;"/>
                         <p:outputLabel for="desc" value="Descrição: " style="color: #000000;" />
-                        <p:inputText id="desc" label="Descrição" value="#" size="32" required="true" 
+                        <p:inputText id="desc" label="Descrição" value="#{aeroportoBean.aeroport.nome}" size="32" required="true" 
                                      style="color: #000000; background-color: #ffffff;"/>
                         <p:outputLabel value="Continente: " for="continente" style="color: #000000;"/>
                         <p:selectOneMenu id="continente" value="#{dropdownView.continente}" style="width:300px">
@@ -44,7 +44,7 @@
                         </p:selectOneMenu>                        
                     </h:panelGrid><br/> 
                     <h:panelGrid columns="2">
-                        <p:button onclick="#" value="Ok" icon="ui-icon-check" iconPos="right"
+                        <p:commandButton update="dados" onclick="#" value="Ok" icon="ui-icon-check" iconPos="right"
                                   style="width: 130px;"/>
                         <p:button onclick="#" value="Cancelar" icon="ui-icon-cancel" iconPos="right"
                                   style="width: 130px;"/>

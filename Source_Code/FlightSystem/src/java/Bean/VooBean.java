@@ -6,6 +6,9 @@
 
 package Bean;
 
+import Controller.VooControle;
+import DB_FlightSystem.Base.EBase;
+import Model.Voo;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -16,7 +19,7 @@ import java.io.Serializable;
  */
 @Named(value = "vooBean")
 @SessionScoped
-public class VooBean implements Serializable
+public class VooBean extends BaseBean<VooControle, Voo>
 {
 
     /**
@@ -24,6 +27,12 @@ public class VooBean implements Serializable
      */
     public VooBean()
     {
+    }
+
+    @Override
+    protected VooControle getControleInstancia()
+    {
+        return new VooControle();
     }
     
 }

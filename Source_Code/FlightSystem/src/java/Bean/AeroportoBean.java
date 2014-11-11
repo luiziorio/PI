@@ -6,6 +6,10 @@
 
 package Bean;
 
+import Controller.AeronaveControle;
+import Controller.AeroportoControle;
+import DB_FlightSystem.Base.EBase;
+import Model.Aeroporto;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -16,9 +20,8 @@ import java.io.Serializable;
  */
 @Named(value = "aeroportoBean")
 @SessionScoped
-public class AeroportoBean implements Serializable
+public class AeroportoBean extends BaseBean<AeroportoControle, Aeroporto>
 {
-
     /**
      * Creates a new instance of AeroportoBean
      */
@@ -26,4 +29,10 @@ public class AeroportoBean implements Serializable
     {
     }
     
+
+    @Override
+    protected AeroportoControle getControleInstancia()
+    {
+        return new AeroportoControle();
+    }
 }

@@ -6,9 +6,11 @@
 
 package Bean;
 
+import Controller.CidadeControle;
+import DB_FlightSystem.Base.EBase;
+import Model.Cidade;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
 
 /**
  *
@@ -16,8 +18,8 @@ import java.io.Serializable;
  */
 @Named(value = "cidadeBean")
 @SessionScoped
-public class CidadeBean implements Serializable
-{
+public class CidadeBean extends BaseBean<CidadeControle, Cidade>
+{   
 
     /**
      * Creates a new instance of CidadeBean
@@ -26,4 +28,10 @@ public class CidadeBean implements Serializable
     {
     }
     
+    
+    @Override
+    protected CidadeControle getControleInstancia()
+    {
+        return new CidadeControle();
+    }
 }

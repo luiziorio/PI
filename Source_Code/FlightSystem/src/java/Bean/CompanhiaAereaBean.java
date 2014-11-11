@@ -6,6 +6,10 @@
 
 package Bean;
 
+import Controller.BaseControle;
+import Controller.CompanhiaAereaControle;
+import DB_FlightSystem.Base.EBase;
+import Model.CompanhiaAerea;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -16,9 +20,10 @@ import java.io.Serializable;
  */
 @Named(value = "companhiaAereaBean")
 @SessionScoped
-public class CompanhiaAereaBean implements Serializable
+public class CompanhiaAereaBean extends BaseBean<CompanhiaAereaControle, CompanhiaAerea>
 {
 
+    
     /**
      * Creates a new instance of CompanhiaAereaBean
      */
@@ -26,4 +31,9 @@ public class CompanhiaAereaBean implements Serializable
     {
     }
     
+    @Override
+    protected CompanhiaAereaControle getControleInstancia()
+    {
+        return new CompanhiaAereaControle();
+    }
 }

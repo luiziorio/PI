@@ -23,10 +23,10 @@
                         <br/>
                         <h:panelGrid columns="2" style="background: none;">
                             <p:outputLabel value="Nome:" for="nome" style="color: #000000;"/>
-                            <p:inputText id="nome" label="Nome" value="#{usuarioBean.nome}"  required="true" 
+                            <p:inputText id="nome" label="Nome" value="#{cidadeBean.objeto.nome}"  required="true" 
                                          style="color: #000000; background-color: #ffffff;"/>
                             <p:outputLabel value="Senha:" for="senha" style="color: #000000;"/>
-                            <p:inputText id="senha" label="Senha" type="Password" value="#{usuarioBean.senha}" required="true" 
+                            <p:inputText id="senha" label="Senha" type="Password" value="#{cidadeBean.objeto.sequencial}" required="true" 
                                          style="color: #000000; background-color: #ffffff;"/>
                             <p:selectBooleanCheckbox id="cbxTipo" ></p:selectBooleanCheckbox>
                         </h:panelGrid><br/> 
