@@ -10,7 +10,125 @@
  *
  * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Arial%2Csans-serif&fwDefault=normal&fsDefault=1em&cornerRadius=2px&bgColorHeader=%23002040&bgTextureHeader=diagonals_small&bgImgOpacityHeader=45&borderColorHeader=%23aaaaaa&fcHeader=%23ffffff&iconColorHeader=%23ffffff&bgColorContent=%23ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=%23aaaaaa&fcContent=%23222222&iconColorContent=%23222222&bgColorDefault=%23e6e6e6&bgTextureDefault=flat&bgImgOpacityDefault=75&borderColorDefault=%23d3d3d3&fcDefault=%23555555&iconColorDefault=%23888888&bgColorHover=%23002040&bgTextureHover=diagonals_small&bgImgOpacityHover=45&borderColorHover=%23999999&fcHover=%23ffffff&iconColorHover=%23ffffff&bgColorActive=%23eeeeee&bgTextureActive=diagonals_small&bgImgOpacityActive=65&borderColorActive=%23aaaaaa&fcActive=%23212121&iconColorActive=%23565656&bgColorHighlight=%23fbf9ee&bgTextureHighlight=white_lines&bgImgOpacityHighlight=55&borderColorHighlight=%23fcefa1&fcHighlight=%23363636&iconColorHighlight=%2331ff2e&bgColorError=%23fef1ec&bgTextureError=white_lines&bgImgOpacityError=95&borderColorError=%23cd0a0a&fcError=%23cd0a0a&iconColorError=%23cd0a0a&bgColorOverlay=%23aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=40&bgColorShadow=%23aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
  */
+html, body, div, span, h1, h2,  p, a,  ul, li, img
+{margin: 0; padding: 0;
+border: 0; outline: 0;
+font-size: 100%;background: transparent;}
+ul {list-style: none;}
+:focus {outline: 0;}
+a {text-decoration:none;}
+*{
+margin: 0 auto;
+padding: 0 auto;	
+}
+p{
+    color: #dddddd;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #002040;
+    vertical-align: middle;
+    text-align: center;
+}
+#bHome{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bgHome.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%,100%;
+    vertical-align: middle;
+    text-align: center;
+}
+#Header {
+    background: #002040;
+}
 
+#principal{
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+    text-align: center;
+    font-family: calibri;
+    font-size: 10px;
+    font-style: inherit;
+    color: #ffffff;
+}
+#msg1 
+ {
+    padding: 10px;
+    font-family: arial;
+    font-size: 21px;
+    color: #ffffff;
+    text-align: left;
+ }
+ 
+ #home.hover{
+     color: #ffffff;
+ }
+ #home.visited
+ {
+     color: #ffffff;
+ }
+ #msg2 
+ {
+    padding: 10px;
+    font-family: arial;
+    font-size: 15px;
+    color: #ffffff;
+    text-align: left;
+ }
+ #opcoes ul {
+     list-style:none;
+     display: block;
+     text-decoration:none;
+     color: #ffffff;
+ }
+ #opcoes ul li{
+     font-size: 15px;
+     padding: 35px 30px 20px 10px;     
+     list-style:none;
+     display: inline-block;
+     text-decoration:underline;
+     
+     font-family: arial;  
+     text-align: center;
+ }
+  #opcoes li a:hover{
+  
+     color: #ffffff;
+ }
+  #opcoes li a:visited{
+     color: #e3e3e3;
+ }
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 15px 30px 15px 30px;
+  border: solid #ffffff 4px;
+  text-decoration: none;
+  line-height: 25px;
+  width: 180px;
+}
+
+.btn:hover {
+  background: #002040;
+  text-decoration: none;
+}
+#home{
+     font-size: 16px;
+     list-style:none;
+     display: inline-block;
+     text-decoration:underline;
+     color: #ffffff;
+     font-family: arial;  
+ }
+ 
 
 /* Component containers
 ----------------------------------*/
@@ -54,7 +172,7 @@
 .ui-widget-header {
 	border: 1px solid #aaaaaa;
 	background: #002040 url("../images/ui-bg_diagonals-small_45_eeeeee_40x40.png") 50% 50% repeat;
-	color: #002040;
+	color: #ffffff;
 	font-weight: normal;
 }
 .ui-widget-header a {
@@ -94,14 +212,14 @@
 	font-weight: normal;
 	color: #222222;
 }
-.ui-state-hover a,
-.ui-state-hover a:hover,
-.ui-state-hover a:link,
-.ui-state-hover a:visited,
-.ui-state-focus a,
-.ui-state-focus a:hover,
-.ui-state-focus a:link,
-.ui-state-focus a:visited {
+.ui-state-hover button,
+.ui-state-hover button:hover,
+.ui-state-hover button:link,
+.ui-state-hover button:visited,
+.ui-state-focus button,
+.ui-state-focus button:hover,
+.ui-state-focus button:link,
+.ui-state-focus button:visited {
 	color: #ffffff;
 	text-decoration: none;
 }

@@ -7,7 +7,6 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Cadastro de Usuario</title>
-        <link type="text/css" rel="stylesheet" href="../css/estilo.css"/>
         <link type="text/css" rel="stylesheet" href="../css/theme.css"/>
     </h:head>
     <h:body>
@@ -24,7 +23,7 @@
                             <br/>
                             <div class="ui-grid-row">
                                 <p:panelGrid id="matchGrid">
-                                    <div class="ui-grid-col-1">\
+                                    <div class="ui-grid-col-1">
                                         <h:panelGrid columns="2" style="background: none; text-align: left; ">
                                             <p:outputLabel value="Nome: " for="nome" style="color: #000000; margin-right: 40px;"/>
                                             <p:inputText id="nome" label="Nome" value="#{usuarioBean.objeto.nome}"  required="true" 
@@ -51,9 +50,9 @@
                             <br/> 
                             <h:panelGrid columns="2">
                                 <p:commandButton id="btnOK" update="matchGrid" value="Ok" action="#{usuarioBean.insert}"  ajax="false" icon="ui-icon-check" iconPos="right"
-                                                 style="color: #000000; background-color: #ffffff; width: 130px;" />
+                                                 style="background-color: #ffffff; width: 130px;" />
                                 <p:button href="Home.jsf" value="Cancelar" icon="ui-icon-cancel" iconPos="right"
-                                          style="color: #000000; background-color: #ffffff; width: 130px;"/>
+                                          style="background-color: #ffffff; width: 130px;"/>
                             </h:panelGrid>
                         </h:panelGrid> 
                     </div>
