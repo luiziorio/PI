@@ -18,33 +18,7 @@ import javax.persistence.Table;
 @Table(name = "comissariaBordo")
 public class EComissariaBoardo extends EFuncionario
 {
-    protected Set<String> curso;
-
-    public Set<String> getCurso()
-    {
-        return curso;
-    }
-
-    public void setCurso(Set<String> curso)
-    {
-        this.curso = curso;
-    }
-
     public EComissariaBoardo()
     {
     }
-
-    public EComissariaBoardo(Set<String> curso, Double salario, String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        super(salario, telefone, email, endereco, usuario);
-        this.curso = curso;
-    }
-
-    public EComissariaBoardo(Set<String> curso, Double salario, String sexo, Date dataNascimento, String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        super(salario, sexo, dataNascimento, telefone, email, endereco, usuario);
-        this.curso = curso;
-    }
-    
-    
 }
