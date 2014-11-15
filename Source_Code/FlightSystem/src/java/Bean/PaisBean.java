@@ -7,7 +7,6 @@
 package Bean;
 
 import Controller.PaisControle;
-import DB_FlightSystem.Base.EBase;
 import Model.Pais;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;

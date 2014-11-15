@@ -6,17 +6,18 @@
 
 package Bean;
 
+import Controller.AeronaveControle;
+import Model.Aeronave;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
 
 /**
- *
+ * Bean da view Aeronave
  * @author Flavinha
  */
 @Named(value = "aeronaveBean")
 @SessionScoped
-public class AeronaveBean implements Serializable
+public class AeronaveBean extends BaseBean<AeronaveControle, Aeronave>
 {
 
     
@@ -25,6 +26,12 @@ public class AeronaveBean implements Serializable
      */
     public AeronaveBean()
     {
+    }
+
+    @Override
+    protected AeronaveControle getControleInstancia()
+    {
+        return new AeronaveControle();
     }
     
 }

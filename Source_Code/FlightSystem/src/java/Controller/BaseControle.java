@@ -11,6 +11,8 @@ import DB_FlightSystem.Base.EBase;
 /**
  *
  * @author rafael
+ * @param <T>
+ * @param <TE>
  */
 public abstract class BaseControle< T extends BaseController, TE extends EBase>
 {

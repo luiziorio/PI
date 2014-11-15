@@ -10,10 +10,10 @@ import DB_FlightSystem.Base.EBase;
 import java.io.Serializable;
 
 /**
- *
+ * Classe base para os beans, aqui já possui os metodos de salvar e pesquisar simples
  * @author rafael
- * @param <T>
- * @param <TM>
+ * @param <T> Classe que herda de base controle
+ * @param <TM> Classe que é o Model
  */
 public abstract class BaseBean < T extends BaseControle, TM extends  EBase> implements Serializable
 {
@@ -29,8 +29,10 @@ public abstract class BaseBean < T extends BaseControle, TM extends  EBase> impl
         this.objeto = objeto;
     }
     
-    
-    
+    /**
+     *  get um instancia de um Controle
+     * @return retorna uma instancia
+     */
     protected abstract T getControleInstancia();
     
     public void insert()

@@ -6,9 +6,7 @@
 package Bean;
 
 import Controller.UsuarioControle;
-import DB_FlightSystem.Base.EBase;
 import Model.Usuario;
-import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 

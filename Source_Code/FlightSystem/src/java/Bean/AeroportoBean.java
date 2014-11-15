@@ -6,13 +6,10 @@
 
 package Bean;
 
-import Controller.AeronaveControle;
 import Controller.AeroportoControle;
-import DB_FlightSystem.Base.EBase;
 import Model.Aeroporto;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
 
 /**
  *

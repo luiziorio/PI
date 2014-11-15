@@ -7,11 +7,9 @@
 package Bean;
 
 import Controller.VooControle;
-import DB_FlightSystem.Base.EBase;
 import Model.Voo;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
 
 /**
  *
