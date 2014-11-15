@@ -44,6 +44,7 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
      /**
       * Salva a entidade
       * @param objeto entidade a ser salva
+     * @return 
       */
     public boolean Salvar(TE objeto)
     {
@@ -74,16 +75,6 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
         return (TE) getInstanciaDAO().getSelect(fltro);
     }
     
-    /**
-     * Realiza pesquisa utilizando um lambda expression,
-     * METODO NÃO ESTA PRONTO AINDA
-     * @param filtro Lambda expression
-     * @return retorna um objeto que herda de EBase
-     */
-    public TE getSelect(Predicate<TE> filtro)
-    {
-        return null;
-    }
     
     /**
      * Pesquisa entidae pelo id

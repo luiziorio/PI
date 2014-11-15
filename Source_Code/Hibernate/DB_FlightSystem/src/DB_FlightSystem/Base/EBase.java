@@ -7,6 +7,7 @@
 package DB_FlightSystem.Base;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -26,7 +27,18 @@ public abstract class EBase implements Serializable
 {
     @Id @GeneratedValue
     protected int sequencial;
+    
+    protected boolean tranferidoParaDW = false;
 
+    public boolean isTranferidoParaDW()
+    {
+        return tranferidoParaDW;
+    }
+
+    public void setTranferidoParaDW(boolean tranferidoParaDW)
+    {
+        this.tranferidoParaDW = tranferidoParaDW;
+    }
 
     public int getSequencial()
     {

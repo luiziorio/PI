@@ -1,0 +1,85 @@
+﻿CREATE TABLE CiaAerea(
+	CiaAereaSigla char(2) primary key NOT NULL, -- IATA Code da Compania Aerea
+	CiaAereaDescricao varchar(70) NOT NULL,
+	CiaAereaLogotipo varchar(245) )
+
+CREATE TABLE Aeroporto(
+	idAeroporto char(3) primary key,
+	AeroportoNome varchar(150) NOT NULL,
+	idCidade integer NOT NULL)
+
+CREATE TABLE Cidade(
+	idCidade integer primary key,
+	CidadeNome varchar(150) NOT NULL,
+	CidadeFusoHorario integer NOT NULL,
+	idPais integer NOT NULL)
+
+CREATE TABLE Pais(
+	idPais integer primary key,
+	PaisNome varchar(150) NOT NULL,
+	idContinente integer NOT NULL)
+
+CREATE TABLE Continente(
+	idContinente integer primary key,
+	ContinenteNome varchar(150) NOT NULL)
+
+CREATE TABLE DiaSemana(
+	idDiaSemana integer primary key,
+	DiaSemanaNome varchar(25) NOT NULL)
+
+CREATE TABLE VooHistorico(
+	idVoo   integer  primary key,
+	idSlot   integer ,
+	idAeroportoOrigem   char (3),
+	idAeroportoDestino   char (3),
+	VooHoraPartida   timestamp ,
+	VooHoraChegada   timestamp )
+
+
+CREATE TABLE Escala(
+	 idEscala   integer  primary key,
+	 idSlot   integer  NOT NULL,
+	 idAeroporto   char (3) NOT NULL,
+	 EscalaHoraChegada   timestamp  NOT NULL,
+	 EscalaHoraPartida   timestamp  NOT NULL)
+
+CREATE TABLE Slot(
+	 idSlot   integer  primary key,
+	 CiaAereaSigla   char (2) NOT NULL,
+	 SlotNumero   char (4) NOT NULL,
+	 idAeroportoOrigem   char (3) NOT NULL,
+	 idAeroportoDestino   char (3) NOT NULL,
+	 idDiaSemana   integer  NOT NULL,
+	 SlotHoraPartida   timestamp  NOT NULL,
+	 SlotHoraChegada   timestamp  NOT NULL)
+
+
+ALTER TABLE Aeroporto  ADD  CONSTRAINT  FK_Aeroporto_Cidade  FOREIGN KEY( IDCidade )
+REFERENCES  Cidade  ( IDCidade )
+
+ALTER TABLE  Cidade   ADD  CONSTRAINT  FK_Cidade_Pais  FOREIGN KEY( IDPais )
+REFERENCES Pais  ( IDPais )
+
+ALTER TABLE Pais   ADD  CONSTRAINT  FK_Pais_Continente  FOREIGN KEY( IDContinente )
+REFERENCES  Continente  ( IDContinente )
+
+ALTER TABLE  Slot  ADD  CONSTRAINT  FK_Slot_CiaAerea  FOREIGN KEY( CiaAereaSigla )
+REFERENCES  CiaAerea  ( CiaAereaSigla )
+
+ALTER TABLE Slot  ADD  CONSTRAINT  FK_Slot_AeroportoOrigem  FOREIGN KEY( idAeroportoOrigem )
+REFERENCES  Aeroporto  ( idAeroporto )
+
+ALTER TABLE Slot ADD  CONSTRAINT  FK_Slot_AeroportoDestino  FOREIGN KEY( idAeroportoDestino )
+REFERENCES  Aeroporto  ( idAeroporto )
+
+ALTER TABLE Slot  ADD  CONSTRAINT  FK_Slot_DiaSemana  FOREIGN KEY( idDiaSemana )
+REFERENCES  DiaSemana  ( idDiaSemana )
+
+insert into DiaSemana values(0, 'Todos');
+insert into DiaSemana values(1, 'Domingo');
+insert into DiaSemana values(2, 'Segunda');
+insert into DiaSemana values(3, 'Terça');
+insert into DiaSemana values(4, 'Quarta');
+insert into DiaSemana values(5, 'Quinta');
+insert into DiaSemana values(6, 'Sexta');
+insert into DiaSemana values(7, 'Sábado');
