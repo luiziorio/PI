@@ -1,0 +1,140 @@
+@startuml
+abstract class DB_FlightSystem.Entidade.EFuncionario
+abstract class DB_FlightSystem.Entidade.EPessoaBase
+annotation javax.persistence.Basic
+annotation javax.persistence.Column
+annotation javax.persistence.Entity
+annotation javax.persistence.Inheritance
+annotation javax.persistence.ManyToMany
+annotation javax.persistence.ManyToOne
+annotation javax.persistence.OneToMany
+annotation javax.persistence.OneToOne
+annotation javax.persistence.Table
+annotation javax.persistence.Temporal
+annotation javax.persistence.Transient
+annotation javax.xml.bind.annotation.XmlRootElement
+class Criptografia.Cripto
+class DB_FlightSystem.Base.EBase
+class DB_FlightSystem.Base.EBaseNome
+class DB_FlightSystem.Entidade.EAeronave
+class DB_FlightSystem.Entidade.EAeroporto
+class DB_FlightSystem.Entidade.ECidade
+class DB_FlightSystem.Entidade.EComissariaBoardo
+class DB_FlightSystem.Entidade.ECompanhiaAerea
+class DB_FlightSystem.Entidade.EContinente
+class DB_FlightSystem.Entidade.EDataHora
+class DB_FlightSystem.Entidade.EEndereco
+class DB_FlightSystem.Entidade.EEscala
+class DB_FlightSystem.Entidade.EPais
+class DB_FlightSystem.Entidade.EPessoaFisica
+class DB_FlightSystem.Entidade.EPessoaJuridica
+class DB_FlightSystem.Entidade.EPiloto
+class DB_FlightSystem.Entidade.EStatus
+class DB_FlightSystem.Entidade.EUsuario
+class DB_FlightSystem.Entidade.EVoo
+class java.awt.Image
+class java.util.Date
+class java.util.List
+class java.util.Set
+class javax.persistence.CascadeType
+class javax.persistence.FetchType
+class javax.persistence.InheritanceType
+DB_FlightSystem.Entidade.EFuncionario ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EFuncionario ..> javax.persistence.Inheritance
+DB_FlightSystem.Entidade.EFuncionario ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EFuncionario --|> DB_FlightSystem.Entidade.EPessoaFisica
+DB_FlightSystem.Entidade.EFuncionario ..> java.util.Date
+DB_FlightSystem.Entidade.EFuncionario ..> javax.persistence.InheritanceType
+DB_FlightSystem.Entidade.EPessoaBase ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EPessoaBase ..> javax.persistence.Inheritance
+DB_FlightSystem.Entidade.EPessoaBase ..> javax.persistence.ManyToOne
+DB_FlightSystem.Entidade.EPessoaBase ..> javax.persistence.OneToOne
+DB_FlightSystem.Entidade.EPessoaBase ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EPessoaBase --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EPessoaBase ..> javax.persistence.InheritanceType
+DB_FlightSystem.Entidade.EAeronave ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EAeronave ..> javax.persistence.ManyToMany
+DB_FlightSystem.Entidade.EAeronave ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EAeronave --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EAeronave ..> java.util.List
+DB_FlightSystem.Entidade.EAeroporto ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EAeroporto ..> javax.persistence.OneToOne
+DB_FlightSystem.Entidade.EAeroporto ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EAeroporto --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EAeroporto ..> javax.persistence.FetchType
+DB_FlightSystem.Entidade.ECidade ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.ECidade ..> javax.persistence.Table
+DB_FlightSystem.Entidade.ECidade ..> javax.xml.bind.annotation.XmlRootElement
+DB_FlightSystem.Entidade.ECidade --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EComissariaBoardo --|> DB_FlightSystem.Entidade.EFuncionario
+DB_FlightSystem.Entidade.EComissariaBoardo ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EComissariaBoardo ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EComissariaBoardo ..> java.util.Date
+DB_FlightSystem.Entidade.EComissariaBoardo ..> java.util.Set
+DB_FlightSystem.Entidade.ECompanhiaAerea ..> javax.persistence.Column
+DB_FlightSystem.Entidade.ECompanhiaAerea ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.ECompanhiaAerea ..> javax.persistence.Table
+DB_FlightSystem.Entidade.ECompanhiaAerea ..> javax.persistence.Transient
+DB_FlightSystem.Entidade.ECompanhiaAerea --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.ECompanhiaAerea ..> java.awt.Image
+DB_FlightSystem.Entidade.EContinente ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EContinente ..> javax.persistence.OneToMany
+DB_FlightSystem.Entidade.EContinente ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EContinente --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EContinente ..> java.util.Set
+DB_FlightSystem.Entidade.EContinente ..> javax.persistence.FetchType
+DB_FlightSystem.Entidade.EDataHora ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EDataHora ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EDataHora ..> javax.persistence.Temporal
+DB_FlightSystem.Entidade.EDataHora --|> DB_FlightSystem.Base.EBase
+DB_FlightSystem.Entidade.EDataHora ..> java.util.Date
+DB_FlightSystem.Entidade.EEndereco ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EEndereco ..> javax.persistence.OneToOne
+DB_FlightSystem.Entidade.EEndereco ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EEndereco --|> DB_FlightSystem.Base.EBase
+DB_FlightSystem.Entidade.EEscala ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EEscala ..> javax.persistence.ManyToMany
+DB_FlightSystem.Entidade.EEscala ..> javax.persistence.ManyToOne
+DB_FlightSystem.Entidade.EEscala ..> javax.persistence.OneToOne
+DB_FlightSystem.Entidade.EEscala ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EEscala ..> javax.persistence.Temporal
+DB_FlightSystem.Entidade.EEscala --|> DB_FlightSystem.Base.EBase
+DB_FlightSystem.Entidade.EEscala ..> java.util.Date
+DB_FlightSystem.Entidade.EEscala ..> java.util.List
+DB_FlightSystem.Entidade.EEscala ..> javax.persistence.FetchType
+DB_FlightSystem.Entidade.EPais ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EPais ..> javax.persistence.OneToMany
+DB_FlightSystem.Entidade.EPais ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EPais --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EPais ..> java.util.Set
+DB_FlightSystem.Entidade.EPais ..> javax.persistence.CascadeType
+DB_FlightSystem.Entidade.EPais ..> javax.persistence.FetchType
+DB_FlightSystem.Entidade.EPessoaFisica --|> DB_FlightSystem.Entidade.EPessoaBase
+DB_FlightSystem.Entidade.EPessoaFisica ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EPessoaFisica ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EPessoaFisica ..> java.util.Date
+DB_FlightSystem.Entidade.EPessoaJuridica --|> DB_FlightSystem.Entidade.EPessoaBase
+DB_FlightSystem.Entidade.EPessoaJuridica ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EPessoaJuridica ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EPiloto --|> DB_FlightSystem.Entidade.EFuncionario
+DB_FlightSystem.Entidade.EPiloto ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EPiloto ..> javax.persistence.ManyToMany
+DB_FlightSystem.Entidade.EPiloto ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EPiloto ..> java.util.Date
+DB_FlightSystem.Entidade.EPiloto ..> java.util.Set
+DB_FlightSystem.Entidade.EStatus --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EUsuario ..> javax.persistence.Basic
+DB_FlightSystem.Entidade.EUsuario ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EUsuario ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EUsuario ..> javax.xml.bind.annotation.XmlRootElement
+DB_FlightSystem.Entidade.EUsuario ..> Criptografia.Cripto
+DB_FlightSystem.Entidade.EUsuario --|> DB_FlightSystem.Base.EBaseNome
+DB_FlightSystem.Entidade.EUsuario ..> javax.persistence.FetchType
+DB_FlightSystem.Entidade.EVoo ..> javax.persistence.Entity
+DB_FlightSystem.Entidade.EVoo ..> javax.persistence.OneToMany
+DB_FlightSystem.Entidade.EVoo ..> javax.persistence.OneToOne
+DB_FlightSystem.Entidade.EVoo ..> javax.persistence.Table
+DB_FlightSystem.Entidade.EVoo --|> DB_FlightSystem.Base.EBase
+DB_FlightSystem.Entidade.EVoo ..> java.util.Set
+DB_FlightSystem.Entidade.EVoo ..> javax.persistence.FetchType
+@enduml
