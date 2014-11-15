@@ -22,7 +22,7 @@ import org.hibernate.Transaction;
  */
 public abstract class BaseDAO<T extends EBase>
 {
-   
+    
     protected abstract T getInstanceEntidade();
     
     protected Session getSession()    

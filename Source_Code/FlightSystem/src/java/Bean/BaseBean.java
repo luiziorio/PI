@@ -12,6 +12,8 @@ import java.io.Serializable;
 /**
  *
  * @author rafael
+ * @param <T>
+ * @param <TM>
  */
 public abstract class BaseBean < T extends BaseControle, TM extends  EBase> implements Serializable
 {

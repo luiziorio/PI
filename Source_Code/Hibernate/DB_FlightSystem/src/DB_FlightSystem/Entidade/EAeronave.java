@@ -21,5 +21,32 @@ public class EAeronave extends EBaseNome
 {
     @ManyToMany(mappedBy = "aeronaveDirigi")
     private List<EPiloto> ePilotos;
+
+    public List<EPiloto> getePilotos()
+    {
+        return ePilotos;
+    }
+
+    public void setePilotos(List<EPiloto> ePilotos)
+    {
+        this.ePilotos = ePilotos;
+    }
+
+    public EAeronave()
+    {
+    }
+    
+    public EAeronave(Integer sequencial,String nome ,List<EPiloto> ePilotos)
+    {
+        this.sequencial = sequencial;
+        this.nome = nome;
+        this.ePilotos = ePilotos;
+    }
+
+    public EAeronave(List<EPiloto> ePilotos)
+    {
+        this.ePilotos = ePilotos;
+    }
    
+    
 }

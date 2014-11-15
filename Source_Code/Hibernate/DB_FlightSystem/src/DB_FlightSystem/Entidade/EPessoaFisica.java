@@ -6,8 +6,10 @@
 package DB_FlightSystem.Entidade;
 
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -18,9 +20,14 @@ import javax.persistence.Table;
 @Table(name = "PessoaFisica")
 public class EPessoaFisica extends EPessoaBase
 {
+    @Column(length = 2)
     protected String sexo;
+    @Column(length = 11)
     protected String cpf;
+    @Column(length = 10)
     protected String rg;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
     protected Date dataNascimento;
 
     public EPessoaFisica()

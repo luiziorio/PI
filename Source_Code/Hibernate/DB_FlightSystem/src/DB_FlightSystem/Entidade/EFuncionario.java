@@ -6,9 +6,9 @@
 package DB_FlightSystem.Entidade;
 
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -17,11 +17,22 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "funcionario")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class EFuncionario extends EPessoaFisica
 {
     protected Double salario;
+    @OneToMany(mappedBy = "eFuncionario")
+    protected Set<EEquipe> equipes;
 
+    public Set<EEquipe> getEquipes()
+    {
+        return equipes;
+    }
+
+    public void setEquipes(Set<EEquipe> equipes)
+    {
+        this.equipes = equipes;
+    }
+    
     public Double getSalario()
     {
         return salario;

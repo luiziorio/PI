@@ -25,12 +25,25 @@ public class EVoo extends EBase
     private ECompanhiaAerea companhia;
     @OneToOne
     private EUsuario usuario;
+    
     @OneToOne
     private EAeronave aeronave;
     
     @OneToMany(fetch = FetchType.LAZY)
     private Set<EEscala> escalas;
+    
+    @OneToOne
+    private EEquipe equipe;
 
+    public EEquipe getEquipe()
+    {
+        return equipe;
+    }
+
+    public void setEquipe(EEquipe equipe)
+    {
+        this.equipe = equipe;
+    }
      
     public ECompanhiaAerea getCompanhia()
     {
@@ -77,6 +90,16 @@ public class EVoo extends EBase
     public void setEscalas(Set<EEscala> escalas)
     {
         this.escalas = escalas;
+    }
+    public  EVoo(){}
+
+    public EVoo(ECompanhiaAerea companhia, EUsuario usuario, EAeronave aeronave, Set<EEscala> escalas, EEquipe equipe)
+    {
+        this.companhia = companhia;
+        this.usuario = usuario;
+        this.aeronave = aeronave;
+        this.escalas = escalas;
+        this.equipe = equipe;
     }
     
 }

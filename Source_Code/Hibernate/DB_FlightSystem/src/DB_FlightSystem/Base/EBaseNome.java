@@ -6,6 +6,7 @@
 
 package DB_FlightSystem.Base;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -22,6 +23,7 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class EBaseNome extends EBase
 {
+    @Column(length = 50)
     protected String nome;
 
     public String getNome()
@@ -33,4 +35,8 @@ public abstract class EBaseNome extends EBase
     {
         this.nome = nome;
     }
+    
+    
+    
+    
 }

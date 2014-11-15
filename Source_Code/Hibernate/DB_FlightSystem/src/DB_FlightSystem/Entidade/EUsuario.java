@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
+import javax.persistence.Column;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
@@ -24,6 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class EUsuario extends EBaseNome  
 {
+    @Column(length = 10)
     private String login;
     
     @Basic(fetch = FetchType.LAZY)

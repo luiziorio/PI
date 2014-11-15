@@ -14,7 +14,7 @@ import org.hibernate.cfg.Configuration;
  *
  * @author rafaellf
  */
-class HibernateUtility
+public class HibernateUtility
 {
     private SessionFactory factory;
     private Configuration configuration;

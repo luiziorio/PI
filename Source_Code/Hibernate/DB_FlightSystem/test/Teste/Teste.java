@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Teste;
 
-import DB_FlightSystem.Controller.UsuarioController;
-import DB_FlightSystem.Entidade.EUsuario;
+import HibernateUtil.HibernateUtility;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Flavinha
+ * @author rafael
  */
 public class Teste
 {
@@ -44,17 +44,19 @@ public class Teste
     @After
     public void tearDown()
     {
-        teste();
+        testeUsuario();
     }
     
     @Test
-    public void teste()
+    public void testeUsuario()
     {
-        try( UsuarioController u = new UsuarioController() )
-        {
-            EUsuario eUsuario = new EUsuario();
-            u.Salvar(eUsuario);
-        }
+        HibernateUtility h = new HibernateUtility();
+        Session sessao = h.getSession(); //Abrindo uma sess�o
+        Transaction transaction = sessao.beginTransaction(); //Iniciando uma transa��o
+        
+        transaction.commit();
+        sessao.close();
+
     }
 
     // TODO add test methods here.
