@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entidates;
+package Entidade;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -48,7 +48,7 @@ public class Diasemana implements Serializable
     @Column(name = "diasemananome")
     private String diasemananome;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iddiasemana")
-    private Collection<Slot> slotCollection;
+    private List<Slot> slotList;
 
     public Diasemana()
     {
@@ -86,14 +86,14 @@ public class Diasemana implements Serializable
     }
 
     @XmlTransient
-    public Collection<Slot> getSlotCollection()
+    public List<Slot> getSlotList()
     {
-        return slotCollection;
+        return slotList;
     }
 
-    public void setSlotCollection(Collection<Slot> slotCollection)
+    public void setSlotList(List<Slot> slotList)
     {
-        this.slotCollection = slotCollection;
+        this.slotList = slotList;
     }
 
     @Override
@@ -123,7 +123,7 @@ public class Diasemana implements Serializable
     @Override
     public String toString()
     {
-        return "Entidates.Diasemana[ iddiasemana=" + iddiasemana + " ]";
+        return "Entidade.Diasemana[ iddiasemana=" + iddiasemana + " ]";
     }
     
 }

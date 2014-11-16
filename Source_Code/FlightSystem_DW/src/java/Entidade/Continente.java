@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entidates;
+package Entidade;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -48,7 +48,7 @@ public class Continente implements Serializable
     @Column(name = "continentenome")
     private String continentenome;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idcontinente")
-    private Collection<Pais> paisCollection;
+    private List<Pais> paisList;
 
     public Continente()
     {
@@ -86,14 +86,14 @@ public class Continente implements Serializable
     }
 
     @XmlTransient
-    public Collection<Pais> getPaisCollection()
+    public List<Pais> getPaisList()
     {
-        return paisCollection;
+        return paisList;
     }
 
-    public void setPaisCollection(Collection<Pais> paisCollection)
+    public void setPaisList(List<Pais> paisList)
     {
-        this.paisCollection = paisCollection;
+        this.paisList = paisList;
     }
 
     @Override
@@ -123,7 +123,7 @@ public class Continente implements Serializable
     @Override
     public String toString()
     {
-        return "Entidates.Continente[ idcontinente=" + idcontinente + " ]";
+        return "Entidade.Continente[ idcontinente=" + idcontinente + " ]";
     }
     
 }

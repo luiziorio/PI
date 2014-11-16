@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entidates;
+package Entidade;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -156,7 +156,7 @@ public class Voohistorico implements Serializable
     @Override
     public String toString()
     {
-        return "Entidates.Voohistorico[ idvoo=" + idvoo + " ]";
+        return "Entidade.Voohistorico[ idvoo=" + idvoo + " ]";
     }
     
 }

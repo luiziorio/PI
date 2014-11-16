@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entidates;
+package Entidade;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -51,9 +51,9 @@ public class Aeroporto implements Serializable
     @Column(name = "aeroportonome")
     private String aeroportonome;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idaeroportoorigem")
-    private Collection<Slot> slotCollection;
+    private List<Slot> slotList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idaeroportodestino")
-    private Collection<Slot> slotCollection1;
+    private List<Slot> slotList1;
     @JoinColumn(name = "idcidade", referencedColumnName = "idcidade")
     @ManyToOne(optional = false)
     private Cidade idcidade;
@@ -94,25 +94,25 @@ public class Aeroporto implements Serializable
     }
 
     @XmlTransient
-    public Collection<Slot> getSlotCollection()
+    public List<Slot> getSlotList()
     {
-        return slotCollection;
+        return slotList;
     }
 
-    public void setSlotCollection(Collection<Slot> slotCollection)
+    public void setSlotList(List<Slot> slotList)
     {
-        this.slotCollection = slotCollection;
+        this.slotList = slotList;
     }
 
     @XmlTransient
-    public Collection<Slot> getSlotCollection1()
+    public List<Slot> getSlotList1()
     {
-        return slotCollection1;
+        return slotList1;
     }
 
-    public void setSlotCollection1(Collection<Slot> slotCollection1)
+    public void setSlotList1(List<Slot> slotList1)
     {
-        this.slotCollection1 = slotCollection1;
+        this.slotList1 = slotList1;
     }
 
     public Cidade getIdcidade()
@@ -152,7 +152,7 @@ public class Aeroporto implements Serializable
     @Override
     public String toString()
     {
-        return "Entidates.Aeroporto[ idaeroporto=" + idaeroporto + " ]";
+        return "Entidade.Aeroporto[ idaeroporto=" + idaeroporto + " ]";
     }
     
 }

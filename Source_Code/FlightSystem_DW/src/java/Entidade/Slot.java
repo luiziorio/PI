@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entidates;
+package Entidade;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -197,7 +197,7 @@ public class Slot implements Serializable
     @Override
     public String toString()
     {
-        return "Entidates.Slot[ idslot=" + idslot + " ]";
+        return "Entidade.Slot[ idslot=" + idslot + " ]";
     }
     
 }

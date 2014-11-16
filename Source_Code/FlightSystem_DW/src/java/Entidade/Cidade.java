@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entidates;
+package Entidade;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -58,7 +58,7 @@ public class Cidade implements Serializable
     @ManyToOne(optional = false)
     private Pais idpais;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idcidade")
-    private Collection<Aeroporto> aeroportoCollection;
+    private List<Aeroporto> aeroportoList;
 
     public Cidade()
     {
@@ -117,14 +117,14 @@ public class Cidade implements Serializable
     }
 
     @XmlTransient
-    public Collection<Aeroporto> getAeroportoCollection()
+    public List<Aeroporto> getAeroportoList()
     {
-        return aeroportoCollection;
+        return aeroportoList;
     }
 
-    public void setAeroportoCollection(Collection<Aeroporto> aeroportoCollection)
+    public void setAeroportoList(List<Aeroporto> aeroportoList)
     {
-        this.aeroportoCollection = aeroportoCollection;
+        this.aeroportoList = aeroportoList;
     }
 
     @Override
@@ -154,7 +154,7 @@ public class Cidade implements Serializable
     @Override
     public String toString()
     {
-        return "Entidates.Cidade[ idcidade=" + idcidade + " ]";
+        return "Entidade.Cidade[ idcidade=" + idcidade + " ]";
     }
     
 }
