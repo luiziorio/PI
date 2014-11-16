@@ -53,6 +53,18 @@ public class EEndereco extends EBase
     {
         this.cidade = cidade;
     }
+
+    public EEndereco()
+    {
+    }
+
+    public EEndereco(String rua, String cep, ECidade cidade, Integer sequencial)
+    {
+        super(sequencial);
+        this.rua = rua;
+        this.cep = cep;
+        this.cidade = cidade;
+    }
     
     
 }

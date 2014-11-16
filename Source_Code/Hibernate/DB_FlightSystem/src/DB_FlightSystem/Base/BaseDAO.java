@@ -20,36 +20,22 @@ import org.hibernate.Transaction;
  * @param <T> Clasee a ser persistida
  * @version  1.0.0
  */
-public abstract class BaseDAO<T extends EBase>
+import Hibernate.GenericoDAO;
+import Hibernate.IHibernateUtility;
+public abstract class BaseDAO<T extends EBase> extends GenericoDAO<T>
 {
     
     protected abstract T getInstanceEntidade();
     
+    @Override
+    protected IHibernateUtility getHibernateInstance()
+    {
+        return HibernateUtilityController.getInstance().getIHibernateUtility();
+    }
+    
     protected Session getSession()    
     {
         return HibernateUtilityController.getInstance().getSession();
-    }
-    
-    public boolean Salva(T objeto)
-    {
-        boolean retorno = true;
-        Session sessao = getSession(); //Abrindo uma sessão
-        Transaction transaction = sessao.beginTransaction();
-        try
-        {
-            sessao.saveOrUpdate(objeto);
-            transaction.commit(); //Finalizando a transação
-        }
-        catch(HibernateException e)
-        {
-            transaction.rollback();
-            retorno = false;
-        }
-        finally
-        {
-            sessao.close(); //Fechando a sessão
-        }
-        return retorno;
     }
     
     public void Delete(T objeto)

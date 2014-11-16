@@ -27,7 +27,7 @@ import javax.persistence.InheritanceType;
 public abstract class EBase implements Serializable
 {
     @Id @GeneratedValue(strategy = GenerationType.TABLE)
-    protected int sequencial;
+    protected Integer sequencial;
     
     protected boolean tranferidoParaDW = false;
 
@@ -41,12 +41,21 @@ public abstract class EBase implements Serializable
         this.tranferidoParaDW = tranferidoParaDW;
     }
 
-    public int getSequencial()
+    public Integer getSequencial()
     {
         return sequencial;
     }
 
-    public void setSequencial(int sequencial)
+    public void setSequencial(Integer sequencial)
+    {
+        this.sequencial = sequencial;
+    }
+
+    public EBase()
+    {
+    }
+
+    public EBase(Integer sequencial)
     {
         this.sequencial = sequencial;
     }

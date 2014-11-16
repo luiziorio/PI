@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBase;
+import java.util.ArrayList;
 
 /**
  *
@@ -30,7 +31,7 @@ public class EVoo extends EBase
     private EAeronave aeronave;
     
     @OneToMany(fetch = FetchType.LAZY)
-    private Set<EEscala> escalas;
+    private ArrayList<EEscala> escalas;
     
     @OneToOne
     private EEquipe equipe;
@@ -81,19 +82,19 @@ public class EVoo extends EBase
     }
 
      
-    public Set<EEscala> getEscalas()
+    public ArrayList<EEscala> getEscalas()
     {
         return escalas;
     }
 
      
-    public void setEscalas(Set<EEscala> escalas)
+    public void setEscalas(ArrayList<EEscala> escalas)
     {
         this.escalas = escalas;
     }
     public  EVoo(){}
 
-    public EVoo(ECompanhiaAerea companhia, EUsuario usuario, EAeronave aeronave, Set<EEscala> escalas, EEquipe equipe)
+    public EVoo(ECompanhiaAerea companhia, EUsuario usuario, EAeronave aeronave, ArrayList<EEscala> escalas, EEquipe equipe)
     {
         this.companhia = companhia;
         this.usuario = usuario;

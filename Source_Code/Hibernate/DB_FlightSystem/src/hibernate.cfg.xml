@@ -10,22 +10,14 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>  
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> --> 
   
-      <property name="hibernate.connection.driver_class">
-        com.microsoft.sqlserver.jdbc.SQLServerDriver
-    </property>
-    <property name="hibernate.connection.url">
-        jdbc:sqlserver://localhost:1433;databaseName=PI
-    </property>
+    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=PI</property>
     <property name="hibernate.connection.username">sa</property>
     <property name="hibernate.connection.password">123456</property>
-    <property name="hibernate.dialect">
-        org.hibernate.dialect.SQLServerDialect
-    </property>
-    
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>  
-  
-        <property name="show_sql">true</property>  
-        <property name="format_sql">true</property>  
+    <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+    <property name="hibernate.hbm2ddl.auto">create-drop</property>  
+    <property name="show_sql">true</property>  
+    <property name="format_sql">true</property>  
       
     <!--se deixar create-drop ele tudo novamente sempre que rodar o programa-->
     <!-- Condiguração do c3p0 -->

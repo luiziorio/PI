@@ -38,5 +38,17 @@ public class EPais extends EBaseNome
     {
         this.listaCidades = listaCidades;
     }
+
+    public EPais()
+    {
+    }
+
+    public EPais(Set<ECidade> listaCidades, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.listaCidades = listaCidades;
+    }
+    
+    
     
 }

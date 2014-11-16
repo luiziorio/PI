@@ -6,6 +6,7 @@
 
 package HibernateUtil;
 
+import Hibernate.IHibernateUtility;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -14,7 +15,7 @@ import org.hibernate.cfg.Configuration;
  *
  * @author rafaellf
  */
-public class HibernateUtility
+public class HibernateUtility implements IHibernateUtility
 {
     private SessionFactory factory;
     private Configuration configuration;
@@ -34,6 +35,7 @@ public class HibernateUtility
         }
     }
 
+    @Override
     public Session getSession()
     {
         return factory.openSession();

@@ -12,13 +12,21 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author rafaellf
  */
 @Entity
-@Table(name = "Aeroporto")
+@Table(name = "EAeroporto")
+@NamedQueries(
+{
+    @NamedQuery(name = "EAeroporto.findAll", query = "SELECT a FROM EAeroporto a"),
+    @NamedQuery(name = "EAeroporto.findByIdaeroporto", query = "SELECT a FROM EAeroporto a WHERE a.sequencial = :sequencial"),
+    @NamedQuery(name = "EAeroporto.findNotTransferido",query = "SELECT a FROM EAeroporto a WHERE a.tranferidoParaDW = :tranferido")
+})
 public class EAeroporto extends EBaseNome 
 {
     private String codigo;
@@ -66,6 +74,19 @@ public class EAeroporto extends EBaseNome
 
     public void setCidade(ECidade cidade)
     {
+        this.cidade = cidade;
+    }
+
+    public EAeroporto()
+    {
+    }
+
+    public EAeroporto(String codigo, EContinente continente, EPais pais, ECidade cidade, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.codigo = codigo;
+        this.continente = continente;
+        this.pais = pais;
         this.cidade = cidade;
     }
 }

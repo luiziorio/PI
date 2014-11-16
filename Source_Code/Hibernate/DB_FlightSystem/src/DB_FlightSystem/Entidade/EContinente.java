@@ -34,4 +34,15 @@ public class EContinente extends EBaseNome
     {
         this.listaPaises = listaPaises;
     }
+
+    public EContinente()
+    {
+    }
+
+    public EContinente(Set<EPais> listaPaises, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.listaPaises = listaPaises;
+    }
+    
 }

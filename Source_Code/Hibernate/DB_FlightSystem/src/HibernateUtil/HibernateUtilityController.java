@@ -5,7 +5,7 @@
  */
 package HibernateUtil;
 
-import java.sql.SQLException;
+import Hibernate.IHibernateUtility;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -52,6 +52,13 @@ public class HibernateUtilityController implements ICarregouXML
         if(hibernate.get() == null)
             hibernate.set(new HibernateUtility());
         return hibernate.get().getSession();
+    }
+    
+    public IHibernateUtility getIHibernateUtility()
+    {
+         if(hibernate.get() == null)
+            hibernate.set(new HibernateUtility());
+         return hibernate.get();
     }
     
     

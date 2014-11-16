@@ -62,4 +62,18 @@ public class ECompanhiaAerea extends EBaseNome
     {
         this.logoTipo = logoTipo;
     }
+
+    public ECompanhiaAerea()
+    {
+    }
+
+    public ECompanhiaAerea(String sigla, String logoTipoCaminho, Image logoTipo, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.sigla = sigla;
+        this.logoTipoCaminho = logoTipoCaminho;
+        this.logoTipo = logoTipo;
+    }
+    
+    
 }

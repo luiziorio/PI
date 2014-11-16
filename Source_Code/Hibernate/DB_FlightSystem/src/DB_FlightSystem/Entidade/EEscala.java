@@ -24,10 +24,11 @@ import DB_FlightSystem.Base.EBase;
 @Table(name = "Escala")
 public class EEscala extends EBase  
 {
+    private String numero;
     @ManyToMany(mappedBy = "escalas")
     private List<EVoo> eVoos;
     @OneToOne(fetch = FetchType.LAZY)
-    private EAeroporto aerportoDestino;
+    private EAeroporto aeroportoDestino;
     @OneToOne(fetch = FetchType.LAZY)
     private EAeroporto aeroportoOrigem;
     
@@ -48,16 +49,36 @@ public class EEscala extends EBase
     
     private EStatus status;
 
-     
-    public EAeroporto getAerportoDestino()
+    public String getNumero()
     {
-        return aerportoDestino;
+        return numero;
+    }
+
+    public void setNumero(String numero)
+    {
+        this.numero = numero;
+    }
+
+    public List<EVoo> geteVoos()
+    {
+        return eVoos;
+    }
+
+    public void seteVoos(List<EVoo> eVoos)
+    {
+        this.eVoos = eVoos;
+    }
+
+    
+    public EAeroporto getAeroportoDestino()
+    {
+        return aeroportoDestino;
     }
 
      
-    public void setAerportoDestino(EAeroporto aerportoDestino)
+    public void setAeroportoDestino(EAeroporto aerporotoDestino)
     {
-        this.aerportoDestino = aerportoDestino;
+        this.aeroportoDestino = aeroportoDestino;
     }
 
      
@@ -155,6 +176,43 @@ public class EEscala extends EBase
     {
         this.voo = voo;
     }
+
+    public EEscala()
+    {
+    }
+
+    public EEscala(List<EVoo> eVoos, EAeroporto aerporotoDestino, EAeroporto aeroportoOrigem, Date dataChegadaPrevista, Date dataSaidaPrevista, Date dataChegadaEfetiva, Date dataSaidaEfetiva, boolean atrasado, EVoo voo, EStatus status, Integer sequencial)
+    {
+        super(sequencial);
+        this.eVoos = eVoos;
+        this.aeroportoDestino = aeroportoDestino;
+        this.aeroportoOrigem = aeroportoOrigem;
+        this.dataChegadaPrevista = dataChegadaPrevista;
+        this.dataSaidaPrevista = dataSaidaPrevista;
+        this.dataChegadaEfetiva = dataChegadaEfetiva;
+        this.dataSaidaEfetiva = dataSaidaEfetiva;
+        this.atrasado = atrasado;
+        this.voo = voo;
+        this.status = status;
+    }
+
+    public EEscala(String numero, List<EVoo> eVoos, EAeroporto aeroportoDestino, EAeroporto aeroportoOrigem, Date dataChegadaPrevista, Date dataSaidaPrevista, Date dataChegadaEfetiva, Date dataSaidaEfetiva, boolean atrasado, EVoo voo, EStatus status, Integer sequencial)
+    {
+        super(sequencial);
+        this.numero = numero;
+        this.eVoos = eVoos;
+        this.aeroportoDestino = aeroportoDestino;
+        this.aeroportoOrigem = aeroportoOrigem;
+        this.dataChegadaPrevista = dataChegadaPrevista;
+        this.dataSaidaPrevista = dataSaidaPrevista;
+        this.dataChegadaEfetiva = dataChegadaEfetiva;
+        this.dataSaidaEfetiva = dataSaidaEfetiva;
+        this.atrasado = atrasado;
+        this.voo = voo;
+        this.status = status;
+    }
+    
+    
     
     
 }

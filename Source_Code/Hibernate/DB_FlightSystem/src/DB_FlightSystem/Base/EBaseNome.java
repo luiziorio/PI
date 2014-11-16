@@ -35,6 +35,16 @@ public abstract class EBaseNome extends EBase
     {
         this.nome = nome;
     }
+
+    public EBaseNome()
+    {
+    }
+
+    public EBaseNome(String nome, Integer sequencial)
+    {
+        super(sequencial);
+        this.nome = nome;
+    }
     
     
     

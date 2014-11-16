@@ -31,6 +31,4 @@ public class EComissariaBordo extends EFuncionario
     {
         super(salario, sexo, dataNascimento, telefone, email, endereco, usuario);
     }
-    
-    
 }

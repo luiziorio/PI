@@ -34,4 +34,16 @@ public class EDataHora extends EBase
     {
         this.dataHora = dataHora;
     }
+
+    public EDataHora()
+    {
+    }
+
+    public EDataHora(Date dataHora, Integer sequencial)
+    {
+        super(sequencial);
+        this.dataHora = dataHora;
+    }
+    
+    
 }

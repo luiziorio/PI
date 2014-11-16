@@ -49,7 +49,7 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
     public boolean Salvar(TE objeto)
     {
         TDAO dao = getInstanciaDAO();
-        return dao.Salva(objeto);
+        return dao.salva(objeto);
     }
     
     

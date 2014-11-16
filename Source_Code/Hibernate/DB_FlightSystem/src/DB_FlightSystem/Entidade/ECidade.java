@@ -20,4 +20,28 @@ import DB_FlightSystem.Base.EBaseNome;
 @XmlRootElement
 public class ECidade extends EBaseNome
 {
+    private Integer fusoHorario;
+
+    public Integer getFusoHorario()
+    {
+        return fusoHorario;
+    }
+
+    public void setFusoHorario(Integer fusoHorario)
+    {
+        this.fusoHorario = fusoHorario;
+    }
+
+    public ECidade()
+    {
+    }
+
+    public ECidade(Integer fusoHorario, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.fusoHorario = fusoHorario;
+    }
+    
+    
+    
 }
