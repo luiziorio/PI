@@ -12,12 +12,18 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 /**
  *
  * @author rafael
  */
 @Entity
 @Table(name = "Continente")
+@NamedQueries(
+{
+    @NamedQuery(name = "EContinente.sgetAll", query = "SELECT a FROM EContinente a")
+})
 public class EContinente extends EBaseNome  
 {
    @OneToMany(fetch = FetchType.LAZY)

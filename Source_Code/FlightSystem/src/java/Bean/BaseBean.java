@@ -18,6 +18,14 @@ import java.io.Serializable;
 public abstract class BaseBean < T extends BaseControle, TM extends  EBase> implements Serializable
 {
     protected TM objeto;
+    private final T controle;
+    
+    protected abstract T instanciaControle();
+    
+    protected T getInstanciaControle()
+    {
+        return controle;
+    }
 
     public TM getObjeto()
     {
@@ -27,6 +35,11 @@ public abstract class BaseBean < T extends BaseControle, TM extends  EBase> impl
     public void setObjeto(TM objeto)
     {
         this.objeto = objeto;
+    }
+    
+    public BaseBean()
+    {
+        controle = instanciaControle();
     }
     
     /**

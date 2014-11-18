@@ -8,6 +8,9 @@ package DB_FlightSystem.DAO;
 
 import DB_FlightSystem.Base.BaseDAO;
 import DB_FlightSystem.Entidade.EPais;
+import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.Session;
 
 /**
  *
@@ -18,6 +21,8 @@ public class PaisDAO extends BaseDAO<EPais>
     private PaisDAO(){}
     
     private static PaisDAO objeto;
+    protected final String Q_GET_PAIS_PELO_CONTINETE = "EPais.getAllPaisPorContinete";
+    protected final String P_GET_PAIS_PELO_CONTINETE_ID = "id";
     
     public static PaisDAO GetObjeto()
     {
@@ -30,5 +35,25 @@ public class PaisDAO extends BaseDAO<EPais>
     protected EPais getInstanceEntidade()
     {
         return new EPais();
+    }
+    
+    public List<EPais> getAllPaisPorContinente(Integer idContinente)
+    {
+        List<EPais> retorno = null;
+        Session sessao = getSession();
+        try
+        {
+            Query query = sessao.getNamedQuery(Q_GET_PAIS_PELO_CONTINETE).setInteger(P_GET_PAIS_PELO_CONTINETE_ID, idContinente);
+            retorno = query.list();
+            
+        }
+        catch(Exception e)
+        {
+        }
+        finally
+        {
+            sessao.close();
+        }
+        return retorno;
     }
 }

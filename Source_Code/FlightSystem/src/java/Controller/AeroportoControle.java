@@ -7,7 +7,14 @@
 package Controller;
 
 import DB_FlightSystem.Controller.AeroportoController;
+import DB_FlightSystem.Controller.CidadeController;
+import DB_FlightSystem.Controller.ContinenteController;
+import DB_FlightSystem.Controller.PaisController;
+import DB_FlightSystem.Entidade.EContinente;
 import Model.Aeroporto;
+import Model.Cidade;
+import Model.Pais;
+import java.util.List;
 
 /**
  *
@@ -17,9 +24,33 @@ public class AeroportoControle extends BaseControle<AeroportoController, Aeropor
 {
 
     @Override
-    protected AeroportoController getInstanceBase()
+    protected AeroportoController getInstanceBaseController()
     {
         return new AeroportoController();
+    }
+    
+    public List<EContinente> getContinente()
+    {
+        try(ContinenteController c = new ContinenteController())
+        {
+            return c.getAll();
+        }
+    }
+    
+    public List<Pais> getPais(Integer continenteId)
+    {
+        try(PaisController p = new PaisController())
+        {
+            return (List<Pais>)(Pais)p.getAllPaisPorContinente(continenteId);
+        }
+    }
+    
+    public List<Cidade> getCidades(Integer paisId)
+    {
+        try(CidadeController c=  new CidadeController())
+        {
+            return (List<Cidade>)(Cidade)c.getCidadeByPais(paisId);
+        }
     }
     
 }

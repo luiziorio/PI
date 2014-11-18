@@ -7,6 +7,7 @@ package Controller;
 
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.Base.EBase;
+import java.util.List;
 
 /**
  *
@@ -16,12 +17,12 @@ import DB_FlightSystem.Base.EBase;
  */
 public abstract class BaseControle< T extends BaseController, TE extends EBase>
 {
-    protected abstract T getInstanceBase();
+    protected abstract T getInstanceBaseController();
     
     public boolean insert(TE entidade)
     {
         boolean retorno;
-        try(T base = getInstanceBase())
+        try(T base = getInstanceBaseController())
         {
             retorno = base.Salvar(entidade);
         }
@@ -30,5 +31,22 @@ public abstract class BaseControle< T extends BaseController, TE extends EBase>
             retorno = false;
         }
        return retorno;
+    }
+    
+    public List<TE> getAll()
+    {
+        try(T controller = getInstanceBaseController())
+        {
+            return (List<TE>)(TE) controller.getAll();
+        }
+    }
+    
+    public TE getById(Integer id)
+    {
+        try(T controller = getInstanceBaseController())
+        {
+            return (TE) controller.getEntidade(id);
+        }
+        
     }
 }

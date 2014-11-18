@@ -9,6 +9,7 @@ package DB_FlightSystem.Controller;
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.PaisDAO;
 import DB_FlightSystem.Entidade.EPais;
+import java.util.List;
 
 /**
  *
@@ -20,6 +21,11 @@ public class PaisController extends BaseController<EPais, PaisDAO>
     protected PaisDAO getInstanciaDAO()
     {
         return PaisDAO.GetObjeto();
+    }
+    
+    public List<EPais> getAllPaisPorContinente(Integer idContinente)
+    {
+        return (List<EPais>)getInstanciaDAO().getAllPaisPorContinente(idContinente);
     }
     
 }

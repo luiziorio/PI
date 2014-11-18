@@ -26,10 +26,17 @@ public class AeronaveBean extends BaseBean<AeronaveControle, Aeronave>
      */
     public AeronaveBean()
     {
+        super();
     }
 
     @Override
     protected AeronaveControle getControleInstancia()
+    {
+        return new AeronaveControle();
+    }
+
+    @Override
+    protected AeronaveControle instanciaControle()
     {
         return new AeronaveControle();
     }

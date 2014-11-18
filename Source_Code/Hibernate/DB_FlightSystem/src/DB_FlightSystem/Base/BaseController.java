@@ -6,7 +6,7 @@
 
 package DB_FlightSystem.Base;
 
-import java.util.function.Predicate;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -65,18 +65,6 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
     
     
     /**
-     * Pesquisa a ser realizada com o HQL
-     * 
-     * @param fltro Filtro usando o HQL
-     * @return retorna um objeto que herda de EBase
-     */
-    public TE getSelect(String fltro)
-    {
-        return (TE) getInstanciaDAO().getSelect(fltro);
-    }
-    
-    
-    /**
      * Pesquisa entidae pelo id
      * 
      * @param id Id desejado
@@ -88,4 +76,8 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
                 
     }
     
+    public List<TE> getAll()
+    {
+        return (List<TE>) getInstanciaDAO().getAll();
+    }
 }

@@ -25,10 +25,17 @@ public class PaisBean extends BaseBean<PaisControle, Pais>
      */
     public PaisBean()
     {
+        super();
     }
 
     @Override
     protected PaisControle getControleInstancia()
+    {
+        return new PaisControle();
+    }
+
+    @Override
+    protected PaisControle instanciaControle()
     {
         return new PaisControle();
     }

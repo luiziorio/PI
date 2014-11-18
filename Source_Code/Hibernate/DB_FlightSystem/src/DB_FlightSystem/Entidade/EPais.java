@@ -13,6 +13,9 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 
 /**
@@ -21,18 +24,32 @@ import DB_FlightSystem.Base.EBaseNome;
  */
 @Entity
 @Table(name = "Pais")
+@NamedQueries(
+{
+    @NamedQuery(name = "EPais.getAll", query = "SELECT a FROM EPais a"),
+    @NamedQuery(name = "EPais.getAllPaisPorContinete", query = "SELECT A FROM EPais A WHERE A.continente.sequencial = :id")
+})
 public class EPais extends EBaseNome  
 {
+    @ManyToOne
+    private EContinente continente;
     @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ECidade> listaCidades;
 
+    public EContinente getContinenteSequencial()
+    {
+        return continente;
+    }
 
-     
+    public void setContinenteSequencial(EContinente continente)
+    {
+        this.continente = continente;
+    }
+    
     public Set<ECidade> getListaCidades()
     {
         return listaCidades;
     }
-
      
     public void setListaCidades(Set<ECidade> listaCidades)
     {
@@ -43,12 +60,10 @@ public class EPais extends EBaseNome
     {
     }
 
-    public EPais(Set<ECidade> listaCidades, String nome, Integer sequencial)
+    public EPais(EContinente continente, Set<ECidade> listaCidades, String nome, Integer sequencial)
     {
         super(nome, sequencial);
+        this.continente = continente;
         this.listaCidades = listaCidades;
     }
-    
-    
-    
 }

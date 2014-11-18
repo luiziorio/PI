@@ -16,7 +16,7 @@ import Model.Aeronave;
 public class AeronaveControle extends BaseControle<AeronaveController, Aeronave>
 {
     @Override
-    protected AeronaveController getInstanceBase()
+    protected AeronaveController getInstanceBaseController()
     {
         return new AeronaveController();
     }   

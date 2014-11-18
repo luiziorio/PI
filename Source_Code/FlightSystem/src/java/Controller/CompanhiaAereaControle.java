@@ -8,6 +8,7 @@ package Controller;
 
 import DB_FlightSystem.Controller.CompanhiaAeriaController;
 import Model.CompanhiaAerea;
+import java.util.List;
 
 /**
  *
@@ -17,9 +18,25 @@ public class CompanhiaAereaControle extends BaseControle<CompanhiaAeriaControlle
 {
 
     @Override
-    protected CompanhiaAeriaController getInstanceBase()
+    protected CompanhiaAeriaController getInstanceBaseController()
     {
         return new CompanhiaAeriaController();
+    }
+    
+    public List<CompanhiaAerea> getAll()
+    {
+        try(CompanhiaAeriaController c = new CompanhiaAeriaController())
+        {
+            return (List<CompanhiaAerea>)(CompanhiaAerea)c.getAll();
+        }
+    }
+    
+    public CompanhiaAerea getById(Integer id)
+    {
+        try(CompanhiaAeriaController c = new CompanhiaAeriaController())
+        {
+            return (CompanhiaAerea)c.getEntidade(id);
+        }
     }
     
 }

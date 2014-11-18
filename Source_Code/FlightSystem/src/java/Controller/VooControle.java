@@ -17,7 +17,7 @@ public class VooControle extends BaseControle<VooController, Voo>
 {
 
     @Override
-    protected VooController getInstanceBase()
+    protected VooController getInstanceBaseController()
     {
         return new VooController();
     }

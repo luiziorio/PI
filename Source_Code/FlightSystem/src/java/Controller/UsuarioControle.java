@@ -16,7 +16,7 @@ import Model.Usuario;
 public class UsuarioControle extends BaseControle<UsuarioController, Usuario>
 {
     @Override
-    protected UsuarioController getInstanceBase()
+    protected UsuarioController getInstanceBaseController()
     {
         return new UsuarioController();
     }

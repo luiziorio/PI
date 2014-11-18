@@ -25,10 +25,17 @@ public class VooBean extends BaseBean<VooControle, Voo>
      */
     public VooBean()
     {
+        super();
     }
 
     @Override
     protected VooControle getControleInstancia()
+    {
+        return new VooControle();
+    }
+
+    @Override
+    protected VooControle instanciaControle()
     {
         return new VooControle();
     }

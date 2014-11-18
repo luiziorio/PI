@@ -22,10 +22,15 @@ import org.hibernate.Transaction;
  */
 import Hibernate.GenericoDAO;
 import Hibernate.IHibernateUtility;
+
 public abstract class BaseDAO<T extends EBase> extends GenericoDAO<T>
 {
+    private Object session;
     
     protected abstract T getInstanceEntidade();
+    
+    protected final String Q_GET_ALL = "getAll";
+    private String className = "";
     
     @Override
     protected IHibernateUtility getHibernateInstance()
@@ -58,27 +63,6 @@ public abstract class BaseDAO<T extends EBase> extends GenericoDAO<T>
         }
     }
     
-    public List<T> getSelect(String filtro)
-    {
-        List<T> retorno = null;
-        Session sessao = getSession(); //Abrindo uma sessão
-        try
-        {
-            
-            Query query = sessao.createQuery(filtro);
-            retorno = query.list();
-        }
-        catch(Exception e)
-        {
-            
-        }
-        finally
-        {
-            sessao.close();
-        }
-        return  retorno;
-    }
-    
     public T getObjeto(Integer id)
     {
         T retorno = getInstanceEntidade();
@@ -86,7 +70,7 @@ public abstract class BaseDAO<T extends EBase> extends GenericoDAO<T>
         Session sessao = getSession(); //Abrindo uma sessão
         try
         {
-            retorno = (T) sessao.get(retorno.getClass(), retorno);
+            retorno = (T) sessao.get(retorno.getClass(), id);
         }
         catch(Exception e)
         {
@@ -99,8 +83,36 @@ public abstract class BaseDAO<T extends EBase> extends GenericoDAO<T>
         return  retorno;
     }
     
-    public T getSelect(Predicate<T> filtro)
+    private String getGetAll()
     {
-        return null;
+        return getClassName() + "." + Q_GET_ALL;
+    }
+    
+    private String getClassName()
+    {
+        if("".equals(className))
+            className = getInstanceEntidade().getClass().getName();
+        return className;
+    }
+    
+    public List<T> getAll()
+    {
+        List<T> retorno = null;
+        Session sessao = getSession();
+        try
+        {
+            
+            Query query = sessao.getNamedQuery(getGetAll());
+            retorno = query.list();
+            
+        }
+        catch(Exception e)
+        {
+        }
+        finally
+        {
+            sessao.close();
+        }
+        return retorno;
     }
 }

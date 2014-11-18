@@ -8,6 +8,7 @@ package Bean;
 
 import Controller.CompanhiaAereaControle;
 import Model.CompanhiaAerea;
+import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 
@@ -19,17 +20,32 @@ import javax.enterprise.context.SessionScoped;
 @SessionScoped
 public class CompanhiaAereaBean extends BaseBean<CompanhiaAereaControle, CompanhiaAerea>
 {
-
-    
     /**
      * Creates a new instance of CompanhiaAereaBean
      */
     public CompanhiaAereaBean()
     {
+        super();
+    }
+   
+    public List<CompanhiaAerea> getAllCompanhia()
+    {
+        return getInstanciaControle().getAll();
+    }
+    
+    public CompanhiaAerea getCompanhiaPeloId(Integer id)
+    {
+        return getControleInstancia().getById(id);
     }
     
     @Override
     protected CompanhiaAereaControle getControleInstancia()
+    {
+        return new CompanhiaAereaControle();
+    }
+
+    @Override
+    protected CompanhiaAereaControle instanciaControle()
     {
         return new CompanhiaAereaControle();
     }

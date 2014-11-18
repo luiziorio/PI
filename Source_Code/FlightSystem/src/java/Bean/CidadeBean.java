@@ -25,11 +25,18 @@ public class CidadeBean extends BaseBean<CidadeControle, Cidade>
      */
     public CidadeBean()
     {
+        super();
     }
     
     
     @Override
     protected CidadeControle getControleInstancia()
+    {
+        return new CidadeControle();
+    }
+
+    @Override
+    protected CidadeControle instanciaControle()
     {
         return new CidadeControle();
     }

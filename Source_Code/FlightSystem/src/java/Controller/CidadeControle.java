@@ -9,6 +9,7 @@ package Controller;
 import DB_FlightSystem.Base.EBase;
 import DB_FlightSystem.Controller.CidadeController;
 import Model.Cidade;
+import java.util.List;
 
 /**
  *
@@ -18,7 +19,7 @@ public class CidadeControle extends BaseControle<CidadeController, Cidade>
 {
 
     @Override
-    protected CidadeController getInstanceBase()
+    protected CidadeController getInstanceBaseController()
     {
         return new CidadeController();
     }

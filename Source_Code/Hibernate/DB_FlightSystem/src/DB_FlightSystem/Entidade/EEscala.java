@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import DB_FlightSystem.Base.EBase;
+import java.util.Set;
 
 /**
  *
@@ -25,8 +26,11 @@ import DB_FlightSystem.Base.EBase;
 public class EEscala extends EBase  
 {
     private String numero;
-    @ManyToMany(mappedBy = "escalas")
-    private List<EVoo> eVoos;
+    
+    
+    @ManyToMany
+    private Set<EVoo> eVoos;
+    
     @OneToOne(fetch = FetchType.LAZY)
     private EAeroporto aeroportoDestino;
     @OneToOne(fetch = FetchType.LAZY)
@@ -59,12 +63,12 @@ public class EEscala extends EBase
         this.numero = numero;
     }
 
-    public List<EVoo> geteVoos()
+    public Set<EVoo> geteVoos()
     {
         return eVoos;
     }
 
-    public void seteVoos(List<EVoo> eVoos)
+    public void seteVoos(Set<EVoo> eVoos)
     {
         this.eVoos = eVoos;
     }
@@ -181,7 +185,7 @@ public class EEscala extends EBase
     {
     }
 
-    public EEscala(List<EVoo> eVoos, EAeroporto aerporotoDestino, EAeroporto aeroportoOrigem, Date dataChegadaPrevista, Date dataSaidaPrevista, Date dataChegadaEfetiva, Date dataSaidaEfetiva, boolean atrasado, EVoo voo, EStatus status, Integer sequencial)
+    public EEscala(Set<EVoo> eVoos, EAeroporto aerporotoDestino, EAeroporto aeroportoOrigem, Date dataChegadaPrevista, Date dataSaidaPrevista, Date dataChegadaEfetiva, Date dataSaidaEfetiva, boolean atrasado, EVoo voo, EStatus status, Integer sequencial)
     {
         super(sequencial);
         this.eVoos = eVoos;
@@ -196,7 +200,7 @@ public class EEscala extends EBase
         this.status = status;
     }
 
-    public EEscala(String numero, List<EVoo> eVoos, EAeroporto aeroportoDestino, EAeroporto aeroportoOrigem, Date dataChegadaPrevista, Date dataSaidaPrevista, Date dataChegadaEfetiva, Date dataSaidaEfetiva, boolean atrasado, EVoo voo, EStatus status, Integer sequencial)
+    public EEscala(String numero, Set<EVoo> eVoos, EAeroporto aeroportoDestino, EAeroporto aeroportoOrigem, Date dataChegadaPrevista, Date dataSaidaPrevista, Date dataChegadaEfetiva, Date dataSaidaEfetiva, boolean atrasado, EVoo voo, EStatus status, Integer sequencial)
     {
         super(sequencial);
         this.numero = numero;

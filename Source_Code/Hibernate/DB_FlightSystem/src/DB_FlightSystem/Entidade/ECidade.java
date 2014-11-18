@@ -10,6 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import DB_FlightSystem.Base.EBaseNome;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
@@ -18,10 +21,27 @@ import DB_FlightSystem.Base.EBaseNome;
 @Entity
 @Table(name = "Cidade")
 @XmlRootElement
+@NamedQueries(
+{
+    @NamedQuery(name = "ECidade.getAll", query = "SELECT a FROM ECidade a"),
+    @NamedQuery(name = "ECidade.getAllCidadePorPais", query = "SELECT A FROM ECidade A WHERE A.pais.sequencial = :id")
+})
 public class ECidade extends EBaseNome
 {
+    @ManyToOne
+    private EPais pais;
     private Integer fusoHorario;
 
+    public EPais getPaisSequencial()
+    {
+        return pais;
+    }
+
+    public void setPaisSequencial(EPais pais)
+    {
+        this.pais = pais;
+    }
+    
     public Integer getFusoHorario()
     {
         return fusoHorario;
@@ -41,7 +61,11 @@ public class ECidade extends EBaseNome
         super(nome, sequencial);
         this.fusoHorario = fusoHorario;
     }
-    
-    
-    
+
+    public ECidade(EPais pais, Integer fusoHorario, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.pais = pais;
+        this.fusoHorario = fusoHorario;
+    }
 }

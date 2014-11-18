@@ -41,10 +41,17 @@ public class UsuarioBean extends BaseBean<UsuarioControle, Usuario>
 
     public UsuarioBean()
     {
+        super();
     }
 
     @Override
     protected UsuarioControle getControleInstancia()
+    {
+        return new UsuarioControle();
+    }
+
+    @Override
+    protected UsuarioControle instanciaControle()
     {
         return new UsuarioControle();
     }

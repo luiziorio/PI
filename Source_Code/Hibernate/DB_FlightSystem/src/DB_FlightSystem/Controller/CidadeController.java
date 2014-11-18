@@ -8,6 +8,7 @@ package DB_FlightSystem.Controller;
 import DB_FlightSystem.Base.BaseController;
 import DB_FlightSystem.DAO.CidadeDAO;
 import DB_FlightSystem.Entidade.ECidade;
+import java.util.List;
 
 /**
  *
@@ -22,4 +23,8 @@ public class CidadeController extends BaseController<ECidade, CidadeDAO>
         return CidadeDAO.GetObjeto();
     }
     
+    public List<ECidade> getCidadeByPais(Integer paisSequencial)
+    {
+        return getInstanciaDAO().getCidadePorPais(paisSequencial);
+    }
 }

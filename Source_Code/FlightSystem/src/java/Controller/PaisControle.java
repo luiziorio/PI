@@ -17,7 +17,7 @@ public class PaisControle extends BaseControle<PaisController, Pais>
 {
 
     @Override
-    protected PaisController getInstanceBase()
+    protected PaisController getInstanceBaseController()
     {
         return new PaisController();
     }

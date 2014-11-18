@@ -23,4 +23,6 @@ public class ContinenteController extends BaseController<EContinente, Continente
         return ContinenteDAO.GetObjeto();
     }
     
+    
+    
 }

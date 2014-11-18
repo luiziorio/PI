@@ -134,6 +134,7 @@ public class Conversor
         s.setSlothorachegada(convertDateTime(eEscala.getDataChegadaEfetiva()));
         s.setSlothorapartida(convertDateTime(eEscala.getDataSaidaEfetiva()));
         s.setSlotnumero(eEscala.getNumero());
+        
         //s.setIddiasemana(eEscala.get);
         
         return s;
@@ -143,11 +144,11 @@ public class Conversor
     {
         Voohistorico v = new Voohistorico();
         
-        String aeroportoDestino = voo.getEscalas().get(0).getAeroportoOrigem().getCodigo();
-        String aeroportoOrigem = voo.getEscalas().get(voo.getEscalas().size() - 1).getAeroportoOrigem().getCodigo();
+        //String aeroportoDestino = voo.getEscalas().get(0).getAeroportoOrigem().getCodigo();
+        //String aeroportoOrigem = voo.getEscalas().get(voo.getEscalas().size() - 1).getAeroportoOrigem().getCodigo();
         
-        v.setIdaeroportodestino(aeroportoDestino);
-        v.setIdaeroportoorigem(aeroportoOrigem);
+        //v.setIdaeroportodestino(aeroportoDestino);
+        //v.setIdaeroportoorigem(aeroportoOrigem);
         v.setIdvoo(voo.getSequencial());
         v.setIdslot(slot.getIdslot());
         

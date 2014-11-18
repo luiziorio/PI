@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import DB_FlightSystem.Base.EBaseNome;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
@@ -18,6 +20,10 @@ import DB_FlightSystem.Base.EBaseNome;
  */
 @Entity
 @Table(name = "CompanhiaAeria")
+@NamedQueries(
+{
+    @NamedQuery(name = "ECompanhiaAerea.getAll", query = "SELECT a FROM ECompanhiaAerea a")
+})
 public class ECompanhiaAerea extends EBaseNome  
 {
     @Column(length = 3)

@@ -7,7 +7,6 @@
 package DB_FlightSystem.Base;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -23,7 +22,7 @@ import javax.persistence.InheritanceType;
  */
 @Entity
 @Table(name = "base")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class EBase implements Serializable
 {
     @Id @GeneratedValue(strategy = GenerationType.TABLE)
