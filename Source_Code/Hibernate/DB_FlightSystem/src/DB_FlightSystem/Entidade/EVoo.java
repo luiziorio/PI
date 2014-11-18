@@ -9,10 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBase;
-import java.util.ArrayList;
 import java.util.Set;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
@@ -20,6 +20,10 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @Table(name = "Voo")
+@NamedQueries(
+{
+    @NamedQuery(name = "EVoo.getAll", query = "SELECT a FROM EVoos a"),
+})
 public class EVoo extends EBase  
 {
     @OneToOne

@@ -13,6 +13,8 @@ import javax.persistence.FetchType;
 import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
 import javax.persistence.Column;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
@@ -23,6 +25,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "Usuario")
 @XmlRootElement
+@NamedQueries(
+{
+    @NamedQuery(name = "EUsuario.getAll", query = "SELECT a FROM EUsuario a"),
+})
 public class EUsuario extends EBaseNome  
 {
     @Column(length = 10)

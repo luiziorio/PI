@@ -10,6 +10,8 @@ import javax.persistence.Table;
 import DB_FlightSystem.Base.EBaseNome;
 import java.util.List;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
@@ -17,6 +19,10 @@ import javax.persistence.ManyToMany;
  */
 @Entity
 @Table(name = "Aeronave")
+@NamedQueries(
+{
+    @NamedQuery(name = "EAeronave.getAll", query = "SELECT a FROM EAeronave a"),
+})
 public class EAeronave extends EBaseNome
 {
     @ManyToMany(mappedBy = "aeronaveDirigi")

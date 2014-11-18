@@ -16,6 +16,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import DB_FlightSystem.Base.EBase;
 import java.util.Set;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
@@ -23,6 +25,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "Escala")
+@NamedQueries(
+{
+    @NamedQuery(name = "EEscala.getAll", query = "SELECT a FROM EEquipe a"),
+})
 public class EEscala extends EBase  
 {
     private String numero;

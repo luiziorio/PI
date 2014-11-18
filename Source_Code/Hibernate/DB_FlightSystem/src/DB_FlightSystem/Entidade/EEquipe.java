@@ -9,6 +9,8 @@ import DB_FlightSystem.Base.EBaseNome;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -19,6 +21,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Equipe")
+@NamedQueries(
+{
+    @NamedQuery(name = "EEquipe.getAll", query = "SELECT a FROM EEquipe a"),
+})
 public class EEquipe extends EBaseNome
 {
     @OneToOne

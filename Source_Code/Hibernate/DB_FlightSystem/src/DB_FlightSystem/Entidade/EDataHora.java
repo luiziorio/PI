@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import DB_FlightSystem.Base.EBase;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 
 /**
@@ -18,6 +20,10 @@ import DB_FlightSystem.Base.EBase;
  */
 @Entity
 @Table(name = "DataHora")
+@NamedQueries(
+{
+    @NamedQuery(name = "EDataHora.getAll", query = "SELECT a FROM EDataHora a"),
+})
 public class EDataHora extends EBase  
 {
     @Temporal(javax.persistence.TemporalType.DATE)

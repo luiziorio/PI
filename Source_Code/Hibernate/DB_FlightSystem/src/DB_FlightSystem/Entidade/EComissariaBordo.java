@@ -6,8 +6,9 @@
 package DB_FlightSystem.Entidade;
 
 import java.util.Date;
-import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -16,6 +17,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "comissariaBordo")
+@NamedQueries(
+{
+    @NamedQuery(name = "EComissariaBordo.getAll", query = "SELECT a FROM EComissariaBordo a"),
+})
 public class EComissariaBordo extends EFuncionario
 {
     public EComissariaBordo()

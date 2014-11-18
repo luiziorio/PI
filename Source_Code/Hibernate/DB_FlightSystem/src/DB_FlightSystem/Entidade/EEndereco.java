@@ -7,6 +7,8 @@ package DB_FlightSystem.Entidade;
 
 import DB_FlightSystem.Base.EBase;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,6 +18,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Endereco")
+@NamedQueries(
+{
+    @NamedQuery(name = "EEndereco.getAll", query = "SELECT a FROM EEndereco a"),
+})
 public class EEndereco extends EBase
 {
     private String rua;

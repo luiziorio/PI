@@ -9,6 +9,8 @@ import java.util.Date;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -17,6 +19,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Piloto")
+@NamedQueries(
+{
+    @NamedQuery(name = "EPiloto.getAll", query = "SELECT a FROM EPiloto a"),
+})
 public class EPiloto extends EFuncionario
 {
     @ManyToMany
