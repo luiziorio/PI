@@ -19,6 +19,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @Table(name = "Aeronave")
+
 @NamedQueries(
 {
     @NamedQuery(name = "EAeronave.getAll", query = "SELECT a FROM EAeronave a"),

@@ -21,7 +21,19 @@ import org.primefaces.model.UploadedFile;
 @SessionScoped
 public class CompanhiaAereaBean extends BaseBean<CompanhiaAereaControle, CompanhiaAerea>
 {
-   private UploadedFile file;
+    private CompanhiaAerea model;
+
+    public CompanhiaAerea getModel()
+    {
+        return model;
+    }
+
+    public void setModel(CompanhiaAerea model)
+    {
+        this.model = model;
+    }
+    
+    private UploadedFile file;
 
     public UploadedFile getFile()
     {
@@ -33,6 +45,13 @@ public class CompanhiaAereaBean extends BaseBean<CompanhiaAereaControle, Companh
         this.file = file;
     }
    
+   @Override
+    public void insert()
+    {
+        objeto.setLogoTipoCIA(file.getContents());
+        super.insert();
+    }
+    
     /**
      * Creates a new instance of CompanhiaAereaBean
      */

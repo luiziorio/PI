@@ -14,4 +14,9 @@ import DB_FlightSystem.Entidade.ECompanhiaAerea;
  */
 public class CompanhiaAerea extends ECompanhiaAerea
 {
+    public CompanhiaAerea()
+    {
+        this.sigla = new String();
+        this.nome = new String();
+    }
 }

@@ -89,7 +89,7 @@ public class Conversor
         Ciaaerea retorno = new Ciaaerea();
         
         retorno.setCiaaereadescricao(aerea.getNome());
-        retorno.setCiaaerealogotipo(aerea.getLogoTipoCaminho());
+        //retorno.setCiaaerealogotipo(aerea.getLogoTipoCaminho());
         retorno.setCiaaereasigla(aerea.getSigla());
         
         return retorno;

@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Classe base ppara a persistencia de dados
@@ -28,6 +29,7 @@ public abstract class EBase implements Serializable
     @Id @GeneratedValue(strategy = GenerationType.TABLE)
     protected Integer sequencial;
     
+    @XmlTransient
     protected boolean tranferidoParaDW = false;
 
     public boolean isTranferidoParaDW()

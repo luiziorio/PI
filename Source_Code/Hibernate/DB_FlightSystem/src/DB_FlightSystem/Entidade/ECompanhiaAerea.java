@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import DB_FlightSystem.Base.EBaseNome;
+import java.util.logging.Logger;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -27,13 +29,26 @@ import javax.persistence.NamedQuery;
 public class ECompanhiaAerea extends EBaseNome  
 {
     @Column(length = 3)
-    private String sigla;
-    private String logoTipoCaminho;
+    protected String sigla;
+    @Lob
+    protected byte[] logoTipoCIA;
     
     @Transient
     private Image logoTipo;
+
+    public byte[] getLogoTipoCIA()
+    {
+        return logoTipoCIA;
+    }
+
+    public void setLogoTipoCIA(byte[] logoTipoCIA)
+    {
+        this.logoTipoCIA = logoTipoCIA;
+    }
     
      
+    
+    
     public String getSigla()
     {
         return sigla;
@@ -44,20 +59,7 @@ public class ECompanhiaAerea extends EBaseNome
     {
         this.sigla = sigla;
     }
-
-     
-    public String getLogoTipoCaminho()
-    {
-        return logoTipoCaminho;
-    }
-
-     
-    public void setLogoTipoCaminho(String logoTipoCaminho)
-    {
-        this.logoTipoCaminho = logoTipoCaminho;
-    }
-
-     
+    
     public Image getLogoTipo()
     {
         return logoTipo;
@@ -73,13 +75,10 @@ public class ECompanhiaAerea extends EBaseNome
     {
     }
 
-    public ECompanhiaAerea(String sigla, String logoTipoCaminho, Image logoTipo, String nome, Integer sequencial)
+    public ECompanhiaAerea(String sigla, byte[] logoTipoCIA, String nome, Integer sequencial)
     {
         super(nome, sequencial);
         this.sigla = sigla;
-        this.logoTipoCaminho = logoTipoCaminho;
-        this.logoTipo = logoTipo;
+        this.logoTipoCIA = logoTipoCIA;
     }
-    
-    
 }

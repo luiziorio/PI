@@ -21,10 +21,10 @@
                     <br/>
                     <h:panelGrid id="dados" columns="2" style="background: none; text-align: right;">
                         <p:outputLabel for="codigo" value="Código: " style="color: #000000;" />
-                        <p:inputText id="codigo" label="Código" value="#{aeroportoBean.aeroport.codigo}" size="32" required="true" 
+                        <p:inputText id="codigo" label="Código" value="#{aeroportoBean.objeto.codigo}" size="32" required="true" 
                                       style="color: #000000; background-color: #ffffff;"/>
                         <p:outputLabel for="desc" value="Descrição: " style="color: #000000;" />
-                        <p:inputText id="desc" label="Descrição" value="#{aeroportoBean.aeroport.nome}" size="32" required="true" 
+                        <p:inputText id="desc" label="Descrição" value="#{aeroportoBean.objeto.nome}" size="32" required="true" 
                                      style="color: #000000; background-color: #ffffff;"/>
                         <p:outputLabel value="Continente: " for="continente" style="color: #000000;"/>
                         <p:selectOneMenu id="continente" value="#{dropdownView.continente}" style="width:300px">

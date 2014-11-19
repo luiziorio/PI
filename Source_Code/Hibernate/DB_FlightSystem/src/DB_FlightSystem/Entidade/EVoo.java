@@ -13,6 +13,7 @@ import java.util.Set;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
@@ -20,9 +21,10 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @Table(name = "Voo")
+@PrimaryKeyJoinColumn(name = "sequencial")
 @NamedQueries(
 {
-    @NamedQuery(name = "EVoo.getAll", query = "SELECT a FROM EVoos a"),
+    @NamedQuery(name = "EVoo.getAll", query = "SELECT a FROM EVoo a"),
 })
 public class EVoo extends EBase  
 {

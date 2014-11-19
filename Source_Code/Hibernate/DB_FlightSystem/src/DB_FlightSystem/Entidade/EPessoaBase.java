@@ -8,6 +8,8 @@ package DB_FlightSystem.Entidade;
 import DB_FlightSystem.Base.EBaseNome;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -18,6 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PessoaBase")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class EPessoaBase extends EBaseNome
 {
     @Column(length = 20)
