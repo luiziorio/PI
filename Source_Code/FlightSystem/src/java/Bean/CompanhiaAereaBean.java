@@ -11,6 +11,7 @@ import Model.CompanhiaAerea;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import org.primefaces.model.UploadedFile;
 
 /**
  *
@@ -20,6 +21,18 @@ import javax.enterprise.context.SessionScoped;
 @SessionScoped
 public class CompanhiaAereaBean extends BaseBean<CompanhiaAereaControle, CompanhiaAerea>
 {
+   private UploadedFile file;
+
+    public UploadedFile getFile()
+    {
+        return file;
+    }
+
+    public void setFile(UploadedFile file)
+    {
+        this.file = file;
+    }
+   
     /**
      * Creates a new instance of CompanhiaAereaBean
      */
