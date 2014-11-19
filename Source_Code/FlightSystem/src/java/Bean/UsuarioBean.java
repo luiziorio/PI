@@ -55,4 +55,10 @@ public class UsuarioBean extends BaseBean<UsuarioControle, Usuario>
     {
         return new UsuarioControle();
     }
+
+    @Override
+    protected Usuario instanceModel()
+    {
+        return new Usuario();
+    }
 }

@@ -39,5 +39,11 @@ public class PaisBean extends BaseBean<PaisControle, Pais>
     {
         return new PaisControle();
     }
+
+    @Override
+    protected Pais instanceModel()
+    {
+        return new Pais();
+    }
     
 }

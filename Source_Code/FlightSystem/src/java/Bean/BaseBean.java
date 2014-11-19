@@ -18,17 +18,22 @@ import java.io.Serializable;
 public abstract class BaseBean < T extends BaseControle, TM extends  EBase> implements Serializable
 {
     protected TM objeto;
-    private final T controle;
+    private T controle;
     
     protected abstract T instanciaControle();
+    protected abstract TM instanceModel();
     
     protected T getInstanciaControle()
     {
+        if(controle == null)
+            controle = instanciaControle();
         return controle;
     }
 
     public TM getObjeto()
     {
+        if(objeto == null)
+            objeto = instanceModel();
         return objeto;
     }
 
@@ -36,11 +41,7 @@ public abstract class BaseBean < T extends BaseControle, TM extends  EBase> impl
     {
         this.objeto = objeto;
     }
-    
-    public BaseBean()
-    {
-        controle = instanciaControle();
-    }
+
     
     /**
      *  get um instancia de um Controle

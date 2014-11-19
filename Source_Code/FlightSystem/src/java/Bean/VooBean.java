@@ -39,5 +39,11 @@ public class VooBean extends BaseBean<VooControle, Voo>
     {
         return new VooControle();
     }
+
+    @Override
+    protected Voo instanceModel()
+    {
+        return new Voo();
+    }
     
 }

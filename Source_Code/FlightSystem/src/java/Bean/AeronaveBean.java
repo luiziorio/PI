@@ -26,7 +26,7 @@ public class AeronaveBean extends BaseBean<AeronaveControle, Aeronave>
      */
     public AeronaveBean()
     {
-        super();
+        
     }
 
     @Override
@@ -39,6 +39,12 @@ public class AeronaveBean extends BaseBean<AeronaveControle, Aeronave>
     protected AeronaveControle instanciaControle()
     {
         return new AeronaveControle();
+    }
+
+    @Override
+    protected Aeronave instanceModel()
+    {
+        return new Aeronave();
     }
     
 }

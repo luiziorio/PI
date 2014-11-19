@@ -25,7 +25,6 @@ public class CidadeBean extends BaseBean<CidadeControle, Cidade>
      */
     public CidadeBean()
     {
-        super();
     }
     
     
@@ -39,5 +38,11 @@ public class CidadeBean extends BaseBean<CidadeControle, Cidade>
     protected CidadeControle instanciaControle()
     {
         return new CidadeControle();
+    }
+
+    @Override
+    protected Cidade instanceModel()
+    {
+        return new Cidade();
     }
 }

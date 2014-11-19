@@ -81,4 +81,10 @@ public class AeroportoBean extends BaseBean<AeroportoControle, Aeroporto>
     {
         return new AeroportoControle();
     }  
+
+    @Override
+    protected Aeroporto instanceModel()
+    {
+        return new Aeroporto();
+    }
 }
