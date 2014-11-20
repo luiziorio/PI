@@ -8,6 +8,7 @@ package Controller;
 import Base.BaseController;
 import DAO.CompanhiaAeriaDAO;
 import Model.ECompanhiaAerea;
+import org.springframework.stereotype.Controller;
 
 /**
  *
@@ -15,6 +16,7 @@ import Model.ECompanhiaAerea;
  */
 public class CompanhiaAeriaController extends BaseController<ECompanhiaAerea, CompanhiaAeriaDAO>
 {
+    
     @Override
     protected CompanhiaAeriaDAO getInstanciaDAO()
     {

@@ -5,6 +5,9 @@
  */
 package Teste;
 
+import HibernateUtility.HibernateUtility;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,6 +46,17 @@ public class Hibernate
     {
     }
 
+    
+    @Test
+    public void testConexao()
+    {
+        Session s = HibernateUtility.getSession();
+        Transaction t = s.getTransaction();
+        t.begin();
+        
+        t.commit();
+        s.close();
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

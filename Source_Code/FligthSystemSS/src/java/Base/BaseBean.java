@@ -6,6 +6,7 @@
 package Base;
 
 import java.io.Serializable;
+import javax.ws.rs.POST;
 
 /**
  * Classe base para os beans, aqui já possui os metodos de salvar e pesquisar simples
@@ -40,8 +41,11 @@ public abstract class BaseBean < T extends BaseController, TM extends  EBase> im
         this.objeto = objeto;
     }
     
+    @POST
     public void salva()
     {
+        if(controle == null)
+            controle = getInstanciaControle();
         controle.Salvar(objeto);
     }
 }

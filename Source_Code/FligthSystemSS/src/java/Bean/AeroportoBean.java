@@ -21,6 +21,8 @@ import javax.enterprise.context.SessionScoped;
 public class AeroportoBean extends BaseBean<AeroportoController, EAeroporto>
 {
 
+    
+    
     @Override
     protected EAeroporto instanceModel()
     {
