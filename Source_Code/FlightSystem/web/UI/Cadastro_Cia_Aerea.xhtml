@@ -17,35 +17,35 @@
             <h:form>
                 <p:layoutUnit position="center">
                     <h:panelGrid columns="1">
-                            <br/>
-                            <h1>Cadastro de Companhias Aéreas</h1>
-                            <br/>
-                            <p:panelGrid id="gridPrincipal">
-                                <h:panelGrid columns="2" style="background: none; text-align: right;">
-                                    <p:outputLabel value="Sigla: " for="sigla" style="color: #000000;"/>
-                                    <p:inputText id="sigla" maxlength="3" label="Sigla"  required="true"  value="#{companhiaAereaBean.objeto.sigla}"
-                                         style="color: #000000; background-color: #ffffff;"/>
-                                    <p:outputLabel value="Nome: " for="nome" style="color: #000000;"/>
-                                    <p:inputText id="nome" label="Nome"  required="true" value="#{companhiaAereaBean.objeto.nome}"
-                                         style="color: #000000; background-color: #ffffff;"/>
-                                </h:panelGrid> 
-                                <h:panelGrid>
-                                    <p:outputLabel value="Imagem: " for="img"/>
-                                    <p:fileUpload id="img" mode="advanced" dragDropSupport="true" value="#{companhiaAereaBean.file}"
-                                                  update="messages"  fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                        <br/>
+                        <h1>Cadastro de Companhias Aéreas</h1>
+                        <br/>
+                        <p:panelGrid id="gridPrincipal">
+                            <h:panelGrid columns="2" style="background: none; text-align: right;">
+                                <p:outputLabel value="Sigla: " for="sigla" style="color: #000000;"/>
+                                <p:inputText id="sigla" maxlength="3" label="Sigla"  required="true"  value="#{companhiaAereaBean.objeto.sigla}"
+                                             style="color: #000000; background-color: #ffffff;"/>
+                                <p:outputLabel value="Nome: " for="nome" style="color: #000000;"/>
+                                <p:inputText id="nome" label="Nome"  required="true" value="#{companhiaAereaBean.objeto.nome}"
+                                             style="color: #000000; background-color: #ffffff;"/>
+                            </h:panelGrid> 
+                            <h:panelGrid>
+                                <p:outputLabel value="Imagem: " for="img"/>
 
-                                    <p:growl id="messages" showDetail="true" />
-                                </h:panelGrid><br/>
-                            </p:panelGrid>
-                            <h:panelGrid columns="2">
-                                <p:commandButton update="gridPrincipal" action="#{companhiaAereaBean.insert}" ajax="false" value="Ok" icon="ui-icon-check" iconPos="right"
-                                  style="width: 130px;"/>
-                                <p:button onclick="#" value="Cancelar" icon="ui-icon-cancel" iconPos="right"
+                                <p:growl id="messages" showDetail="true" />
+
+                                <p:fileUpload id="img" value="#{companhiaAereaBean.objeto.logoTipoCIA}" mode="simple"/>
+                            </h:panelGrid><br/>
+                        </p:panelGrid>
+                        <h:panelGrid columns="2">
+                            <p:commandButton update="gridPrincipal" action="#{companhiaAereaBean.insert}" ajax="false" value="Ok" icon="ui-icon-check" iconPos="right"
+                                             style="width: 130px;"/>
+                            <p:button onclick="#" value="Cancelar" icon="ui-icon-cancel" iconPos="right"
                                       style="width: 130px;"/>
-                            </h:panelGrid>
                         </h:panelGrid>
-                    </p:layoutUnit>
-                </h:form>
+                    </h:panelGrid>
+                </p:layoutUnit>
+            </h:form>
             <p:layoutUnit position="south">
                 <ui:include src="Footer.xhtml"/>
             </p:layoutUnit>

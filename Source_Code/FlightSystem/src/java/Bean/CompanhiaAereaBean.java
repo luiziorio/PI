@@ -36,9 +36,10 @@ public class CompanhiaAereaBean extends BaseBean<CompanhiaAereaControle, Companh
    @Override
     public void insert()
     {
+        //Sempre ta vindo nulo o file, tem que descobri pq e como arrumar
         if(file != null)
             objeto.setLogoTipoCIA(file.getContents());
-        super.insert();
+        //super.insert();
     }
     
     /**
