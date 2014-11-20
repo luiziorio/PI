@@ -17,12 +17,14 @@ import Model.EContinente;
 public class ContinenteController extends BaseController<EContinente, ContinenteDAO>
 {
 
+    public ContinenteController(ContinenteDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected ContinenteDAO getInstanciaDAO()
     {
         return ContinenteDAO.GetObjeto();
     }
-    
-    
-    
 }

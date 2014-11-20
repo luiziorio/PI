@@ -16,6 +16,11 @@ import Model.EAeronave;
 public class AeronaveController extends BaseController<EAeronave, AeronaveDAO>
 {
 
+    public AeronaveController(AeronaveDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected AeronaveDAO getInstanciaDAO()
     {

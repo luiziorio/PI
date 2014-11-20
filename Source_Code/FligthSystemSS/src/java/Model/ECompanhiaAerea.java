@@ -14,6 +14,7 @@ import javax.persistence.Transient;
 import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import org.springframework.stereotype.Component;
 
 /**
  *
@@ -25,8 +26,10 @@ import javax.persistence.NamedQuery;
 {
     @NamedQuery(name = "ECompanhiaAerea.getAll", query = "SELECT a FROM ECompanhiaAerea a")
 })
+@Component
 public class ECompanhiaAerea extends EBaseNome  
 {
+    
     @Column(length = 3)
     protected String sigla;
     

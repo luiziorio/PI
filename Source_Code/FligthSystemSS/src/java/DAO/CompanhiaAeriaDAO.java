@@ -7,24 +7,20 @@ package DAO;
 
 import Base.BaseDAO;
 import Model.ECompanhiaAerea;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author rafael
  */
+@Repository
 public class CompanhiaAeriaDAO extends BaseDAO<ECompanhiaAerea>
 {
-    public CompanhiaAeriaDAO(){}
-    
-    /*private static CompanhiaAeriaDAO objeto;
-    
-    public static CompanhiaAeriaDAO GetObjeto()
+    public CompanhiaAeriaDAO()
     {
-        if(objeto == null)
-            objeto = new CompanhiaAeriaDAO();
-        return objeto;
-    }*/
-
+        
+    }
+    
     @Override
     protected ECompanhiaAerea getInstanceEntidade()
     {

@@ -17,6 +17,11 @@ import Model.EAeroporto;
 public class AeroportoController extends BaseController<EAeroporto, AeroportoDAO>
 {
 
+    public AeroportoController(AeroportoDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected AeroportoDAO getInstanciaDAO()
     {

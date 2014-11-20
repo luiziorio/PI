@@ -15,6 +15,11 @@ import Model.EPessoaJuridica;
  */
 public class PessoaJuridicaController extends BaseController<EPessoaJuridica, PessoaJuridicaDAO>
 {
+
+    public PessoaJuridicaController(PessoaJuridicaDAO dao)
+    {
+        super(dao);
+    }
     @Override
     protected PessoaJuridicaDAO getInstanciaDAO()
     {

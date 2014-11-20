@@ -15,6 +15,11 @@ import Model.EPiloto;
  */
 public class PilotoController extends BaseController<EPiloto, PilotoDAO>
 {
+
+    public PilotoController(PilotoDAO dao)
+    {
+        super(dao);
+    }
     @Override
     protected PilotoDAO getInstanciaDAO()
     {

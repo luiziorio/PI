@@ -21,6 +21,13 @@ import java.util.logging.Logger;
 @SuppressWarnings("unchecked")
 public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> implements AutoCloseable,Serializable
 {
+    protected final TDAO dao;
+    
+    public BaseController(TDAO dao)
+    {
+        this.dao = dao;
+    }
+    
     /**
      * Get uma instancia do DAO
      *
@@ -50,7 +57,6 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
       */
     public boolean Salvar(TE objeto)
     {
-        TDAO dao = getInstanciaDAO();
         return dao.salva(objeto);
     }
     
@@ -61,7 +67,6 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
      */
     public void Delete(TE objeto)
     {
-        TDAO dao = getInstanciaDAO();
         dao.Delete(objeto);
     }
     
@@ -74,12 +79,12 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
      */
     public TE getEntidade(Integer  id)
     {
-        return (TE) getInstanciaDAO().getObjeto(id);
+        return (TE) dao.getObjeto(id);
                 
     }
     
     public List<TE> getAll()
     {
-        return (List<TE>) getInstanciaDAO().getAll();
+        return (List<TE>) dao.getAll();
     }
 }

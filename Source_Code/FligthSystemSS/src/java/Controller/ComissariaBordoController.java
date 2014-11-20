@@ -16,6 +16,11 @@ import Model.EComissariaBordo;
 public class ComissariaBordoController extends BaseController<EComissariaBordo, ComissariaBordoDAO>
 {
 
+    public ComissariaBordoController(ComissariaBordoDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected ComissariaBordoDAO getInstanciaDAO()
     {

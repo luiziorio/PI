@@ -15,6 +15,11 @@ import Model.EPessoaFisica;
  */
 public class PessoaFisicaController extends BaseController<EPessoaFisica, PessoaFisicaDAO>
 {
+
+    public PessoaFisicaController(PessoaFisicaDAO dao)
+    {
+        super(dao);
+    }
     @Override
     protected PessoaFisicaDAO getInstanciaDAO()
     {

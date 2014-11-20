@@ -15,6 +15,11 @@ import Model.EEndereco;
  */
 public class EnderecoController extends BaseController<EEndereco, EnderecoDAO>
 {
+
+    public EnderecoController(EnderecoDAO dao)
+    {
+        super(dao);
+    }
     @Override
     protected EnderecoDAO getInstanciaDAO()
     {

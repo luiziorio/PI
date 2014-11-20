@@ -17,22 +17,16 @@ import javax.ws.rs.POST;
 public abstract class BaseBean < T extends BaseController, TM extends  EBase> implements Serializable
 {
     protected TM objeto;
-    private T controle;
-    
-    protected abstract T instanciaController();
-    protected abstract TM instanceModel();
-    
-    protected T getInstanciaControle()
-    {
-        if(controle == null)
-            controle = instanciaController();
-        return controle;
-    }
+    private final T controller;    
 
+    public BaseBean(T controller, TM model)
+    {
+        this.controller = controller;
+        model = objeto;
+    }
+    
     public TM getObjeto()
     {
-        if(objeto == null)
-            objeto = instanceModel();
         return objeto;
     }
 
@@ -44,8 +38,6 @@ public abstract class BaseBean < T extends BaseController, TM extends  EBase> im
     @POST
     public void salva()
     {
-        if(controle == null)
-            controle = getInstanciaControle();
-        controle.Salvar(objeto);
+        controller.Salvar(objeto);
     }
 }

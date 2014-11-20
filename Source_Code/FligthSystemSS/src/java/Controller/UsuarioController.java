@@ -17,6 +17,11 @@ import Model.EUsuario;
 public class UsuarioController extends BaseController<EUsuario, UsuarioDAO>
 {
 
+    public UsuarioController(UsuarioDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected UsuarioDAO getInstanciaDAO()
     {

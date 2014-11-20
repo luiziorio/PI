@@ -21,17 +21,8 @@ import javax.enterprise.context.SessionScoped;
 public class AeroportoBean extends BaseBean<AeroportoController, EAeroporto>
 {
 
-    
-    
-    @Override
-    protected EAeroporto instanceModel()
+    public AeroportoBean(AeroportoController controller, EAeroporto model)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    protected AeroportoController instanciaController()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super(controller, model);
     }
 }

@@ -17,6 +17,11 @@ import java.util.List;
  */
 public class PaisController extends BaseController<EPais, PaisDAO>
 {
+
+    public PaisController(PaisDAO dao)
+    {
+        super(dao);
+    }
     @Override
     protected PaisDAO getInstanciaDAO()
     {

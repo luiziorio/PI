@@ -17,6 +17,11 @@ import java.util.List;
 public class CidadeController extends BaseController<ECidade, CidadeDAO>
 {
 
+    public CidadeController(CidadeDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected CidadeDAO getInstanciaDAO()
     {

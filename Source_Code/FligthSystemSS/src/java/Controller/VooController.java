@@ -16,6 +16,11 @@ import Model.EVoo;
 public class VooController extends BaseController<EVoo, VooDAO>
 {
 
+    public VooController(VooDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected VooDAO getInstanciaDAO()
     {

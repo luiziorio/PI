@@ -15,6 +15,11 @@ import Model.EDataHora;
 public class DataHoraController extends BaseController<EDataHora, DataHoraDAO>
 {
 
+    public DataHoraController(DataHoraDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected DataHoraDAO getInstanciaDAO()
     {

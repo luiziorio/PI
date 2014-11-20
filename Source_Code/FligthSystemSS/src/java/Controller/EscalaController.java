@@ -16,6 +16,11 @@ import Model.EEscala;
 public class EscalaController extends BaseController<EEscala,EscalaDAO>
 {
 
+    public EscalaController(EscalaDAO dao)
+    {
+        super(dao);
+    }
+
     @Override
     protected EscalaDAO getInstanciaDAO()
     {

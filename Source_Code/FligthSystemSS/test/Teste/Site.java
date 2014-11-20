@@ -49,7 +49,7 @@ public class Site
     @Test
     public void testCompanhiaAerea()
     {
-        CompanhiaAereaBean c = new CompanhiaAereaBean();
+        /*CompanhiaAereaBean c = new CompanhiaAereaBean();
         ECompanhiaAerea e = new ECompanhiaAerea();
         
         e.setNome("Test");
@@ -57,7 +57,7 @@ public class Site
         
         c.setObjeto(e);
         
-        c.salva();
+        c.salva();*/
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

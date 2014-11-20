@@ -8,14 +8,26 @@ package Controller;
 import Base.BaseController;
 import DAO.CompanhiaAeriaDAO;
 import Model.ECompanhiaAerea;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author rafael
  */
+@Service
 public class CompanhiaAeriaController extends BaseController<ECompanhiaAerea, CompanhiaAeriaDAO>
 {
+    /*public CompanhiaAeriaController()
+    {
+    super(new CompanhiaAeriaDAO());
+    }*/
+    
+    @Autowired
+    public CompanhiaAeriaController(CompanhiaAeriaDAO dao)
+    {
+        super(dao);
+    }
     
     @Override
     protected CompanhiaAeriaDAO getInstanciaDAO()
