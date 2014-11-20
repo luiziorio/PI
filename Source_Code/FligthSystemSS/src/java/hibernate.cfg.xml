@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+      
+    <property name="hibernate.connection.username">postgres</property>  
+        <property name="hibernate.connection.password">123</property>  
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost/PI</property>  
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>  
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+  
+    <!--<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=PI</property>
+    <property name="hibernate.connection.username">sa</property>
+    <property name="hibernate.connection.password">123456</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>-->
+    <!--<property name="hibernate.hbm2ddl.auto">create-drop</property>  -->
+    <property name="show_sql">true</property>  
+    <property name="format_sql">true</property>
+      
+    <!--se deixar create-drop ele tudo novamente sempre que rodar o programa-->
+    <!-- Condiguração do c3p0 -->
+    <property name="hibernate.c3p0.max_size">10</property>
+    <property name="hibernate.c3p0.min_size">2</property>
+    <property name="hibernate.c3p0.timeout">5000</property>
+    <property name="hibernate.c3p0.max_statements">10</property>
+    <property name="hibernate.c3p0.idle_test_period">3000</property>
+    <property name="hibernate.c3p0.acquire_increment">2</property>
+    <property name="hibernate.use_sql_comments">true</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.generate_statistics">true</property>
+    
+    <!-- Mapeamentos-->
+    <!--Classes Bases -->
+    <mapping class="DB_FlightSystem.Base.EBase"/>
+    <mapping class="DB_FlightSystem.Base.EBaseNome"/>
+    <mapping class="DB_FlightSystem.Entidade.EPessoaBase"/>
+    <mapping class="DB_FlightSystem.Entidade.EFuncionario"/>
+    
+    <!-- Classes sem dependencias de outras-->
+    <mapping class="DB_FlightSystem.Entidade.EDataHora"/>
+    <mapping class="DB_FlightSystem.Entidade.EStatus"/>
+    <mapping class="DB_FlightSystem.Entidade.ECompanhiaAerea"/>
+    <mapping class="DB_FlightSystem.Entidade.EEndereco"/>
+    <mapping class="DB_FlightSystem.Entidade.EUsuario"/>
+    <mapping class="DB_FlightSystem.Entidade.EContinente"/>
+    
+    
+    <!-- Dependem do EContinente -->
+    <mapping class="DB_FlightSystem.Entidade.EPais"/>
+    <mapping class="DB_FlightSystem.Entidade.ECidade"/>
+    
+    <mapping class="DB_FlightSystem.Entidade.EAeroporto"/>
+    
+    <!-- Dependem do EPessoaBase-->
+    <mapping class="DB_FlightSystem.Entidade.EPessoaFisica"/>
+    <mapping class="DB_FlightSystem.Entidade.EPessoaJuridica"/>
+    
+    <!-- Dependem do EFuncionario-->
+    <mapping class="DB_FlightSystem.Entidade.EPiloto"/>
+    <mapping class="DB_FlightSystem.Entidade.EComissariaBordo"/>
+    
+    <!-- Dependem do EPiloto e EComissariaBordo-->
+    <mapping class="DB_FlightSystem.Entidade.EEquipe"/>
+    <mapping class="DB_FlightSystem.Entidade.EAeronave"/>
+    <!-- Dependem dos outross-->
+    <mapping class="DB_FlightSystem.Entidade.EVoo"/>
+    <mapping class="DB_FlightSystem.Entidade.EEscala"/>
+    
+
+  </session-factory>
+</hibernate-configuration>
+
