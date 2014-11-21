@@ -16,7 +16,11 @@ import Model.EUsuario;
  */
 public class UsuarioController extends BaseController<EUsuario, UsuarioDAO>
 {
-
+    public UsuarioController()
+    {
+        super(new UsuarioDAO());
+    }
+    
     public UsuarioController(UsuarioDAO dao)
     {
         super(dao);
@@ -25,7 +29,12 @@ public class UsuarioController extends BaseController<EUsuario, UsuarioDAO>
     @Override
     protected UsuarioDAO getInstanciaDAO()
     {
-        return UsuarioDAO.GetObjeto();
+        return new UsuarioDAO();
+    }
+    
+    public boolean validaUsuario(EUsuario usario)
+    {
+        return dao.validaUsuario(usario);
     }
     
 }

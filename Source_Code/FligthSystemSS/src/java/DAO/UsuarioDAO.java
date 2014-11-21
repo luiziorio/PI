@@ -7,25 +7,42 @@
 package DAO;
 
 import Base.BaseDAO;
+import HibernateUtility.HibernateUtility;
 import Model.EUsuario;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author rafael
  */
+@Repository
 public class UsuarioDAO extends BaseDAO<EUsuario>
 {
-    private UsuarioDAO(){}
+    private final String COMPARA_USUARIO = "EUsuario.comparaUsuario";
+    private final String P_COMPARA_USUARIO = "e";
+    private Object sessao;
     
-    private static UsuarioDAO objeto;
-    
-    public static UsuarioDAO GetObjeto()
+    public boolean validaUsuario(EUsuario usuario)
     {
-        if(objeto == null)
-            objeto = new UsuarioDAO();
-        return objeto;
+        Session s = HibernateUtility.getSession();
+        try
+        {
+            if(usuario.getSequencial() == null)
+                return false;
+            EUsuario u = super.getObjeto(usuario.getSequencial());
+            if(u == null)
+                return false;
+            return (u.getNome().equals(usuario.getNome()) && (u.getSenha() == null ? usuario.getSenha() == null : u.getSenha().equals(usuario.getSenha())));
+                
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
     }
-
+    
     @Override
     protected EUsuario getInstanceEntidade()
     {
