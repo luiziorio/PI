@@ -20,9 +20,4 @@ public class PessoaFisicaController extends BaseController<EPessoaFisica, Pessoa
     {
         super(dao);
     }
-    @Override
-    protected PessoaFisicaDAO getInstanciaDAO()
-    {
-        return PessoaFisicaDAO.GetObjeto();
-    }   
 }

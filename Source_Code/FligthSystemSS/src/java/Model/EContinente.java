@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import org.springframework.stereotype.Service;
 /**
  *
  * @author rafael
@@ -24,6 +25,7 @@ import javax.persistence.NamedQuery;
 {
     @NamedQuery(name = "EContinente.sgetAll", query = "SELECT a FROM EContinente a")
 })
+@Service
 public class EContinente extends EBaseNome  
 {
    @OneToMany(fetch = FetchType.LAZY)

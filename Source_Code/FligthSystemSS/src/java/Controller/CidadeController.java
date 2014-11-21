@@ -9,27 +9,30 @@ import Base.BaseController;
 import DAO.CidadeDAO;
 import Model.ECidade;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author rafael
  */
+@Service
 public class CidadeController extends BaseController<ECidade, CidadeDAO>
 {
 
+    public CidadeController()
+    {
+        super(new CidadeDAO());
+    }
+    
+    @Autowired
     public CidadeController(CidadeDAO dao)
     {
         super(dao);
     }
-
-    @Override
-    protected CidadeDAO getInstanciaDAO()
-    {
-        return CidadeDAO.GetObjeto();
-    }
     
     public List<ECidade> getCidadeByPais(Integer paisSequencial)
     {
-        return getInstanciaDAO().getCidadePorPais(paisSequencial);
+        return dao.getCidadePorPais(paisSequencial);
     }
 }

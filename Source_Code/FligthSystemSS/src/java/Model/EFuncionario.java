@@ -8,6 +8,7 @@ package Model;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
@@ -23,7 +24,7 @@ import javax.persistence.Table;
 public abstract class EFuncionario extends EPessoaFisica
 {
     protected Double salario;
-    @OneToMany(mappedBy = "eFuncionario")
+    @OneToMany(mappedBy = "eFuncionario",fetch = FetchType.LAZY)
     protected Set<EEquipe> equipes;
 
     public Set<EEquipe> getEquipes()
@@ -50,17 +51,29 @@ public abstract class EFuncionario extends EPessoaFisica
     {
     }
 
-    public EFuncionario(Double salario, String telefone, String email, EEndereco endereco, EUsuario usuario)
+    public EFuncionario(Double salario, char sexo, Date dataNascimento, String telefone, String email, String cpfCnpj, EEndereco endereco, EUsuario usuario, String nome, Integer sequencial)
     {
-        super(telefone, email, endereco, usuario);
+        super(sexo, dataNascimento, telefone, email, cpfCnpj, endereco, usuario, nome, sequencial);
         this.salario = salario;
     }
 
-    public EFuncionario(Double salario, String sexo, Date dataNascimento, String telefone, String email, EEndereco endereco, EUsuario usuario)
+    public EFuncionario(Double salario, Set<EEquipe> equipes, char sexo, Date dataNascimento, String telefone, String email, String cpfCnpj, EEndereco endereco, EUsuario usuario, String nome, Integer sequencial)
     {
-        super(sexo, dataNascimento, telefone, email, endereco, usuario);
+        super(sexo, dataNascimento, telefone, email, cpfCnpj, endereco, usuario, nome, sequencial);
+        this.salario = salario;
+        this.equipes = equipes;
+    }
+
+    public EFuncionario(Double salario, char sexo, Date dataNascimento, String telefone, String email, String cpfCnpj, EEndereco endereco, String nome, Integer sequencial)
+    {
+        super(sexo, dataNascimento, telefone, email, cpfCnpj, endereco, nome, sequencial);
         this.salario = salario;
     }
-    
-    
+
+    public EFuncionario(Double salario, Set<EEquipe> equipes, char sexo, Date dataNascimento, String telefone, String email, String cpfCnpj, EEndereco endereco, String nome, Integer sequencial)
+    {
+        super(sexo, dataNascimento, telefone, email, cpfCnpj, endereco, nome, sequencial);
+        this.salario = salario;
+        this.equipes = equipes;
+    }
 }

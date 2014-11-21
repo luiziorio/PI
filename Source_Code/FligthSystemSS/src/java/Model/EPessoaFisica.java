@@ -7,6 +7,7 @@ package Model;
 
 import java.util.Date;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -18,40 +19,21 @@ import javax.persistence.Temporal;
  
 @Entity
 @Table(name = "PessoaFisica")
+@DiscriminatorValue(value = "PF")
 public class EPessoaFisica extends EPessoaBase
 {
-    @Column(length = 2)
-    protected String sexo;
-    @Column(length = 11)
-    protected String cpf;
-    @Column(length = 10)
-    protected String rg;
+    @Column
+    protected char sexo;
     
     @Temporal(javax.persistence.TemporalType.DATE)
     protected Date dataNascimento;
 
-    public EPessoaFisica()
-    {
-    }
-
-    public EPessoaFisica(String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        super(telefone, email, endereco, usuario);
-    }
-
-    public EPessoaFisica(String sexo, Date dataNascimento, String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        super(telefone, email, endereco, usuario);
-        this.sexo = sexo;
-        this.dataNascimento = dataNascimento;
-    }
-    
-    public String getSexo()
+    public char getSexo()
     {
         return sexo;
     }
 
-    public void setSexo(String sexo)
+    public void setSexo(char sexo)
     {
         this.sexo = sexo;
     }
@@ -65,24 +47,24 @@ public class EPessoaFisica extends EPessoaBase
     {
         this.dataNascimento = dataNascimento;
     }
+    
+    
 
-    public String getCpf()
+    public EPessoaFisica()
     {
-        return cpf;
     }
 
-    public void setCpf(String cpf)
+    public EPessoaFisica(char sexo, Date dataNascimento, String telefone, String email, String cpfCnpj, EEndereco endereco, EUsuario usuario, String nome, Integer sequencial)
     {
-        this.cpf = cpf;
+        super(telefone, email, cpfCnpj, endereco, usuario, nome, sequencial);
+        this.sexo = sexo;
+        this.dataNascimento = dataNascimento;
     }
 
-    public String getRg()
+    public EPessoaFisica(char sexo, Date dataNascimento, String telefone, String email, String cpfCnpj, EEndereco endereco, String nome, Integer sequencial)
     {
-        return rg;
+        super(telefone, email, cpfCnpj, endereco, nome, sequencial);
+        this.sexo = sexo;
+        this.dataNascimento = dataNascimento;
     }
-
-    public void setRg(String rg)
-    {
-        this.rg = rg;
-    }    
 }

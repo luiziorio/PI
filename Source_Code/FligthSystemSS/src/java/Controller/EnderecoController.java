@@ -20,9 +20,4 @@ public class EnderecoController extends BaseController<EEndereco, EnderecoDAO>
     {
         super(dao);
     }
-    @Override
-    protected EnderecoDAO getInstanciaDAO()
-    {
-        return EnderecoDAO.GetObjeto();
-    }
 }

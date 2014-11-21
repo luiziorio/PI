@@ -20,9 +20,4 @@ public class PilotoController extends BaseController<EPiloto, PilotoDAO>
     {
         super(dao);
     }
-    @Override
-    protected PilotoDAO getInstanciaDAO()
-    {
-        return PilotoDAO.GetObjeto();
-    }
 }

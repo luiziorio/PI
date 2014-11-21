@@ -27,13 +27,5 @@ public class CompanhiaAeriaController extends BaseController<ECompanhiaAerea, Co
     public CompanhiaAeriaController(CompanhiaAeriaDAO dao)
     {
         super(dao);
-    }
-    
-    @Override
-    protected CompanhiaAeriaDAO getInstanciaDAO()
-    {
-        return new CompanhiaAeriaDAO();
-        //return  CompanhiaAeriaDAO.GetObjeto();
-    }
-    
+    } 
 }

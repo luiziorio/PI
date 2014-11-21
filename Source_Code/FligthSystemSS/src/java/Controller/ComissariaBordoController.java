@@ -20,11 +20,4 @@ public class ComissariaBordoController extends BaseController<EComissariaBordo, 
     {
         super(dao);
     }
-
-    @Override
-    protected ComissariaBordoDAO getInstanciaDAO()
-    {
-       return ComissariaBordoDAO.GetObjeto();
-    }
-    
 }

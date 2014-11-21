@@ -8,6 +8,7 @@ package Model;
 import Base.EBaseNome;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
@@ -27,21 +28,18 @@ public abstract class EPessoaBase extends EBaseNome
     protected String telefone;
     @Column(length = 50)
     protected String email;
+    
+    @Column(length = 11)
+    protected String cpfCnpj;
+    
     @ManyToOne
     protected EEndereco endereco;
-    @OneToOne
+    
+    @OneToOne(fetch = FetchType.LAZY)
     protected EUsuario usuario;
 
     public EPessoaBase()
     {
-    }
-
-    public EPessoaBase(String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        this.telefone = telefone;
-        this.email = email;
-        this.endereco = endereco;
-        this.usuario = usuario;
     }
     
     public String getTelefone()
@@ -82,5 +80,34 @@ public abstract class EPessoaBase extends EBaseNome
     public void setUsuario(EUsuario usuario)
     {
         this.usuario = usuario;
+    }
+
+    public String getCpfCnpj()
+    {
+        return cpfCnpj;
+    }
+
+    public void setCpfCnpj(String cpfCnpj)
+    {
+        this.cpfCnpj = cpfCnpj;
+    }
+
+    public EPessoaBase(String telefone, String email, String cpfCnpj, EEndereco endereco, EUsuario usuario, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.telefone = telefone;
+        this.email = email;
+        this.cpfCnpj = cpfCnpj;
+        this.endereco = endereco;
+        this.usuario = usuario;
+    }
+
+    public EPessoaBase(String telefone, String email, String cpfCnpj, EEndereco endereco, String nome, Integer sequencial)
+    {
+        super(nome, sequencial);
+        this.telefone = telefone;
+        this.email = email;
+        this.cpfCnpj = cpfCnpj;
+        this.endereco = endereco;
     }
 }

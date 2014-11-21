@@ -20,11 +20,4 @@ public class AeronaveController extends BaseController<EAeronave, AeronaveDAO>
     {
         super(dao);
     }
-
-    @Override
-    protected AeronaveDAO getInstanciaDAO()
-    {
-        return AeronaveDAO.GetObjeto();
-    }
-    
 }

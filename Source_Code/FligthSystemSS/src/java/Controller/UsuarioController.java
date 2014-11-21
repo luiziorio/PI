@@ -25,12 +25,6 @@ public class UsuarioController extends BaseController<EUsuario, UsuarioDAO>
     {
         super(dao);
     }
-
-    @Override
-    protected UsuarioDAO getInstanciaDAO()
-    {
-        return new UsuarioDAO();
-    }
     
     public boolean validaUsuario(EUsuario usario)
     {

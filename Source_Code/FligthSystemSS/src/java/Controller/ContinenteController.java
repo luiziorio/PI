@@ -9,6 +9,7 @@ package Controller;
 import Base.BaseController;
 import DAO.ContinenteDAO;
 import Model.EContinente;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -16,15 +17,14 @@ import Model.EContinente;
  */
 public class ContinenteController extends BaseController<EContinente, ContinenteDAO>
 {
-
+    public ContinenteController()
+    {
+        super(new ContinenteDAO());
+    }
+    
+    @Autowired
     public ContinenteController(ContinenteDAO dao)
     {
         super(dao);
-    }
-
-    @Override
-    protected ContinenteDAO getInstanciaDAO()
-    {
-        return ContinenteDAO.GetObjeto();
     }
 }

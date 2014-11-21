@@ -8,12 +8,14 @@ package DAO;
 
 import Base.BaseDAO;
 import Model.EAeroporto;
+import org.springframework.stereotype.Repository;
      
 
 /**
  *
  * @author rafaellf
  */
+@Repository
 public class AeroportoDAO extends BaseDAO<EAeroporto>
 {
     private AeroportoDAO(){}

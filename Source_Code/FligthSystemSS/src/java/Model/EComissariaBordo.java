@@ -6,6 +6,7 @@
 package Model;
 
 import java.util.Date;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -21,19 +22,8 @@ import javax.persistence.Table;
 {
     @NamedQuery(name = "EComissariaBordo.getAll", query = "SELECT a FROM EComissariaBordo a"),
 })
+@DiscriminatorValue(value = "CBs")
 public class EComissariaBordo extends EFuncionario
 {
-    public EComissariaBordo()
-    {
-    }
 
-    public EComissariaBordo(Double salario, String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        super(salario, telefone, email, endereco, usuario);
-    }
-
-    public EComissariaBordo(Double salario, String sexo, Date dataNascimento, String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        super(salario, sexo, dataNascimento, telefone, email, endereco, usuario);
-    }
 }

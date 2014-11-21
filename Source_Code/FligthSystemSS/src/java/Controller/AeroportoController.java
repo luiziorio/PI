@@ -9,23 +9,20 @@ package Controller;
 import Base.BaseController;
 import DAO.AeroportoDAO;
 import Model.EAeroporto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author rafaellf
  */
+@Service
 public class AeroportoController extends BaseController<EAeroporto, AeroportoDAO>
 {
 
+    @Autowired
     public AeroportoController(AeroportoDAO dao)
     {
         super(dao);
     }
-
-    @Override
-    protected AeroportoDAO getInstanciaDAO()
-    {
-       return AeroportoDAO.GetObjeto(); 
-    }
-    
 }

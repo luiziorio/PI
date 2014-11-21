@@ -27,25 +27,27 @@
                         <p:inputText id="desc" label="Descrição" value="#{aeroportoBean.objeto.nome}" size="32" required="true" 
                                      style="color: #000000; background-color: #ffffff;"/>
                         <p:outputLabel value="Continente: " for="continente" style="color: #000000;"/>
-                        <p:selectOneMenu id="continente" value="#{dropdownView.continente}" style="width:300px">
+                        <p:selectOneMenu id="continente" value="#{aeroportoBean.continente.continentes}" style="width:300px">
+                            <p:ajax listener="#{aeroportoBean.onContinenteChange}" update="pais"/>
                             <f:selectItem itemLabel="Selecione o Continente" itemValue="" noSelectionOption="true" />
-                            <f:selectItems value="#{dropdownView.continente}" />
+                            <f:selectItems value="#{aeroportoBean.objeto.continente}" />
                         </p:selectOneMenu>
                         <p:outputLabel value="País: " for="pais" style="color: #000000;"/>
-                        <p:selectOneMenu id="pais" value="#{dropdownView.pais}" style="width:300px">
+                        <p:selectOneMenu id="pais" value="#{aeroportoBean.pais.paises}" style="width:300px">
+                            <p:ajax listener="#{aeroportoBean.onPaisChange}" update="cidade"/>
                             <f:selectItem itemLabel="Selecione o País" itemValue="" noSelectionOption="true" />
-                            <f:selectItems value="#{dropdownView.pais}" />
+                            <f:selectItems value="#{aeroportoBean.objeto.pais}" />
                         </p:selectOneMenu>
                         <p:outputLabel value="Cidade: " for="cidade" style="color: #000000;"/>
-                        <p:selectOneMenu id="cidade" value="#{dropdownView.cidade}" style="width:300px">
+                        <p:selectOneMenu id="cidade" value="#{aeroportoBean.cidade.cidades}" style="width:300px">
                             <f:selectItem itemLabel="Selecione a Cidade" itemValue="" noSelectionOption="true" />
-                            <f:selectItems value="#{dropdownView.cidade}" />
+                            <f:selectItems value="#{aeroportoBean.objeto.cidade}" />
                         </p:selectOneMenu>                        
                     </h:panelGrid><br/> 
                     <h:panelGrid columns="2">
-                        <p:commandButton update="dados" onclick="#" value="Ok" icon="ui-icon-check" iconPos="right"
-                                  style="width: 130px;"/>
-                        <p:button onclick="#" value="Cancelar" icon="ui-icon-cancel" iconPos="right"
+                        <p:commandButton update="dados" value="Ok" icon="ui-icon-check" iconPos="right"
+                                         style="width: 130px;" action="#{aeroportoBean.salva}"/>
+                        <p:button value="Cancelar" icon="ui-icon-cancel" iconPos="right"
                                   style="width: 130px;"/>
                     </h:panelGrid>
                 </h:panelGrid>

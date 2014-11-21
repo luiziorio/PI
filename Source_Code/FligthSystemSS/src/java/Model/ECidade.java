@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import org.springframework.stereotype.Component;
 
 /**
  *
@@ -26,6 +27,7 @@ import javax.persistence.NamedQuery;
     @NamedQuery(name = "ECidade.getAll", query = "SELECT a FROM ECidade a"),
     @NamedQuery(name = "ECidade.getAllCidadePorPais", query = "SELECT A FROM ECidade A WHERE A.pais.sequencial = :id")
 })
+@Component
 public class ECidade extends EBaseNome
 {
     @ManyToOne

@@ -20,9 +20,4 @@ public class PessoaJuridicaController extends BaseController<EPessoaJuridica, Pe
     {
         super(dao);
     }
-    @Override
-    protected PessoaJuridicaDAO getInstanciaDAO()
-    {
-        return PessoaJuridicaDAO.GetObjeto();
-    }
 }

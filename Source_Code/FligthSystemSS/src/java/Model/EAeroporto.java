@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import org.springframework.stereotype.Component;
 
 /**
  *
@@ -27,6 +28,7 @@ import javax.persistence.NamedQuery;
     @NamedQuery(name = "EAeroporto.findByIdaeroporto", query = "SELECT a FROM EAeroporto a WHERE a.sequencial = :sequencial"),
     @NamedQuery(name = "EAeroporto.findNotTransferido",query = "SELECT a FROM EAeroporto a WHERE a.tranferidoParaDW = :tranferido")
 })
+@Component
 public class EAeroporto extends EBaseNome 
 {
     private String codigo;

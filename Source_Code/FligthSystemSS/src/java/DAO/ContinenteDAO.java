@@ -8,24 +8,15 @@ package DAO;
 
 import Base.BaseDAO;
 import Model.EContinente;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author rafael
  */
+@Repository
 public class ContinenteDAO extends BaseDAO<EContinente>
 {
-    private ContinenteDAO(){}
-    
-    private static ContinenteDAO objeto;
-    
-    public static ContinenteDAO GetObjeto()
-    {
-        if(objeto == null)
-            objeto = new ContinenteDAO();
-        return objeto;
-    }
-
     @Override
     protected EContinente getInstanceEntidade()
     {

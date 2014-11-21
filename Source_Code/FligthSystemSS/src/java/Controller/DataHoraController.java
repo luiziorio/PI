@@ -19,11 +19,4 @@ public class DataHoraController extends BaseController<EDataHora, DataHoraDAO>
     {
         super(dao);
     }
-
-    @Override
-    protected DataHoraDAO getInstanciaDAO()
-    {
-        return DataHoraDAO.GetObjeto();
-    }
-    
 }

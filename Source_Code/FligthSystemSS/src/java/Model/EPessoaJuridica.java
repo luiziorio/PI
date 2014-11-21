@@ -5,6 +5,7 @@
  */
 package Model;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -14,37 +15,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PessoaJuridica")
+@DiscriminatorValue(value = "PJ")
 public class EPessoaJuridica extends EPessoaBase
 {
-
-    protected String cnpj;
-    
-    public EPessoaJuridica()
-    {
-    }
-
-    
-    public EPessoaJuridica(String telefone, String email, EEndereco endereco, EUsuario usuario)
-    {
-        super(telefone, email, endereco, usuario);
-    }
-
-    public EPessoaJuridica(String telefone, String email, EEndereco endereco, EUsuario usuario,String cnpj)
-    {
-        this.cnpj = cnpj;
-    }
-    
-    
-
-    public String getCnpj()
-    {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj)
-    {
-        this.cnpj = cnpj;
-    }
-    
     
 }

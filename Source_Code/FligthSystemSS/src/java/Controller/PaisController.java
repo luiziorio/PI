@@ -10,27 +10,31 @@ import Base.BaseController;
 import DAO.PaisDAO;
 import Model.EPais;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author rafaellf
  */
+@Service
 public class PaisController extends BaseController<EPais, PaisDAO>
 {
 
+    public PaisController()
+    {
+        super(new PaisDAO());
+    }
+    
+    @Autowired
     public PaisController(PaisDAO dao)
     {
         super(dao);
     }
-    @Override
-    protected PaisDAO getInstanciaDAO()
-    {
-        return PaisDAO.GetObjeto();
-    }
-    
+
     public List<EPais> getAllPaisPorContinente(Integer idContinente)
     {
-        return (List<EPais>)getInstanciaDAO().getAllPaisPorContinente(idContinente);
+        return (List<EPais>)dao.getAllPaisPorContinente(idContinente);
     }
     
 }

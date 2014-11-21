@@ -8,6 +8,7 @@ package Base;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,13 +28,6 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
     {
         this.dao = dao;
     }
-    
-    /**
-     * Get uma instancia do DAO
-     *
-     * @return DAO generico
-     */
-    protected abstract TDAO getInstanciaDAO();
     
     @Override 
      public void close()
@@ -83,8 +77,8 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
                 
     }
     
-    public List<TE> getAll()
+    public Set<TE> getAll()
     {
-        return (List<TE>) dao.getAll();
+        return (Set<TE>) dao.getAll();
     }
 }

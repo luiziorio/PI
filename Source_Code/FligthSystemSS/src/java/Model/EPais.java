@@ -16,6 +16,7 @@ import Base.EBaseNome;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import org.springframework.stereotype.Component;
 
 
 /**
@@ -29,6 +30,7 @@ import javax.persistence.NamedQuery;
     @NamedQuery(name = "EPais.getAll", query = "SELECT a FROM EPais a"),
     @NamedQuery(name = "EPais.getAllPaisPorContinete", query = "SELECT A FROM EPais A WHERE A.continente.sequencial = :id")
 })
+@Component
 public class EPais extends EBaseNome  
 {
     @ManyToOne

@@ -12,25 +12,19 @@ import Model.EPais;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author rafaellf
  */
+@Repository
 public class PaisDAO extends BaseDAO<EPais>
 {
-    private PaisDAO(){}
     
     private static PaisDAO objeto;
     protected final String Q_GET_PAIS_PELO_CONTINETE = "EPais.getAllPaisPorContinete";
-    protected final String P_GET_PAIS_PELO_CONTINETE_ID = "id";
-    
-    public static PaisDAO GetObjeto()
-    {
-        if(objeto == null)
-            objeto = new PaisDAO();
-        return objeto;
-    }
+    protected final String P_GET_PAIS_PELO_CONTINETE_ID = "id";    
 
     @Override
     protected EPais getInstanceEntidade()

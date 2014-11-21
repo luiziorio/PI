@@ -12,25 +12,18 @@ import Model.ECidade;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author rafaellf
  */
+@Repository
 public class CidadeDAO extends BaseDAO<ECidade>
 {
-    private CidadeDAO(){}
     
     private final String Q_GET_CIDADE_PELO_PAIS = "ECidade.getAllCidadePorPais";
     private final String P_GET_CIDADE_PELO_PAIS = "id";
-    private static CidadeDAO objeto;
-    
-    public static CidadeDAO GetObjeto()
-    {
-        if(objeto == null)
-            objeto = new CidadeDAO();
-        return objeto;
-    }
 
     @Override
     protected ECidade getInstanceEntidade()

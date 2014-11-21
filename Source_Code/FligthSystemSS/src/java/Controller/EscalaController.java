@@ -20,11 +20,4 @@ public class EscalaController extends BaseController<EEscala,EscalaDAO>
     {
         super(dao);
     }
-
-    @Override
-    protected EscalaDAO getInstanciaDAO()
-    {
-        return EscalaDAO.GetObjeto();
-    }
-    
 }
