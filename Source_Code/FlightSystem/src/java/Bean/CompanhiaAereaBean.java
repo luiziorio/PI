@@ -38,11 +38,15 @@ public class CompanhiaAereaBean extends BaseBean<CompanhiaAereaControle, Companh
     {
         //Sempre ta vindo nulo o file, tem que descobri pq e como arrumar
         if(file != null)
+        {
             objeto.setLogoTipoCIA(file.getContents());
-        //super.insert();
+            System.out.print("Foi caralho");
+        }
+        //super.insert(); esse metodo ta com problema;
     }
     
     /**
+     * 
      * Creates a new instance of CompanhiaAereaBean
      */
     public CompanhiaAereaBean()
