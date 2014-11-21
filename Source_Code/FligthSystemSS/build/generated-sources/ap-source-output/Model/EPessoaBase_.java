@@ -11,6 +11,7 @@ public abstract class EPessoaBase_ extends Base.EBaseNome_ {
 	public static volatile SingularAttribute<EPessoaBase, String> telefone;
 	public static volatile SingularAttribute<EPessoaBase, EEndereco> endereco;
 	public static volatile SingularAttribute<EPessoaBase, EUsuario> usuario;
+	public static volatile SingularAttribute<EPessoaBase, String> cpfCnpj;
 	public static volatile SingularAttribute<EPessoaBase, String> email;
 
 }

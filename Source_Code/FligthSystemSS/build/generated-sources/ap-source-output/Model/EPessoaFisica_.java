@@ -9,9 +9,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(EPessoaFisica.class)
 public abstract class EPessoaFisica_ extends Model.EPessoaBase_ {
 
-	public static volatile SingularAttribute<EPessoaFisica, String> rg;
-	public static volatile SingularAttribute<EPessoaFisica, String> cpf;
-	public static volatile SingularAttribute<EPessoaFisica, String> sexo;
+	public static volatile SingularAttribute<EPessoaFisica, Character> sexo;
 	public static volatile SingularAttribute<EPessoaFisica, Date> dataNascimento;
 
 }
