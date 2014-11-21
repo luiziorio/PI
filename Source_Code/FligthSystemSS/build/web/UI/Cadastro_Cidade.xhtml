@@ -8,7 +8,7 @@
     <h:head>
         <title>Cadastro de Cidade</title>
         <link type="text/css" rel="stylesheet" href="../css/theme.css"/>
-        <link rel="icon" type="image/ico" href="../images/iconetab.fw.ico"></link>
+        <link rel="icon" type="image/ico" href="../images/iconetab.fw.ico"/>
     </h:head>
     <h:body>
         <h:form>                   
@@ -24,6 +24,9 @@
                         <h:panelGrid columns="2" style="background: none;" cellpadding="5">
                             <p:outputLabel value="Nome:" for="nome" style="color: #000000;"/>
                             <p:inputText id="nome" label="Nome" value="#{cidadeBean.objeto.nome}"  required="true" 
+                                         style="color: #000000; background-color: #ffffff; width:200px;"/>
+                            <p:outputLabel value="Fuso Horário:" for="fusohorario" style="color: #000000;"/>
+                            <p:inputText id="fusohorario" label="Fuso Horário" value="#"  required="true" 
                                          style="color: #000000; background-color: #ffffff; width:200px;"/>
                             <p:outputLabel value="Continente: " for="continente" style="color: #000000;"/>
                                             <p:selectOneMenu id="continente" value="#" style="width:210px" required="true">
