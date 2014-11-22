@@ -35,7 +35,7 @@ public abstract class BaseBean < T extends BaseController, TM extends  EBase> im
         this.objeto = objeto;
     }
     
-    @POST
+  
     public void salva()
     {
         controller.Salvar(objeto);

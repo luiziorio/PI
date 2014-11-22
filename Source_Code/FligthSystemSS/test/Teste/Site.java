@@ -6,7 +6,11 @@
 package Teste;
 
 import Bean.CompanhiaAereaBean;
+import Bean.ContinenteBean;
+import Controller.ContinenteController;
+import DAO.ContinenteDAO;
 import Model.ECompanhiaAerea;
+import Model.EContinente;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -58,6 +62,19 @@ public class Site
         c.setObjeto(e);
         
         c.salva();*/
+    }
+    
+    @Test
+    public void testContinente()
+    {
+        ContinenteDAO c = new ContinenteDAO();
+        EContinente e = new EContinente();
+        ContinenteController cc = new ContinenteController(c);
+        ContinenteBean cb = new ContinenteBean(cc, e);
+        
+        e.setNome("Teste");
+
+        cb.salva();
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
