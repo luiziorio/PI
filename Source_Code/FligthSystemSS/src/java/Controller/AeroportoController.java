@@ -20,6 +20,11 @@ import org.springframework.stereotype.Service;
 public class AeroportoController extends BaseController<EAeroporto, AeroportoDAO>
 {
 
+    public AeroportoController()
+    {
+        super(new AeroportoDAO());
+        
+    }
     @Autowired
     public AeroportoController(AeroportoDAO dao)
     {

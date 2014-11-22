@@ -7,6 +7,7 @@
 package Model;
 
 import Base.EBaseNome;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,7 +24,7 @@ import org.springframework.stereotype.Component;
 @Table(name = "Continente")
 @NamedQueries(
 {
-    @NamedQuery(name = "EContinente.sgetAll", query = "SELECT a FROM EContinente a")
+    @NamedQuery(name = "Model.EContinente.getAll", query = "SELECT a FROM EContinente a")
 })
 @Component
 public class EContinente extends EBaseNome  
@@ -43,8 +44,11 @@ public class EContinente extends EBaseNome
         this.listaPaises = listaPaises;
     }
 
+    
     public EContinente()
     {
+        this.nome = new String();
+        this.listaPaises = new HashSet<>();
     }
 
     public EContinente(Set<EPais> listaPaises, String nome, Integer sequencial)

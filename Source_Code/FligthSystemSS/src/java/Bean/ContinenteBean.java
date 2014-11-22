@@ -3,34 +3,43 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Bean;
 
 import Base.BaseBean;
 import Controller.ContinenteController;
 import Model.EContinente;
-import javax.enterprise.context.SessionScoped;
+import Util.ObjetosStaticos;
 import javax.inject.Named;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
- * @author Flavinha
+ * @author rafael
  */
-//Todo bean tem que herdar de beanbase
 @Named(value = "continenteBean")
 @SessionScoped
-@Controller//Annotation do sprign para falar que ele  um controller
 public class ContinenteBean extends BaseBean<ContinenteController, EContinente>
 {
 
-    @Autowired
-    //Na hora que for aberta uma conexao com esse bean, o java automagicamente
-    //vai preencher o contrutor
-    public ContinenteBean(ContinenteController controller, EContinente model)
+    @Override
+    public void salva()
     {
-        super(controller, model);
+        super.salva(); //To change body of generated methods, choose Tools | Templates.
+        ObjetosStaticos.getInstance().updateContinente();
+    }
+    
+    
+
+    @Override
+    protected EContinente getNewModel()
+    {
+       return new EContinente();
+    }
+
+    @Override
+    protected ContinenteController getNewController()
+    {
+        return new ContinenteController();
     }
     
 }

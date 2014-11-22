@@ -13,6 +13,8 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import Base.EBaseNome;
+import java.util.HashSet;
+import javax.naming.ldap.HasControls;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -38,12 +40,12 @@ public class EPais extends EBaseNome
     @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ECidade> listaCidades;
 
-    public EContinente getContinenteSequencial()
+    public EContinente getContinente()
     {
         return continente;
     }
 
-    public void setContinenteSequencial(EContinente continente)
+    public void setContinente(EContinente continente)
     {
         this.continente = continente;
     }
@@ -60,6 +62,9 @@ public class EPais extends EBaseNome
 
     public EPais()
     {
+        this.nome = new String();
+        this.continente = new EContinente();
+        this.listaCidades = new HashSet<>();
     }
 
     public EPais(EContinente continente, Set<ECidade> listaCidades, String nome, Integer sequencial)

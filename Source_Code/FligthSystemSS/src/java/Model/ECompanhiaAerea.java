@@ -14,6 +14,7 @@ import javax.persistence.Transient;
 import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -71,6 +72,7 @@ public class ECompanhiaAerea extends EBaseNome
         this.logoTipo = logoTipo;
     }
 
+    @Autowired
     public ECompanhiaAerea()
     {
     }

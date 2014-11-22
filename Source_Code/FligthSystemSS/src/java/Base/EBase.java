@@ -15,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Classe base ppara a persistencia de dados
@@ -24,6 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name = "base")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Component
 public abstract class EBase implements Serializable
 {
     @Id @GeneratedValue(strategy = GenerationType.TABLE)
@@ -52,6 +55,7 @@ public abstract class EBase implements Serializable
         this.sequencial = sequencial;
     }
 
+    @Autowired
     public EBase()
     {
     }

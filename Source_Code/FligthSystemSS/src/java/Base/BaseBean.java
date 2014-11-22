@@ -7,6 +7,8 @@ package Base;
 
 import java.io.Serializable;
 import javax.ws.rs.POST;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * Classe base para os beans, aqui já possui os metodos de salvar e pesquisar simples
@@ -14,19 +16,20 @@ import javax.ws.rs.POST;
  * @param <T> Classe que herda de base controle
  * @param <TM> Classe que é o Model
  */
+@Controller
 public abstract class BaseBean < T extends BaseController, TM extends  EBase> implements Serializable
 {
-    protected TM objeto;
-    private final T controller;    
-
-    public BaseBean(T controller, TM model)
-    {
-        this.controller = controller;
-        model = objeto;
-    }
     
+    protected TM objeto;
+    protected T controller;    
+    
+    protected abstract TM getNewModel();
+    protected abstract T getNewController();
+
     public TM getObjeto()
     {
+        if(objeto == null)
+            objeto = getNewModel();
         return objeto;
     }
 
@@ -38,6 +41,8 @@ public abstract class BaseBean < T extends BaseController, TM extends  EBase> im
   
     public void salva()
     {
+        if(controller == null)
+            controller = getNewController();
         controller.Salvar(objeto);
     }
 }

@@ -34,6 +34,11 @@ public class ObjetosStaticos
         return continentes;
     }
     
+    public void updateContinente()
+    {
+        carregaContinentes();
+    }
+    
     private void carregaContinentes()
     {
         try(ContinenteController cc = new ContinenteController())

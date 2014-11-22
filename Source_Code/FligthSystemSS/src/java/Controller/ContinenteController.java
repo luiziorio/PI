@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 @Service //Essa classe precisa disso, pois o spring precisa saber dele para Injecao de dependencias, no sei se fazer na base resolve
 public class ContinenteController extends BaseController<EContinente, ContinenteDAO>
 {
+    
     public ContinenteController()
     {
         super(new ContinenteDAO());

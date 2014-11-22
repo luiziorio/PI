@@ -11,7 +11,6 @@ import Model.ECompanhiaAerea;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import org.primefaces.model.UploadedFile;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -23,14 +22,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class CompanhiaAereaBean extends BaseBean<CompanhiaAeriaController, ECompanhiaAerea>
 {
-    
     private UploadedFile file;
-
-    @Autowired
-    public CompanhiaAereaBean(CompanhiaAeriaController controller, ECompanhiaAerea model)
-    {
-        super(controller, model);
-    }
 
     public UploadedFile getFile()
     {
@@ -48,6 +40,18 @@ public class CompanhiaAereaBean extends BaseBean<CompanhiaAeriaController, EComp
         if(file != null)
             objeto.setLogoTipoCIA(file.getContents());
         super.salva(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    protected ECompanhiaAerea getNewModel()
+    {
+        return new ECompanhiaAerea();
+    }
+
+    @Override
+    protected CompanhiaAeriaController getNewController()
+    {
+        return new CompanhiaAeriaController();
     }
     
 }

@@ -8,12 +8,14 @@ package Base;
 
 import HibernateUtility.HibernateUtility;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 /**
  * Classe abstrata e base para todas as classes de acesso ao banco de dado
@@ -21,6 +23,7 @@ import org.hibernate.Transaction;
  * @param <T> Clasee a ser persistida
  * @version  1.0.0
  */
+@Repository
 public abstract class BaseDAO<T extends EBase> implements Serializable
 {
    

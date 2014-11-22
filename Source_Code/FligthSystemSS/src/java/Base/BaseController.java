@@ -7,10 +7,12 @@
 package Base;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.springframework.stereotype.Service;
 
 /**
  * Classe abstrata com as funções base do controller
@@ -20,6 +22,7 @@ import java.util.logging.Logger;
  * @param <TDAO> Classe de acesso ao banco. Obrigatorio herdar da classe BaseDAO
  */
 @SuppressWarnings("unchecked")
+@Service
 public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> implements AutoCloseable,Serializable
 {
     protected final TDAO dao;
@@ -79,6 +82,6 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
     
     public Set<TE> getAll()
     {
-        return (Set<TE>) dao.getAll();
+        return new HashSet<>(dao.getAll());
     }
 }

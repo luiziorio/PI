@@ -18,10 +18,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class CompanhiaAeriaController extends BaseController<ECompanhiaAerea, CompanhiaAeriaDAO>
 {
-    /*public CompanhiaAeriaController()
+    public CompanhiaAeriaController()
     {
-    super(new CompanhiaAeriaDAO());
-    }*/
+        super(new CompanhiaAeriaDAO());
+    }
     
     @Autowired
     public CompanhiaAeriaController(CompanhiaAeriaDAO dao)

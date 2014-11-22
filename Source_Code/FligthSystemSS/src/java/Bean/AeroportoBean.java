@@ -12,12 +12,6 @@ import Compomentes.Dropview.DropViewContinente;
 import Compomentes.Dropview.DropViewPais;
 import Controller.AeroportoController;
 import Model.EAeroporto;
-import Model.ECidade;
-import Model.EContinente;
-import Model.EPais;
-import Util.ObjetosStaticos;
-import java.util.List;
-import java.util.Set;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,15 +25,8 @@ import org.springframework.stereotype.Controller;
 @SessionScoped
 @Controller
 public class AeroportoBean extends BaseBean<AeroportoController, EAeroporto>
-{
-    @Autowired
-    public AeroportoBean(AeroportoController controller, EAeroporto model)
-    {
-        super(controller, model);
-    }
-    
-    
-    
+{   
+
     public void onContinenteChange()
     {
         pais.setContinente(objeto.getContinente());
@@ -82,6 +69,18 @@ public class AeroportoBean extends BaseBean<AeroportoController, EAeroporto>
     public void setPais(DropViewPais pais)
     {
         this.pais = pais;
+    }
+
+    @Override
+    protected EAeroporto getNewModel()
+    {
+        return new EAeroporto();
+    }
+
+    @Override
+    protected AeroportoController getNewController()
+    {
+        return new AeroportoController(null);
     }
     
     

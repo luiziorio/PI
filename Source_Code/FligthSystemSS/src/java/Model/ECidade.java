@@ -34,12 +34,12 @@ public class ECidade extends EBaseNome
     private EPais pais;
     private Integer fusoHorario;
 
-    public EPais getPaisSequencial()
+    public EPais getPais()
     {
         return pais;
     }
 
-    public void setPaisSequencial(EPais pais)
+    public void setPais(EPais pais)
     {
         this.pais = pais;
     }

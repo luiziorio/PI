@@ -7,6 +7,7 @@ package DAO;
 
 import Base.BaseDAO;
 import Model.ECompanhiaAerea;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CompanhiaAeriaDAO extends BaseDAO<ECompanhiaAerea>
 {
+    @Autowired
     public CompanhiaAeriaDAO()
     {
         

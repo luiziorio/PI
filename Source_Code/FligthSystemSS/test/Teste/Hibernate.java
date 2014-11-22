@@ -6,6 +6,10 @@
 package Teste;
 
 import HibernateUtility.HibernateUtility;
+import Model.EContinente;
+import Util.ObjetosStaticos;
+import java.util.List;
+import java.util.Set;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.After;
@@ -56,6 +60,12 @@ public class Hibernate
         
         t.commit();
         s.close();
+    }
+    
+    @Test
+    public void testGetContinente()
+    {
+        Set<EContinente> c = ObjetosStaticos.getInstance().getContinentes();
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

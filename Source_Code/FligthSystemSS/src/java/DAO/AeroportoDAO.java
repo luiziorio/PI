@@ -18,17 +18,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AeroportoDAO extends BaseDAO<EAeroporto>
 {
-    private AeroportoDAO(){}
-    
-    private static AeroportoDAO objeto;
-    
-    public static AeroportoDAO GetObjeto()
-    {
-        if(objeto == null)
-            objeto = new AeroportoDAO();
-        return objeto;
-    }
-
     @Override
     protected EAeroporto getInstanceEntidade()
     {
