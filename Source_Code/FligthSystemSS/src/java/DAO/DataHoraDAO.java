@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import Base.BaseDAO;
+import Base.Persistencia.BaseDAO;
 import Model.EDataHora;
 
 /**

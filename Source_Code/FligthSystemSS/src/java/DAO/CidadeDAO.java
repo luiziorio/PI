@@ -6,7 +6,7 @@
 
 package DAO;
 
-import Base.BaseDAO;
+import Base.Persistencia.BaseDAO;
 import HibernateUtility.HibernateUtility;
 import Model.ECidade;
 import java.util.List;

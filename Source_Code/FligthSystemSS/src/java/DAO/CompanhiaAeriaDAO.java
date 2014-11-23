@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import Base.BaseDAO;
+import Base.Persistencia.BaseDAO;
 import Model.ECompanhiaAerea;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

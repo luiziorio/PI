@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Base.EBaseNome;
+import Base.Persistencia.EBaseNome;
 import java.awt.Image;
 import javax.persistence.Column;
 import javax.persistence.Entity;

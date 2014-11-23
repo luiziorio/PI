@@ -28,7 +28,7 @@
                             <p:outputLabel value="Continente: " for="continente" style="color: #000000;"/>
                             <p:selectOneMenu id="continente" value="#{paisBean.objeto.continente}" style="width:210px" required="false">
                                 <f:selectItem itemLabel="Selecione o continente" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{paisBean.continente.continentes}" />
+                                <f:selectItems value="#{paisBean.continente.objetos}" />
                             </p:selectOneMenu>                                                     
                         </h:panelGrid><br/> 
                         <h:panelGrid id="botao" columns="2">

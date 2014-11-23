@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Base.BaseController;
+import Base.Persistencia.BaseController;
 import DAO.PessoaJuridicaDAO;
 import Model.EPessoaJuridica;
 

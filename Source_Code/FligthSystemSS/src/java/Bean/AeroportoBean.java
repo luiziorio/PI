@@ -6,7 +6,7 @@
 
 package Bean;
 
-import Base.BaseBean;
+import Base.Persistencia.BaseBean;
 import Compomentes.Dropview.DropViewCidade;
 import Compomentes.Dropview.DropViewContinente;
 import Compomentes.Dropview.DropViewPais;

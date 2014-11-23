@@ -32,12 +32,12 @@
                             <p:selectOneMenu id="continente" value="#{cidadeBean.objeto.pais.continente}" style="width:210px" required="true">
                                 <p:ajax listener="#{cidadeBean.onContinenteChange}" update="pais"/>
                                 <f:selectItem itemLabel="Selecione o continente" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{cidadeBean.continente.continentes}" />
+                                <f:selectItems value="#{cidadeBean.continente.objetos}" />
                             </p:selectOneMenu>
                             <p:outputLabel value="País: " for="pais" style="color: #000000;"/>
                             <p:selectOneMenu id="pais" value="#{cidadeBean.objeto.pais}" style="width:210px" required="true">
                                 <f:selectItem itemLabel="Selecione o país" itemValue="" noSelectionOption="true" />
-                                <f:selectItems value="#{cidadeBean.pais.paises}" />
+                                <f:selectItems value="#{cidadeBean.pais.objeto}" />
                             </p:selectOneMenu>
                         </h:panelGrid><br/> 
                         <h:panelGrid columns="2">

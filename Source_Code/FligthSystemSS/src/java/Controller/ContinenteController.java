@@ -6,7 +6,7 @@
 
 package Controller;
 
-import Base.BaseController;
+import Base.Persistencia.BaseController;
 import DAO.ContinenteDAO;
 import Model.EContinente;
 import java.util.Set;

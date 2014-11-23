@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Base.EBase;
+import Base.Persistencia.EBase;
 import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;

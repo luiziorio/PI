@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Base;
+package Base.Persistencia;
 
 import java.io.Serializable;
 import javax.persistence.Entity;

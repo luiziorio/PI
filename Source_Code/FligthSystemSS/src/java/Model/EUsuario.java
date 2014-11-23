@@ -11,7 +11,7 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
-import Base.EBaseNome;
+import Base.Persistencia.EBaseNome;
 import javax.persistence.Column;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;

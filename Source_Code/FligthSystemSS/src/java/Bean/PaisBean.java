@@ -5,7 +5,7 @@
  */
 package Bean;
 
-import Base.BaseBean;
+import Base.Persistencia.BaseBean;
 import Compomentes.Dropview.DropViewContinente;
 import Controller.PaisController;
 import Model.EContinente;

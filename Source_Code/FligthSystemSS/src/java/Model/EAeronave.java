@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Base.EBaseNome;
+import Base.Persistencia.EBaseNome;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.List;

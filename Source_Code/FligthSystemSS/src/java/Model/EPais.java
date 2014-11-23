@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import Base.EBaseNome;
+import Base.Persistencia.EBaseNome;
 import java.util.HashSet;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;

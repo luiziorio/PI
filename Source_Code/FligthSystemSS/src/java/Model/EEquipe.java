@@ -6,7 +6,7 @@
 package Model;
 
 
-import Base.EBaseNome;
+import Base.Persistencia.EBaseNome;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;

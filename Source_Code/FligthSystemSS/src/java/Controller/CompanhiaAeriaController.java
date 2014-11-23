@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Base.BaseController;
+import Base.Persistencia.BaseController;
 import DAO.CompanhiaAeriaDAO;
 import Model.ECompanhiaAerea;
 import org.springframework.beans.factory.annotation.Autowired;

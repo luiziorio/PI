@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Compomentes.Dropview;
 
-import Base.Persistencia.EBaseNome;
+import Base.Compomente.DropViewBase;
+import Model.ECompanhiaAerea;
 
 /**
  *
  * @author rafael
  */
-public class EStatus extends EBaseNome
+public class DropViewCia extends DropViewBase<ECompanhiaAerea>
 {
     
 }

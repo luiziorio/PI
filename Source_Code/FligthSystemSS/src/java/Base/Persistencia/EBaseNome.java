@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Base;
+package Base.Persistencia;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

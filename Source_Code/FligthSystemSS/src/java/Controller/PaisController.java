@@ -6,7 +6,7 @@
 
 package Controller;
 
-import Base.BaseController;
+import Base.Persistencia.BaseController;
 import DAO.PaisDAO;
 import Model.EPais;
 import java.util.List;

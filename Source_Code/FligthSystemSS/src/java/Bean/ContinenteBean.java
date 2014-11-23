@@ -5,7 +5,7 @@
  */
 package Bean;
 
-import Base.BaseBean;
+import Base.Persistencia.BaseBean;
 import Controller.ContinenteController;
 import Model.EContinente;
 import Util.ObjetosStaticos;

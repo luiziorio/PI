@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Base.EBase;
+import Base.Persistencia.EBase;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Table;

@@ -5,6 +5,7 @@
  */
 package Compomentes.Dropview;
 
+import Base.Compomente.DropViewBase;
 import Model.EContinente;
 import Util.ObjetosStaticos;
 import java.util.Set;
@@ -13,32 +14,13 @@ import java.util.Set;
  *
  * @author rafael
  */
-public class DropViewContinente
+public class DropViewContinente extends DropViewBase<EContinente>
 {
-    private EContinente continente;
-    private Set<EContinente> continentes;
-
-    public EContinente getContinente()
+    @Override
+    public Set<EContinente> getObjetos()
     {
-        return continente;
+        if(objetos == null)
+          objetos = ObjetosStaticos.getInstance().getContinentes();
+        return objetos;
     }
-
-    public void setContinente(EContinente continente)
-    {
-        this.continente = continente;
-    }
-
-    public Set<EContinente> getContinentes()
-    {
-        if(continentes == null)
-          continentes = ObjetosStaticos.getInstance().getContinentes();
-        return continentes;
-    }
-
-    public void setContinentes(Set<EContinente> continentes)
-    {
-        //this.continentes = continentes;
-    }
-    
-    
 }

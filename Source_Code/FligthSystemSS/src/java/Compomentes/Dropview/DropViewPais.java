@@ -5,6 +5,7 @@
  */
 package Compomentes.Dropview;
 
+import Base.Compomente.DropViewBase;
 import Model.EContinente;
 import Model.EPais;
 import java.util.HashSet;
@@ -14,10 +15,9 @@ import java.util.Set;
  *
  * @author rafael
  */
-public class DropViewPais
+public class DropViewPais extends DropViewBase<EPais>
 {
     private EContinente continente;
-    private Set<EPais> paises;
 
     public EContinente getContinente()
     {
@@ -29,18 +29,14 @@ public class DropViewPais
         this.continente = continente;
     }
     
-    public Set<EPais> getPaises()
+    @Override
+    public Set<EPais> getObjetos()
     {
         if(continente != null && continente.getListaPaises() != null)
-            paises = continente.getListaPaises();
+            objetos = continente.getListaPaises();
         else
-            paises = new HashSet<>();
-        return paises;
+            objetos = new HashSet<>();
+        return objetos;
     }
 
-    public void setPaises(Set<EPais> paises)
-    {
-        //this.paises = paises;
-    }
-    
 }
