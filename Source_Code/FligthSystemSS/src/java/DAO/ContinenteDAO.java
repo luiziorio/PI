@@ -7,7 +7,10 @@
 package DAO;
 
 import Base.BaseDAO;
+import HibernateUtility.HibernateUtility;
 import Model.EContinente;
+import java.util.Set;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -21,6 +24,12 @@ public class ContinenteDAO extends BaseDAO<EContinente>
     protected EContinente getInstanceEntidade()
     {
         return new EContinente();
+    }
+    
+    public void atualizaPais(Set<EContinente> continete)
+    {
+        Session s = HibernateUtility.getSession();
+        s.update(s);
     }
     
 }

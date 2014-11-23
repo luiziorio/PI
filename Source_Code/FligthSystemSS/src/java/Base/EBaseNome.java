@@ -10,8 +10,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import org.hibernate.Session;
 
 /**
  * Classe que herdar de EBase, possuindo apenas o attributo nome a mais

@@ -7,14 +7,12 @@
 package Model;
 
 import java.util.Set;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import Base.EBaseNome;
 import java.util.HashSet;
-import javax.naming.ldap.HasControls;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -37,7 +35,8 @@ public class EPais extends EBaseNome
 {
     @ManyToOne
     private EContinente continente;
-    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    
+    @OneToMany(mappedBy = "pais",fetch = FetchType.EAGER)
     private Set<ECidade> listaCidades;
 
     public EContinente getContinente()

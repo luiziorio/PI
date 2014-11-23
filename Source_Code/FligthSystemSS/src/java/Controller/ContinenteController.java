@@ -9,6 +9,7 @@ package Controller;
 import Base.BaseController;
 import DAO.ContinenteDAO;
 import Model.EContinente;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +30,10 @@ public class ContinenteController extends BaseController<EContinente, Continente
     public ContinenteController(ContinenteDAO dao)
     {
         super(dao);
+    }
+    
+    public void updatePais(Set<EContinente> continentes)
+    {
+        dao.atualizaPais(continentes);
     }
 }

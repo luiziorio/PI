@@ -162,4 +162,20 @@ public abstract class BaseDAO<T extends EBase> implements Serializable
         }
         return retorno;
     }
+    
+    public void update(T objeto)
+    {
+        Session s = HibernateUtility.getSession();
+        try
+        {
+            s.update(objeto);
+        }
+        catch(Exception e)
+        {
+        }
+        finally
+        {
+            s.close();
+        }
+    }
 }

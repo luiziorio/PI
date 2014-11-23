@@ -29,20 +29,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class EContinente extends EBaseNome  
 {
-   @OneToMany(fetch = FetchType.LAZY)
+   @OneToMany(mappedBy = "continente",fetch = FetchType.EAGER)
    private Set<EPais> listaPaises;
+    
+   public Set<EPais> getListaPaises()
+   {
+       return listaPaises;
+   }
 
     
-    public Set<EPais> getListaPaises()
-    {
-        return listaPaises;
-    }
-
-    
-    public void setListaPaises(Set<EPais> listaPaises)
-    {
-        this.listaPaises = listaPaises;
-    }
+   public void setListaPaises(Set<EPais> listaPaises)
+   {
+       this.listaPaises = listaPaises;
+   }
 
     
     public EContinente()

@@ -5,15 +5,20 @@
  */
 package Teste;
 
+import Bean.CidadeBean;
 import Bean.CompanhiaAereaBean;
 import Bean.ContinenteBean;
+import Bean.PaisBean;
 import Controller.CompanhiaAeriaController;
 import Controller.ContinenteController;
 import DAO.CompanhiaAeriaDAO;
 import DAO.ContinenteDAO;
 import HibernateUtility.HibernateUtility;
+import Model.ECidade;
 import Model.ECompanhiaAerea;
 import Model.EContinente;
+import Model.EPais;
+import Util.ObjetosStaticos;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.After;
@@ -21,7 +26,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -96,9 +100,68 @@ public class Site
         
         cb.salva();
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+
+    @Test
+    public void testPais()
+    {
+        EPais pais = new EPais();
+        PaisBean p = new PaisBean();
+        
+        pais.setNome("Teste1");
+        for(EContinente e : ObjetosStaticos.getInstance().getContinentes() )
+        {
+            pais.setContinente(e);
+            break;
+        }
+        
+        p.setObjeto(pais);
+        
+        p.salva();
+        
+        for(EContinente e : ObjetosStaticos.getInstance().getContinentes() )
+        {
+            Integer t = e.getListaPaises().size();
+            System.out.println("quantiade paises: " + t.toString());
+            for(EPais ps : e.getListaPaises())
+                System.out.println("Nome: " + ps.getNome());
+            break;
+        }
+    }
+    
+    @Test
+    public void testCidade()
+    {
+        ECidade cidade = new ECidade();
+        CidadeBean cb = new CidadeBean();
+        
+        cidade.setNome("TesteCidade");
+        
+        for(EContinente e : ObjetosStaticos.getInstance().getContinentes() )
+        {
+            for(EPais p : e.getListaPaises())
+            {
+                cidade.setPais(p);
+                break;
+            }
+            break;
+        }
+        
+        cb.setObjeto(cidade);
+        cb.salva();
+        
+        for(EContinente e : ObjetosStaticos.getInstance().getContinentes() )
+        {
+            System.out.println("Nome Continente: " + e.getNome());
+            Integer t = e.getListaPaises().size();
+            System.out.println("quantiade paises: " + t.toString());
+            for(EPais ps : e.getListaPaises())
+            {
+                System.out.println("Nome Pais: " + ps.getNome());
+                for(ECidade c : ps.getListaCidades())
+                    System.out.println("Nome Cidade: " + c.getNome());
+            }
+        }
+                
+    }
+    
 }

@@ -5,10 +5,14 @@
  */
 package Util;
 
+import Controller.CidadeController;
 import Controller.ContinenteController;
+import Controller.PaisController;
+import HibernateUtility.HibernateUtility;
 import Model.EContinente;
-import java.util.List;
+import Model.EPais;
 import java.util.Set;
+import org.hibernate.Session;
 
 /**
  *

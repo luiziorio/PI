@@ -30,6 +30,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ECidade extends EBaseNome
 {
+    
     @ManyToOne
     private EPais pais;
     private Integer fusoHorario;

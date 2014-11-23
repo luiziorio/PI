@@ -33,8 +33,8 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
     }
     
     @Override 
-     public void close()
-     {
+    public void close()
+    {
         try
         {
             finalize();
@@ -46,8 +46,7 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
         }
      }
     
-     
-     /**
+    /**
       * Salva a entidade
       * @param objeto entidade a ser salva
      * @return 
@@ -83,5 +82,10 @@ public abstract class BaseController <TE extends EBase, TDAO extends BaseDAO> im
     public Set<TE> getAll()
     {
         return new HashSet<>(dao.getAll());
+    }
+    
+    public void update(TE objeto)
+    {
+        dao.update(objeto);
     }
 }
