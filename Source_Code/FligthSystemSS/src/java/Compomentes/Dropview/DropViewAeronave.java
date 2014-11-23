@@ -6,26 +6,28 @@
 package Compomentes.Dropview;
 
 import Base.Compomente.DropViewBase;
-import Controller.CompanhiaAeriaController;
-import Model.ECompanhiaAerea;
+import Controller.AeronaveController;
+import Model.EAeronave;
 import java.util.Set;
 
 /**
  *
  * @author rafael
  */
-public class DropViewCia extends DropViewBase<ECompanhiaAerea>
+public class DropViewAeronave extends DropViewBase<EAeronave>
 {
+
     @Override
-    public Set<ECompanhiaAerea> getObjetos()
+    public Set<EAeronave> getObjetos()
     {
         if(objetos == null)
         {
-            try(CompanhiaAeriaController cac = new CompanhiaAeriaController())
+            try(AeronaveController ac = new AeronaveController())
             {
-                objetos = cac.getAll();
+                objetos = ac.getAll();
             }
         }
         return objetos;
     }
+    
 }

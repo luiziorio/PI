@@ -39,4 +39,10 @@ public class DropViewPais extends DropViewBase<EPais>
         return objetos;
     }
 
+    @Override
+    public void setObjetos(Set<EPais> objetos)
+    {
+        
+    }
+
 }

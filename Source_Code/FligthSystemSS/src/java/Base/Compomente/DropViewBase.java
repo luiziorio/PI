@@ -10,32 +10,17 @@ import java.util.Set;
 /**
  *
  * @author rafael
+ * @param <T>
  */
-public class DropViewBase<T>
+public abstract class DropViewBase<T>
 {
-    protected T objeto;
     protected Set<T> objetos;
 
-    public T getObjeto()
-    {
-        return objeto;
-    }
-
-    public void setObjeto(T objeto)
-    {
-        this.objeto = objeto;
-    }
-
-    public Set<T> getObjetos()
-    {
-        return objetos;
-    }
+    public abstract Set<T> getObjetos();
 
     public void setObjetos(Set<T> objetos)
     {
         this.objetos = objetos;
     }
-    
-    
     
 }

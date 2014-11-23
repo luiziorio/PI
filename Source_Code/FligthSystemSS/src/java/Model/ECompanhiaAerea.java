@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 @Table(name = "CompanhiaAeria")
 @NamedQueries(
 {
-    @NamedQuery(name = "ECompanhiaAerea.getAll", query = "SELECT a FROM ECompanhiaAerea a")
+    @NamedQuery(name = "Model.ECompanhiaAerea.getAll", query = "SELECT a FROM ECompanhiaAerea a")
 })
 @Component
 public class ECompanhiaAerea extends EBaseNome  

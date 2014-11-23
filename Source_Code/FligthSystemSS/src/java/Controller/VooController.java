@@ -15,6 +15,11 @@ import Model.EVoo;
  */
 public class VooController extends BaseController<EVoo, VooDAO>
 {
+    public VooController()
+    {
+        super(new VooDAO());
+    }
+    
     public VooController(VooDAO dao)
     {
         super(dao);

@@ -15,6 +15,10 @@ import Model.EAeronave;
  */
 public class AeronaveController extends BaseController<EAeronave, AeronaveDAO>
 {
+    public AeronaveController()
+    {
+        super(new AeronaveDAO());
+    }
 
     public AeronaveController(AeronaveDAO dao)
     {

@@ -14,17 +14,6 @@ import Model.EVoo;
  */
 public class VooDAO extends BaseDAO<EVoo>
 {
-    private VooDAO(){}
-    
-    private static VooDAO objeto;
-    
-    public static VooDAO GetObjeto()
-    {
-        if(objeto == null)
-            objeto = new VooDAO();
-        return objeto;
-    }
-
     @Override
     protected EVoo getInstanceEntidade()
     {

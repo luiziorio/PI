@@ -14,17 +14,6 @@ import Model.EAeronave;
  */
 public class AeronaveDAO extends BaseDAO<EAeronave>
 {
-    private AeronaveDAO(){}
-    
-    private static AeronaveDAO objeto;
-    
-    public static AeronaveDAO GetObjeto()
-    {
-        if(objeto == null)
-            objeto = new AeronaveDAO();
-        return objeto;
-    }
-
     @Override
     protected EAeronave getInstanceEntidade()
     {

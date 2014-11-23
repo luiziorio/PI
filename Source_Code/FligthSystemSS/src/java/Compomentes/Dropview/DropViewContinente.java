@@ -23,4 +23,10 @@ public class DropViewContinente extends DropViewBase<EContinente>
           objetos = ObjetosStaticos.getInstance().getContinentes();
         return objetos;
     }
+
+    @Override
+    public void setObjetos(Set<EContinente> objetos)
+    {
+        
+    }
 }

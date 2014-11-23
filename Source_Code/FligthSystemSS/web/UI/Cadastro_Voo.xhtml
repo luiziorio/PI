@@ -25,19 +25,14 @@
                                     <div class="ui-grid-col-6"> 
                                         <h:panelGrid columns="2" style="background: none; text-align: right;" >                                            
                                             <p:outputLabel for="cia_aerea" value="Cia Aerea: " style="color: #000000;" />
-                                            <p:selectOneMenu id="cia_aerea" value="#{dropdownView.cia_aerea}" style="width:300px">
+                                            <p:selectOneMenu id="cia_aerea" value="#{vooBean.objeto.companhia}" style="width:300px">
                                                 <f:selectItem itemLabel="Selecione a Cia Aerea" itemValue="" noSelectionOption="true" />
-                                                <f:selectItems value="#{dropdownView.cia_aerea}" />
+                                                <f:selectItems value="#{vooBean.cia.objetos}" />
                                             </p:selectOneMenu>
                                             <p:outputLabel value="Aeronave: " for="aeronave" style="color: #000000;"/>
-                                            <p:selectOneMenu id="aeronave" value="#{dropdownView.aeronave}" style="width:300px">
+                                            <p:selectOneMenu id="aeronave" value="#{vooBean.objeto.aeronave}" style="width:300px">
                                                 <f:selectItem itemLabel="Selecione a Aeronave" itemValue="" noSelectionOption="true" />
-                                                <f:selectItems value="#{dropdownView.aeronave}" />
-                                            </p:selectOneMenu>
-                                            <p:outputLabel value="Escala: " for="escala" style="color: #000000;"/>
-                                            <p:selectOneMenu id="escala" value="#{dropdownView.escala}" style="width:300px">
-                                                <f:selectItem itemLabel="Selecione a Escala" itemValue="" noSelectionOption="true" />
-                                                <f:selectItems value="#{dropdownView.escala}" />
+                                                <f:selectItems value="#{vooBean.aeronave.objetos}" />
                                             </p:selectOneMenu>
                                             <p:outputLabel value="Voo: " for="voo" style="color: #000000;"/>
                                             <p:selectOneMenu id="voo" value="#{dropdownView.voo}" style="width:300px">
@@ -49,20 +44,16 @@
                                     <div class="ui-grid-col-6">
                                         <h:panelGrid columns="2" style="background: none; text-align: right;" >
                                             <p:outputLabel value="Aeroporto Destino: " for="aeroportodest" style="color: #000000;"/>
-                                            <p:selectOneMenu id="aeroportodest" value="#{dropdownView.aeroportodest}" style="width:300px">
+                                            <p:selectOneMenu id="aeroportodest" value="#{vooBean.escala.aeroportoDestino}" style="width:300px">
                                                 <f:selectItem itemLabel="Selecione o Aeroporto" itemValue="" noSelectionOption="true" />
-                                                <f:selectItems value="#{dropdownView.aeroportodest}" />
+                                                <f:selectItems value="#{vooBean.destino.objetos}" />
                                             </p:selectOneMenu>
                                             <p:outputLabel value="Aeroporto Origem: " for="aeroportoorig" style="color: #000000;"/>
-                                            <p:selectOneMenu id="aeroportoorig" value="#{dropdownView.aeroportoorig}" style="width:300px">
+                                            <p:selectOneMenu id="aeroportoorig" value="#{vooBean.escala.aeroportoOrigem}" style="width:300px">
                                                 <f:selectItem itemLabel="Selecione o Aeroporto" itemValue="" noSelectionOption="true" />
-                                                <f:selectItems value="#{dropdownView.aeroportoorig}" />
+                                                <f:selectItems value="#{vooBean.origem.objetos}" />
                                             </p:selectOneMenu>
                                             <p:outputLabel value="Status: " for="status" style="color: #000000;"/>
-                                            <p:selectOneRadio id="status" value="#{radioView.console}">
-                                                <f:selectItem itemLabel="Confirmado" itemValue="Cpnfirmado" />
-                                                <f:selectItem itemLabel="Cancelado" itemValue="Cancelado" />
-                                            </p:selectOneRadio>
                                         </h:panelGrid>
                                     </div>
                                 </div>
@@ -71,13 +62,13 @@
                                 <h:panelGrid columns="2">
                                     <p:panel id="datasSaida" header="Data de Saida" style="float: left; text-align: right; width: 300px">
                                         <p:outputLabel value="Prevista: " for="dataPrevistaSD" style="color: #000000; " />
-                                        <p:inputMask id="dataPrevistaSD" label="DataPrevista" value="#{maskView.date}" mask="99/99/9999" style="width:150px;" />
+                                        <p:inputMask id="dataPrevistaSD" label="DataPrevista" value="#{vooBean.escala.dataSaidaPrevista}" mask="99/99/9999" style="width:150px;" />
                                         <p:outputLabel value="Confirmada: " for="dataConfirmadaSD" style="color: #000000;" />
                                         <p:inputMask id="dataConfirmadaSD" label="DataConfirmada" value="#{maskView.date}" mask="99/99/9999" style="width:150px;"/>
                                     </p:panel>
                                     <p:panel id="datasChegada" header="Data de Chegada" style="float: left; text-align: right; width: 300px">
                                         <p:outputLabel value="Prevista: " for="dataPrevistaCH" style="color: #000000; " />
-                                        <p:inputMask id="dataPrevistaCH" label="DataPrevista" value="#{maskView.date}" mask="99/99/9999" style="width:150px;" />
+                                        <p:inputMask id="dataPrevistaCH" label="DataPrevista" value="#{vooBean.escala.dataChegadaPrevistas}" mask="99/99/9999" style="width:150px;" />
                                         <p:outputLabel value="Confirmada: " for="dataConfirmadaCH" style="color: #000000;" />
                                         <p:inputMask id="dataConfirmadaCH" label="DataConfirmada" value="#{maskView.date}" mask="99/99/9999" style="width:150px;"/>
                                     </p:panel><br/>                                       

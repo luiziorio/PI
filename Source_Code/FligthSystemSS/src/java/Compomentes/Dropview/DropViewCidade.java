@@ -38,4 +38,10 @@ public class DropViewCidade extends DropViewBase<ECidade>
             objetos = new HashSet<>();
         return objetos;
     }
+
+    @Override
+    public void setObjetos(Set<ECidade> objetos)
+    {
+        
+    }
 }
