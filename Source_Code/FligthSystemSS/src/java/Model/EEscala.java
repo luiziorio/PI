@@ -26,7 +26,7 @@ import javax.persistence.NamedQuery;
 @Table(name = "Escala")
 @NamedQueries(
 {
-    @NamedQuery(name = "EEscala.getAll", query = "SELECT a FROM EEquipe a"),
+    @NamedQuery(name = "Model.EEscala.getAll", query = "SELECT a FROM EEquipe a"),
 })
 public class EEscala extends EBase  
 {

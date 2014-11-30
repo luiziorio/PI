@@ -5,8 +5,10 @@
  */
 package Model;
 
-import Base.EBaseNome;
+import Base.Persistencia.EBaseNome;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
@@ -22,6 +24,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PessoaBase")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "PessoaType",discriminatorType = DiscriminatorType.STRING)
 public abstract class EPessoaBase extends EBaseNome
 {
     @Column(length = 20)

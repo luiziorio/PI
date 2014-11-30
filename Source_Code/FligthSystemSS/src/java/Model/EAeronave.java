@@ -22,7 +22,7 @@ import javax.persistence.NamedQuery;
 
 @NamedQueries(
 {
-    @NamedQuery(name = "EAeronave.getAll", query = "SELECT a FROM EAeronave a"),
+    @NamedQuery(name = "Model.EAeronave.getAll", query = "SELECT a FROM EAeronave a"),
 })
 public class EAeronave extends EBaseNome
 {

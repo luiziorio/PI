@@ -7,6 +7,8 @@ package Model;
 
 import java.util.Date;
 import java.util.Set;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
@@ -21,6 +23,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "funcionario")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="Disc", discriminatorType = DiscriminatorType.CHAR)
 public abstract class EFuncionario extends EPessoaFisica
 {
     protected Double salario;

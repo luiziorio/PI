@@ -27,8 +27,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries(
 {
-    @NamedQuery(name = "EUsuario.getAll", query = "SELECT a FROM EUsuario a"),
-    @NamedQuery(name = "EUsuario.comparaUsuario", query = "SELECT a FROM EUsuario a WHERE a = :e")
+    @NamedQuery(name = "Model.EUsuario.getAll", query = "SELECT a FROM EUsuario a"),
+    @NamedQuery(name = "Model.EUsuario.comparaUsuario", query = "SELECT a FROM EUsuario a WHERE a = :e")
 })
 public class EUsuario extends EBaseNome  
 {

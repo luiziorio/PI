@@ -24,8 +24,8 @@ import org.springframework.stereotype.Component;
 @XmlRootElement
 @NamedQueries(
 {
-    @NamedQuery(name = "ECidade.getAll", query = "SELECT a FROM ECidade a"),
-    @NamedQuery(name = "ECidade.getAllCidadePorPais", query = "SELECT A FROM ECidade A WHERE A.pais.sequencial = :id")
+    @NamedQuery(name = "Model.ECidade.getAll", query = "SELECT a FROM ECidade a"),
+    @NamedQuery(name = "Model.ECidade.getAllCidadePorPais", query = "SELECT A FROM ECidade A WHERE A.pais.sequencial = :id")
 })
 @Component
 public class ECidade extends EBaseNome

@@ -22,7 +22,7 @@ import javax.persistence.NamedQuery;
 @Table(name = "DataHora")
 @NamedQueries(
 {
-    @NamedQuery(name = "EDataHora.getAll", query = "SELECT a FROM EDataHora a"),
+    @NamedQuery(name = "Model.EDataHora.getAll", query = "SELECT a FROM EDataHora a"),
 })
 public class EDataHora extends EBase  
 {

@@ -8,7 +8,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 @Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
 @StaticMetamodel(EEscala.class)
-public abstract class EEscala_ extends Base.EBase_ {
+public abstract class EEscala_ extends Base.Persistencia.EBase_ {
 
 	public static volatile SingularAttribute<EEscala, Date> dataSaidaPrevista;
 	public static volatile SingularAttribute<EEscala, Boolean> atrasado;

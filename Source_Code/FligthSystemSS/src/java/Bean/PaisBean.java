@@ -8,7 +8,6 @@ package Bean;
 import Base.Persistencia.BaseBean;
 import Compomentes.Dropview.DropViewContinente;
 import Controller.PaisController;
-import Model.EContinente;
 import Model.EPais;
 import Util.ObjetosStaticos;
 import javax.inject.Named;
@@ -33,6 +32,8 @@ public class PaisBean extends BaseBean<PaisController, EPais>
     @Override
     public void salva()
     {
+        if(objeto.getClass() == null)
+            return;
         super.salva(); //To change body of generated methods, choose Tools | Templates.
         ObjetosStaticos.getInstance().updateContinente();
     }

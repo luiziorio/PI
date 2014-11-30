@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 @Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
 @StaticMetamodel(EVoo.class)
-public abstract class EVoo_ extends Base.EBase_ {
+public abstract class EVoo_ extends Base.Persistencia.EBase_ {
 
 	public static volatile SetAttribute<EVoo, EEscala> escalas;
 	public static volatile SingularAttribute<EVoo, EUsuario> usuario;

@@ -8,6 +8,7 @@ package Compomentes.Dropview;
 import Base.Compomente.DropViewBase;
 import Controller.AeronaveController;
 import Model.EAeronave;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -26,6 +27,8 @@ public class DropViewAeronave extends DropViewBase<EAeronave>
             {
                 objetos = ac.getAll();
             }
+            if(objetos == null)
+                objetos = new HashSet<>();
         }
         return objetos;
     }

@@ -62,7 +62,7 @@ public class Hibernate
         s.close();
     }
     
-    @Test
+    //@Test
     public void testGetContinente()
     {
         Set<EContinente> c = ObjetosStaticos.getInstance().getContinentes();

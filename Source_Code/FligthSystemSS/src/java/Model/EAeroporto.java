@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 @Table(name = "EAeroporto")
 @NamedQueries(
 {
-    @NamedQuery(name = "Model.EAeroporto.findAll", query = "SELECT a FROM EAeroporto a"),
+    @NamedQuery(name = "Model.EAeroporto.getAll", query = "SELECT a FROM EAeroporto a"),
     @NamedQuery(name = "Model.EAeroporto.findByIdaeroporto", query = "SELECT a FROM EAeroporto a WHERE a.sequencial = :sequencial"),
     @NamedQuery(name = "Model.EAeroporto.findNotTransferido",query = "SELECT a FROM EAeroporto a WHERE a.tranferidoParaDW = :tranferido")
 })

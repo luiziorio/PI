@@ -16,6 +16,18 @@ import java.util.Set;
  */
 public class DropViewContinente extends DropViewBase<EContinente>
 {
+    private EContinente continente;
+
+    public EContinente getContinente()
+    {
+        return continente;
+    }
+
+    public void setContinente(EContinente continente)
+    {
+        this.continente = continente;
+    }
+    
     @Override
     public Set<EContinente> getObjetos()
     {

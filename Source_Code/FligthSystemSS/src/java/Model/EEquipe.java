@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @Table(name = "Equipe")
 @NamedQueries(
 {
-    @NamedQuery(name = "EEquipe.getAll", query = "SELECT a FROM EEquipe a"),
+    @NamedQuery(name = "Model.EEquipe.getAll", query = "SELECT a FROM EEquipe a"),
 })
 public class EEquipe extends EBaseNome
 {

@@ -23,9 +23,9 @@ import javax.persistence.Table;
 @Table(name = "Piloto")
 @NamedQueries(
 {
-    @NamedQuery(name = "EPiloto.getAll", query = "SELECT a FROM EPiloto a"),
+    @NamedQuery(name = "Model.EPiloto.getAll", query = "SELECT a FROM EPiloto a"),
 })
-@DiscriminatorValue(value = "PI")
+@DiscriminatorValue(value = "P")
 public class EPiloto extends EFuncionario
 {
     @ManyToMany(fetch = FetchType.LAZY)

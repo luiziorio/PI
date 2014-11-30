@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 @Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
 @StaticMetamodel(EAeronave.class)
-public abstract class EAeronave_ extends Base.EBaseNome_ {
+public abstract class EAeronave_ extends Base.Persistencia.EBaseNome_ {
 
 	public static volatile ListAttribute<EAeronave, EPiloto> ePilotos;
 

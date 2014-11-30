@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "Endereco")
 @NamedQueries(
 {
-    @NamedQuery(name = "EEndereco.getAll", query = "SELECT a FROM EEndereco a"),
+    @NamedQuery(name = "Model.EEndereco.getAll", query = "SELECT a FROM EEndereco a"),
 })
 public class EEndereco extends EBase
 {

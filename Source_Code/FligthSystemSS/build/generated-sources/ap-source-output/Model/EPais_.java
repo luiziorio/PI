@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 @Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
 @StaticMetamodel(EPais.class)
-public abstract class EPais_ extends Base.EBaseNome_ {
+public abstract class EPais_ extends Base.Persistencia.EBaseNome_ {
 
 	public static volatile SingularAttribute<EPais, EContinente> continente;
 	public static volatile SetAttribute<EPais, ECidade> listaCidades;

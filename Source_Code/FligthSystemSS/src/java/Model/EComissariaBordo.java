@@ -5,7 +5,6 @@
  */
 package Model;
 
-import java.util.Date;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
@@ -22,7 +21,7 @@ import javax.persistence.Table;
 {
     @NamedQuery(name = "EComissariaBordo.getAll", query = "SELECT a FROM EComissariaBordo a"),
 })
-@DiscriminatorValue(value = "CBs")
+@DiscriminatorValue(value = "C")
 public class EComissariaBordo extends EFuncionario
 {
 

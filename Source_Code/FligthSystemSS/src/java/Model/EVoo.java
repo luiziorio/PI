@@ -24,7 +24,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @PrimaryKeyJoinColumn(name = "sequencial")
 @NamedQueries(
 {
-    @NamedQuery(name = "EVoo.getAll", query = "SELECT a FROM EVoo a"),
+    @NamedQuery(name = "Model.EVoo.getAll", query = "SELECT a FROM EVoo a"),
 })
 public class EVoo extends EBase  
 {

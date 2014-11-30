@@ -27,8 +27,8 @@ import org.springframework.stereotype.Component;
 @Table(name = "Pais")
 @NamedQueries(
 {
-    @NamedQuery(name = "EPais.getAll", query = "SELECT a FROM EPais a"),
-    @NamedQuery(name = "EPais.getAllPaisPorContinete", query = "SELECT A FROM EPais A WHERE A.continente.sequencial = :id")
+    @NamedQuery(name = "Model.EPais.getAll", query = "SELECT a FROM EPais a"),
+    @NamedQuery(name = "Model.EPais.getAllPaisPorContinete", query = "SELECT A FROM EPais A WHERE A.continente.sequencial = :id")
 })
 @Component
 public class EPais extends EBaseNome  
